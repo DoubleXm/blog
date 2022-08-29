@@ -6,42 +6,42 @@ export default defineConfig({
   themeConfig: {
     // 导航栏
     nav: [
-      { text: "面试", link: "/interview-questions/" },
+      {
+        text: "面试",
+        items: [
+          { text: "公司真题", link: "/interview-questions/" },
+          { text: "八股文", link: "/eight-part-essay/" },
+          { text: "手撕代码", link: "/tore-code/" }
+        ]
+      },
       { text: "Vue3", link: "#" },
       { text: "React", link: "#" }
-      // {
-      //   text: '工程化',
-      //   items: [
-      //     { text: 'Vite', link: '/vite' },
-      //     { text: 'Webpack', link: '/webpack' }
-      //   ]
-      // },
-      // {
-      //   text: 'Node',
-      //   items: [
-      //     { text: 'Koa', link: '/koa' },
-      //     { text: 'Nest', link: '/nest' }
-      //   ]
-      // }
     ],
     // 侧边栏
-    sidebar: [
-      {
-        text: "2022年08-10月面试",
-        collapsible: true,
-        items: [{ text: "08-31 xxx 科技公司", link: "/interview-questions/questions-1" }]
-      },
-      {
-        text: "TestSidebar",
-        collapsible: true,
-        collapsed: true,
-        items: [
-          { text: "sidebar-one", link: "#" },
-          { text: "sidebar-two", link: "#" }
-        ]
-      }
-    ],
+    sidebar: {
+      "/interview-questions/": [
+        {
+          text: "2022年08-10月面试",
+          collapsible: true,
+          items: [{ text: "08-31 xxx 科技公司", link: "/interview-questions/questions-1" }]
+        }
+      ],
+      "/eight-part-essay/": [
+        {
+          text: "八股文",
+          collapsible: true,
+          items: [{ text: "浏览器部分", link: "/eight-part-essay/browser-questions" }]
+        }
+      ],
+      "/tore-code/": [
+        {
+          text: "JavaScript 手写",
+          collapsible: true,
+          items: [{ text: "手写 Promise", link: "/tore-code/promise" }]
+        }
+      ]
+    },
     // 社交链接
-    socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }]
+    socialLinks: [{ icon: "github", link: "https://github.com/ShuQingX/interview-questions-record/tree/main/docs" }]
   }
 });

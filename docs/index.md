@@ -13,7 +13,7 @@ hero:
       link: /interview-questions/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/ShuQingX/interview-questions-record/tree/main/docs
 
 features:
   - title: Vue
