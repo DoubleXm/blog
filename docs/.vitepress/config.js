@@ -30,7 +30,10 @@ export default defineConfig({
         {
           text: "八股文",
           collapsible: true,
-          items: [{ text: "浏览器部分", link: "/eight-part-essay/browser-questions" }]
+          items: [
+            { text: "计算机网络", link: "/eight-part-essay/internet-questions" },
+            { text: "浏览器部分", link: "/eight-part-essay/browser-questions" }
+          ]
         }
       ],
       "/tore-code/": [
