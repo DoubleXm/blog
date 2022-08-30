@@ -1,0 +1,17 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: vitepress-deploy
+        uses: jenkey2011/vitepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.DOCS_TOKEN }}
+          TARGET_REPO: git@github.com:ShuQingX/interview-questions-record.git
+          TARGET_BRANCH: gh-pages
+          BUILD_SCRIPT: yarn && yarn docs:build
+          BUILD_DIR: docs/.vitepress/dist/
