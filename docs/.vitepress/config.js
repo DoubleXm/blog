@@ -50,7 +50,7 @@ export default defineConfig({
     },
     // 社交链接
     socialLinks: [{ icon: "github", link: "https://github.com/ShuQingX/interview-questions-record" }],
-    lastUpdatedText: "最近更新时间：",
+    lastUpdatedText: "最近更新时间",
     footer: {
       message: "在 MIT 许可下发布。",
       copyright: "版权所有 © 2022-至今 shuqingx"
