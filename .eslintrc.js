@@ -18,7 +18,7 @@ module.exports = {
     "no-use-before-define": "off",
     "react/react-in-jsx-scope": "off",
     "no-var": "error",
-    quotes: ["error", "double"],
+    quotes: ["warn", "double"],
     "no-extra-semi": "error",
     "linebreak-style": ["error", "unix"],
     "array-bracket-spacing": [2, "never"],
