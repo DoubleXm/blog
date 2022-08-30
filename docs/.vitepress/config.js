@@ -9,17 +9,9 @@ export default defineConfig({
   themeConfig: {
     // 导航栏
     nav: [
-      // {
-      //   text: "面试",
-      //   items: [
-      //     { text: "公司真题", link: "/interview-questions/" },
-      //     { text: "八股文", link: "/eight-part-essay/" },
-      //     { text: "手撕代码", link: "/tore-code/" }
-      //   ]
-      // },
-      { text: "公司真题", link: "/interview-questions/" },
-      { text: "八股文", link: "/eight-part-essay/" },
-      { text: "手撕代码", link: "/tore-code/" }
+      { text: "公司真题", link: "/interview-questions/", activeMatch: "/interview-questions/" },
+      { text: "八股文", link: "/eight-part-essay/internet-questions", activeMatch: "/eight-part-essay/" },
+      { text: "手撕代码", link: "/tore-code/", activeMatch: "/tore-code/" }
     ],
     // 侧边栏
     sidebar: {
@@ -36,7 +28,7 @@ export default defineConfig({
           collapsible: true,
           items: [
             { text: "计算机网络", link: "/eight-part-essay/internet-questions" },
-            { text: "浏览器部分", link: "/eight-part-essay/browser-questions" }
+            { text: "浏览器", link: "/eight-part-essay/browser-questions" }
           ]
         }
       ],
@@ -54,6 +46,10 @@ export default defineConfig({
     footer: {
       message: "在 MIT 许可下发布。",
       copyright: "版权所有 © 2022-至今 shuqingx"
+    },
+    editLink: {
+      pattern: "https://github.com/ShuQingX/interview-questions-record/blob/main/docs/:path",
+      text: "在 GitHub 上编辑此页面"
     }
     // 搜索配置 参考资料
     // https://segmentfault.com/a/1190000041480102

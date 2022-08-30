@@ -1,3 +1,3 @@
 ---
-layout: doc
+layout: page
 ---
