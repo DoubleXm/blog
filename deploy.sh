@@ -3,6 +3,8 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+rm -rf docs/.vitepress/dist/
+
 # 生成静态文件
 yarn docs:build
 
@@ -21,7 +23,5 @@ git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:ShuQingX/interview-questions-record.git master:gh-pages
-
-rm -rf docs/.vitepress/dist/
 
 cd -
