@@ -55,5 +55,15 @@ export default defineConfig({
       message: "在 MIT 许可下发布。",
       copyright: "版权所有 © 2022-至今 shuqingx"
     }
+    // 搜索配置 参考资料
+    // https://segmentfault.com/a/1190000041480102
+    // https://docsearch.algolia.com/docs/DocSearch-v3
+    // https://vuepress.vuejs.org/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
+    // algolia: {
+    //   apiKey: "<API_KEY>",
+    //   indexName: "<INDEX_NAME>",
+    //   // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
+    //   appId: "<APP_ID>"
+    // }
   }
 });
