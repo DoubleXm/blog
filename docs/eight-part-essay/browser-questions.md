@@ -237,7 +237,7 @@ Event Loop 执行顺序如下所示：
 
 可以把执行栈认为是一个存储函数调用的栈结构，遵循先进后出的原则。
 
-![bashStack](/browser/bashStack.awebp)
+![bashStack](/browser/bashStack.gif)
 
 当开始执行 JS 代码时，根据先进后出的原则，后执行的函数会先弹出栈，可以看到，foo 函数后执行，当执行完毕后就从栈中弹出了。
 
