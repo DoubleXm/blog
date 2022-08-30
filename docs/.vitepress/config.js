@@ -6,16 +6,17 @@ export default defineConfig({
   themeConfig: {
     // 导航栏
     nav: [
-      {
-        text: "面试",
-        items: [
-          { text: "公司真题", link: "/interview-questions/" },
-          { text: "八股文", link: "/eight-part-essay/" },
-          { text: "手撕代码", link: "/tore-code/" }
-        ]
-      },
-      { text: "Vue3", link: "#" },
-      { text: "React", link: "#" }
+      // {
+      //   text: "面试",
+      //   items: [
+      //     { text: "公司真题", link: "/interview-questions/" },
+      //     { text: "八股文", link: "/eight-part-essay/" },
+      //     { text: "手撕代码", link: "/tore-code/" }
+      //   ]
+      // },
+      { text: "公司真题", link: "/interview-questions/" },
+      { text: "八股文", link: "/eight-part-essay/" },
+      { text: "手撕代码", link: "/tore-code/" }
     ],
     // 侧边栏
     sidebar: {
