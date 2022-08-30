@@ -16,6 +16,6 @@ git add -A
 git commit -m 'feat(all): deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO> 这里做出对应的替换
-git push -f git@github.com:ShuQingX/interview-questions-record.git main gh-pages
+git push -f git@github.com:ShuQingX/interview-questions-record.git main:gh-pages
 
 cd -
