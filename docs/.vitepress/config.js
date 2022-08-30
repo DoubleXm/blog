@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  base: "/docs/",
+  base: "/interview-questions-record/",
   title: "Web 前端开发",
   description: "总结 web 前端相关面试题，以及个人技术的文章总结。",
   themeConfig: {
