@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /interview-questions/
+      link: /eight-part-essay/internet-questions
     - theme: alt
       text: View on GitHub
       link: https://github.com/ShuQingX/interview-questions-record

@@ -9,19 +9,12 @@ export default defineConfig({
   themeConfig: {
     // 导航栏
     nav: [
-      { text: "公司真题", link: "/interview-questions/", activeMatch: "/interview-questions/" },
       { text: "八股文", link: "/eight-part-essay/internet-questions", activeMatch: "/eight-part-essay/" },
+      { text: "公司真题", link: "/interview-questions/", activeMatch: "/interview-questions/" },
       { text: "手撕代码", link: "/tore-code/", activeMatch: "/tore-code/" }
     ],
     // 侧边栏
     sidebar: {
-      "/interview-questions/": [
-        {
-          text: "2022年08-10月面试",
-          collapsible: true,
-          items: [{ text: "08-31 xxx 科技公司", link: "/interview-questions/questions-1" }]
-        }
-      ],
       "/eight-part-essay/": [
         {
           text: "八股文",
@@ -32,6 +25,13 @@ export default defineConfig({
             { text: "JS、TS", link: "/eight-part-essay/js-ts" },
             { text: "Vue2", link: "/eight-part-essay/vue2" }
           ]
+        }
+      ],
+      "/interview-questions/": [
+        {
+          text: "2022年08-10月面试",
+          collapsible: true,
+          items: [{ text: "08-31 xxx 科技公司", link: "/interview-questions/questions-1" }]
         }
       ],
       "/tore-code/": [
