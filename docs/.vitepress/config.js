@@ -22,6 +22,7 @@ export default defineConfig({
           items: [
             { text: "计算机网络", link: "/eight-part-essay/internet-questions" },
             { text: "浏览器", link: "/eight-part-essay/browser-questions" },
+            { text: "HTML、CSS", link: "/eight-part-essay/html-css" },
             { text: "JS、TS", link: "/eight-part-essay/js-ts" },
             { text: "Vue2", link: "/eight-part-essay/vue2" },
             { text: "React", link: "/eight-part-essay/react" },

@@ -46,7 +46,7 @@ Vite 是直接把转换后的 es module 的 JavaScript 代码，扔给 支持 es
 
 ## 双引擎架构实现
 
-![vite2](/browser/vite2.image)
+![vite2](/browser/vite2.png)
 
 - 开发阶段：`ESBuild` 依赖预构建 主要是 ESM 格式的兼容性问题和海量请求的问题
 
