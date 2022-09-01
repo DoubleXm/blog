@@ -251,6 +251,34 @@ Event Loop 执行顺序如下所示：
 
 上面几种方式都是存储少量数据的时候的存储方式，当需要在本地存储大量数据的时候，我们可以使用浏览器的 indexDB 这是浏览器提供的一种本地的数据库存储机制。它不是关系型数据库，它内部采用对象仓库的形式存储数据，它更接近 NoSQL 数据库。
 
+## 懒加载的实现原理
+
+图片的加载是由 `src` 引起的，当对 `src` 赋值时，浏览器就会请求图片 资源。根据这个原理，我们使用 `HTML5` 的 `data-xxx` 属性来储存图片 的路径，在需要加载图片的时候，将 `data-xxx` 中图片的路径赋值给 `src`，这样就实现了图片的按需加载，即懒加载。 注意：`data-xxx` 中的 `xxx` 可以自定义，这里我们使用 data-src 来定 义。懒加载的实现重点在于确定用户需要加载哪张图片，在浏览器中，可 视区域内的资源就是用户需要的资源。所以当图片出现在可视区域时， 获取图片的真实地址并赋值给图片即可
+
+```html
+<div>
+  <img src="loading.gif" data-src="pic.png" />
+  <img src="loading.gif" data-src="pic.png" />
+  <img src="loading.gif" data-src="pic.png" />
+  <img src="loading.gif" data-src="pic.png" />
+  <img src="loading.gif" data-src="pic.png" />
+</div>
+<script>
+  var imgs = document.querySelectAll(img);
+  function lazyLoad() {
+    var scrollTop = document.body.scrollTop; // 滚动过的距离高度
+    var innerHeight = window.innerHeight; // 可视区域高度
+    for (let i = 0; i < imgs.length; i++) {
+      // 元素顶部距离文档顶部的高度 - （滚动过的距离高度 + 可视区域高度）
+      if (imgs[i].offsetTop < scrollTop + innerHeight) {
+        imgs[i].src = imgs[i].getAttribute("data-src");
+      }
+    }
+  }
+  window.onscroll = lazyLoad();
+</script>
+```
+
 ## 什么是 XSS 攻击
 
 ### 概念

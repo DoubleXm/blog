@@ -24,7 +24,9 @@ export default defineConfig({
             { text: "浏览器", link: "/eight-part-essay/browser-questions" },
             { text: "JS、TS", link: "/eight-part-essay/js-ts" },
             { text: "Vue2", link: "/eight-part-essay/vue2" },
-            { text: "React", link: "/eight-part-essay/react" }
+            { text: "React", link: "/eight-part-essay/react" },
+            { text: "Webpack", link: "/eight-part-essay/webpack" },
+            { text: "Vite", link: "/eight-part-essay/vite" }
           ]
         }
       ],
