@@ -123,6 +123,16 @@ layout: doc
 
 ## 常见的 CSS 布局单位
 
+- `px`: 像素单位
+- `rpx`: 小程序布局单位
+- `%`: 相对于父元素的百分比单位
+- `em`: 相对单位 `1em` 等同于父元素的文字大小
+- `rem`: 相对单位 `1rem` 等同于 `html` 根元素的文字大小
+- `vh`: 相对单位 `1vh` 等同于屏幕高度的 `1%`
+- `vw`: 相对单位 `1vw` 等同于屏幕快读的 `1%`
+- `vmin`: 选取 `vh` 和 `vw` 的最小值为基准
+- `vmax`: 选取 `vh` 和 `vw` 的最大值为基准
+
 ## 水平垂直居中的实现
 
 ::: details 利用绝对定位，设置 `left: 50%` 和 `top: 50%` 现将子元素左上角移到父元素中心位置，然后再通过 `translate` 来调整子元素的中心点到父元素的中心。该方法可以不定宽高。
@@ -240,4 +250,18 @@ layout: doc
 }
 ```
 
+:::
+
+## display: none, opacity: 0, visibility: hidden 有什么区别？
+
+::: tip
+`display: none` 隐藏后不占位置，子元素不会显示，事件不会触发，`transtion` 无效；
+:::
+
+::: tip
+`visibility: hidden` 隐藏后占位置，会被子元素继承，可以让子元素设置 `visibility: visable` 显示，不会触发事件，`transtion` 无效；
+:::
+
+::: tip
+`opacity: 0` 隐藏后占位置，会被子元素继承, 但是无法设置子元素显示。事件可以触发，`transtion` 有效；
 :::
