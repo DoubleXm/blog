@@ -33,9 +33,9 @@ export default defineConfig({
       ],
       "/interview-questions/": [
         {
-          text: "2022年08-10月面试",
+          text: "2022年09-10月面试",
           collapsible: true,
-          items: [{ text: "08-31 xxx 科技公司", link: "/interview-questions/questions-1" }]
+          items: [{ text: "09-06 xx 网络科技", link: "/interview-questions/questions-1" }]
         }
       ],
       "/tore-code/": [
