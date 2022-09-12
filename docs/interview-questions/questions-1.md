@@ -22,15 +22,107 @@ layout: doc
 
 ## 如何管理你们的分支？
 
-## 元素渲染层级？ 除了 `z-index`还有哪些方案可以影响元素层级？
+## 元素渲染层级？ 除了 `z-index`还有哪些情况可以影响元素层级？
+
+这个问题应该就是考察 [元素层叠水平 (`stacking level`)](https://github.com/chokcoco/iCSS/issues/48) 。
+
+**层叠水平**：根据层叠规则来绝对元素所处位置的一个环境。
+
+**层叠上下文**：是 `HTML` 元素的三维概念，这些 `HTML` 元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的 `z` 轴上延伸，`HTML` 元素依据其自身属性按照优先级顺序占用层叠上下文的空间。
+
+![stacking](/browser/stacking.jpeg)
+
+::: tip
+1、形成堆叠上下文环境的元素的背景与边框
+
+2、拥有负 `z-index` 的子堆叠上下文元素 （负的越高越堆叠层级越低）
+
+3、正常流式布局，非 `inline-block`，无 `position` 定位（`static` 除外）的子元素
+
+4、无 `position` 定位（`static` 除外）的 float 浮动元素
+
+5、正常流式布局， `inline-block` 元素，无 `position` 定位（`static` 除外）的子元素（包括 `display:table` 和 `display:inline` ）
+
+6、拥有 `z-index:0` 的子堆叠上下文元素
+
+7、拥有正 `z-index`: 的子堆叠上下文元素（正的越低越堆叠层级越低）
+:::
+
+如何触发一个元素形成 堆叠上下文 ？方法如下，摘自 MDN：
+
+::: tip
+
+- 根元素 (HTML),
+
+- `z-index` 值不为 `auto` 的 绝对/相对定位，
+
+- 一个 `z-index` 值不为 `auto` 的 `flex` 项目 (`flex item`)，即：父元素 `display: flex|inline-flex`
+
+- `opacity` 属性值小于 1 的元素（参考 the specification for opacity），
+
+- `transform` 属性值不为 `none` 的元素，
+
+- `mix-blend-mode` 属性值不为 `normal` 的元素，
+
+- `filter` 值不为 `none` 的元素，
+
+- `perspective` 值不为 `none` 的元素，
+
+- `isolation` 属性被设置为 `isolate` 的元素，
+
+- `position: fixed`
+
+- 在 `will-change` 中指定了任意 `CSS` 属性，即便你没有直接指定这些属性的值
+
+- `-webkit-overflow-scrolling` 属性被设置 `touch` 的元素
+
+:::
 
 ## 前端下载链接形式的文件方法？`a` 标签下载文件存在哪些问题？
 
-## `git` 常用命令，实际是考察两个命令有什么区别，我给忘记了。:hot_face:
+`winodw.open`：`window.open('downloadFile.zip')`
+
+- 会出现 `URL` 长度限制问题
+- 需要注意 `url` 编码问题
+- 浏览器可直接浏览的文件类型是不提供下载的，如 `txt、png、jpg、gif` 等
+
+  可以通过设置 `Content-Disposition` 响应头信息，让客户端直接下载而不是打开新页面 [文档地址](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition)
+
+- 不能添加 `header`，也就不能进行鉴权
+- 无法知道下载的进度
+
+`a` 标签的 `download`： `<a href="example.jpg" download="test">点击下载</a>`
+
+- 不能下载跨域下的浏览器可浏览的文件
+- 有兼容性问题，特别是 `IE`
+
+  `Edge 13` 在尝试下载 `data url` 链接时会崩溃。
+
+  `Chrome 65` 及以上版本只支持同源下载链接。
+
+  `Firefox` 只支持同源下载链接。
+
+- 不能进行鉴权
+
+## `git rebase` `git merage` 的区别
+
+**`git rebase`**
+
+将当前分支移植到指定分支或指定 `commit` 之上；
+
+会将整个分支移动到另一个分支上，有效地整合了所有分支上的提交。好处是历史记录更加清晰，是在原有提交的基础上将差异内容反映进去，消除了 `git merge` 所需的不必要的合并提交
+
+**`git merage`**
+
+将当前分支合并到指定分支；
+
+通过 `merge` 合并分支会新增一个 `merge commit`，然后将两个分支的历史联系起来；是一种非破坏性的操作，对现有分支不会以任何方式被更改，但是会导致历史记录相对复杂
 
 ## `H5` 分享页面如何实现
 
-## 基于 `vue` 实现的常用第三方库都用过哪些？
+## 基于 `vue` 实现的常用强依赖第三方库都用过哪些？
+
+就只用过 `VueDragable`， 更多请[参考](https://juejin.cn/post/7025085812517634062)
 
 ## 说说 `Jenkins` 如何实现前端的 `CI,CD`
 
