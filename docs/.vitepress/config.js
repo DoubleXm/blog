@@ -24,10 +24,12 @@ export default defineConfig({
             { text: "浏览器", link: "/eight-part-essay/browser-questions" },
             { text: "HTML、CSS", link: "/eight-part-essay/html-css" },
             { text: "JS、TS", link: "/eight-part-essay/js-ts" },
+            { text: "移动端", link: "/eight-part-essay/mobile" },
             { text: "Vue2", link: "/eight-part-essay/vue2" },
             { text: "React", link: "/eight-part-essay/react" },
             { text: "Webpack", link: "/eight-part-essay/webpack" },
-            { text: "Vite", link: "/eight-part-essay/vite" }
+            { text: "Vite", link: "/eight-part-essay/vite" },
+            { text: "Node", link: "/eight-part-essay/node" }
           ]
         }
       ],

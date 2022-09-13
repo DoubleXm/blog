@@ -146,11 +146,19 @@ if (!Object.keys(target).length) {
 
 在 new 的 2,3 步骤上箭头函数都是没有办法执行的。
 
-## escape、encodeURI、encodeURIComponent 的区别
+## 什么是 `use strict`,好处和坏处是什么？
 
-- encodeURI 是对整个 URI 进行转义，将 URI 中的非法字符转换为合 法字符，所以对于一些在 URI 中有特殊意义的字符不会进行转义。
-- encodeURIComponent 是对 URI 的组成部分进行转义，所以一些特殊 字符也会得到转义。
-- escape 和 encodeURI 的作用相同，不过它们对于 unicode 编码为 0xff 之外字符的时候会有区别，escape 是直接在字符的 unicode 编码前加上 %u，而 encodeURI 首先会将字符转换为 UTF-8 的格式， 再在每个字节前加上 %。
+`ECMAscript 5` 添加了第二种运行模式："严格模式"（`strict mode`）。顾名思义，这种模式使得 `Javascript` 在更严格的条件下运行。
+
+设立 "严格模式" 的目的：
+
+- 消除 `Javascript` 语法的一些不合理、不严谨之处，减少一些怪异行为;
+
+- 消除代码运行的一些不安全之处，保证代码运行的安全；
+
+- 提高编译器效率，增加运行速度；
+
+**缺点**： 现在网站的 `JS` 都会进行压缩，一些文件用了严格模式，而另一些没有。这时这些本来是严格模式的文件，被 `merge` 后，这个串就到了文件的中间，不仅没有指示严格模式，反而在压缩后浪费了字节。
 
 ## ES6 模块与 CommonJS 模块有什么异同？
 

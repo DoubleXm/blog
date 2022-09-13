@@ -2,6 +2,31 @@
 layout: doc
 ---
 
+## HTML5 特性有哪些？
+
+1. 多媒体，用于媒介回放的 `video` 和 `audio` 元素。
+
+2. 图像效果，用于绘画的 `canvas` 元素，`svg` 元素等。
+
+3. 离线&存储，对本地离线存储能够更好地支持，比如 `localstorage,Cookies` 等。
+
+4. 性能与集成特性，`HTML5` 会通过 `XML HttpRequest2`等技术，帮助您的 `Web` 应用和网站在多样化的环境中更快速地工作
+
+## Meta 标签，都有一些什么特性，有什么作用 ？
+
+**什么是 `meta` 标签**：`<meta>` 标签提供关于 HTML 文档的元数据，它不会显示在页面上，但是对于机器是可读 的，可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。
+
+**meta 的作用**：`meta` 里的数据是供机器解读的，告诉机器该如何解析这个页面，还有一个用途是可以添加服 务器发送到浏览器的 `HTTP` 头部内容。
+
+**常用 `meta` 标签总结**：
+
+- `Charset`：它是声明文档使用的字符编码，以防乱码，而且一定要写在第一行
+- `Viewport`： 主要是影响移动端页面布局的。
+
+## 什么是渐进式渲染 ？
+
+指打开页面先加载首屏显示的内容，之后再随着时间或者滚动页面才进行后面的加载 。
+
 ## 对 HTML 语义化的理解
 
 语义化是指根据内容的结构化（内容语义化），选择合适的标签（代码语义化）。通俗来讲就是用正确的标签做正确的事情。
@@ -228,30 +253,6 @@ layout: doc
 - 解决 `margin` 的重叠问题：由于 BFC 是一个独立的区域，内部的元素 和外部的元素互不影响，将两个元素变为两个 `BFC`，就解决了 `margin` 重叠的问题。
 - 解决高度塌陷的问题：在对子元素设置浮动后，父元素会发生高度塌陷。解决这个问题，只需要把父元素变成一个 `BFC`。常用的办法是给父元素设置 `overflow:hidden`。
 
-## 如何解决 1px 问题
-
-::: details 伪元素先放大后缩小
-
-```css
-.container {
-  position: relative;
-}
-.container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  transform: scale(0.5);
-  transform-origin: left top;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
-```
-
-:::
-
 ## display: none, opacity: 0, visibility: hidden 有什么区别？
 
 ::: tip
@@ -265,3 +266,13 @@ layout: doc
 ::: tip
 `opacity: 0` 隐藏后占位置，会被子元素继承, 但是无法设置子元素显示。事件可以触发，`transtion` 有效；
 :::
+
+## 使用 CSS 实现隐藏元素的方式有几种 ？
+
+1. `Opacity`: 设置一个元素的透明度 `.hide{opacity:0;}`
+
+2. `Visibility` `.hide{visibility:hidden}`
+
+3. `Display`: 确保元素不可见并且连盒模型也不生成 `.hide{display:none}`
+
+4. `Position` `.hide{position:absolute; top:-9999px; left:-9999px;}`
