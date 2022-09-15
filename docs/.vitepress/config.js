@@ -61,16 +61,16 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com/ShuQingX/interview-questions-record/blob/main/docs/:path",
       text: "在 GitHub 上编辑此页面"
-    }
+    },
     // 搜索配置 参考资料
     // https://segmentfault.com/a/1190000041480102
     // https://docsearch.algolia.com/docs/DocSearch-v3
     // https://vuepress.vuejs.org/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
-    // algolia: {
-    //   apiKey: "<API_KEY>",
-    //   indexName: "<INDEX_NAME>",
-    //   // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
-    //   appId: "<APP_ID>"
-    // }
+    algolia: {
+      apiKey: "aea12a0a4281c855b5d23789e868f378",
+      indexName: "interview-questions-record",
+      // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
+      appId: "XQYLP2L9WC"
+    }
   }
 });
