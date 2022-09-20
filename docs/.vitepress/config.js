@@ -10,7 +10,6 @@ export default defineConfig({
     // 导航栏
     nav: [
       { text: "八股文", link: "/eight-part-essay/internet-questions", activeMatch: "/eight-part-essay/" },
-      { text: "公司真题", link: "/interview-questions/", activeMatch: "/interview-questions/" },
       { text: "手撕代码", link: "/tore-code/", activeMatch: "/tore-code/" }
     ],
     // 侧边栏
@@ -23,23 +22,14 @@ export default defineConfig({
             { text: "计算机网络", link: "/eight-part-essay/internet-questions" },
             { text: "浏览器", link: "/eight-part-essay/browser-questions" },
             { text: "HTML、CSS", link: "/eight-part-essay/html-css" },
-            { text: "JS、TS", link: "/eight-part-essay/js-ts" },
+            { text: "Javascript", link: "/eight-part-essay/javascript" },
+            { text: "TypeScript", link: "/eight-part-essay/typescript" },
             { text: "移动端", link: "/eight-part-essay/mobile" },
             { text: "Vue2", link: "/eight-part-essay/vue2" },
             { text: "React", link: "/eight-part-essay/react" },
             { text: "Webpack", link: "/eight-part-essay/webpack" },
             { text: "Vite", link: "/eight-part-essay/vite" },
             { text: "Node", link: "/eight-part-essay/node" }
-          ]
-        }
-      ],
-      "/interview-questions/": [
-        {
-          text: "2022年09-10月面试",
-          collapsible: true,
-          items: [
-            { text: "09-06 xx 网络科技", link: "/interview-questions/questions-1" },
-            { text: "09-07 xx 公司吐槽/引战可跳过", link: "/interview-questions/questions-2" }
           ]
         }
       ],
