@@ -1,18 +1,17 @@
 import { defineConfig } from "vitepress";
 
-export default defineConfig({
-  base: "/interview-questions-record/",
-  title: "Web 前端开发",
-  description: "总结 web 前端相关面试题，以及个人技术的文章总结。",
-  lastUpdated: true,
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
-  themeConfig: {
-    // 导航栏
+function getChineseThemeConfig() {
+  return {
+    localeLinks: {
+      items: [
+        { text: "简体中文", link: "/" },
+        { text: "English", link: "/en/" }
+      ]
+    },
     nav: [
       { text: "八股文", link: "/eight-part-essay/internet-questions", activeMatch: "/eight-part-essay/" },
       { text: "手撕代码", link: "/tore-code/", activeMatch: "/tore-code/" }
     ],
-    // 侧边栏
     sidebar: {
       "/eight-part-essay/": [
         {
@@ -41,7 +40,6 @@ export default defineConfig({
         }
       ]
     },
-    // 社交链接
     socialLinks: [{ icon: "github", link: "https://github.com/ShuQingX/interview-questions-record" }],
     lastUpdatedText: "最近更新时间",
     footer: {
@@ -51,11 +49,90 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com/ShuQingX/interview-questions-record/blob/main/docs/:path",
       text: "在 GitHub 上编辑此页面"
+    }
+  };
+}
+
+function getEnglishThemeConfig() {
+  return {
+    localeLinks: {
+      items: [
+        { text: "简体中文", link: "/" },
+        { text: "English", link: "/en" }
+      ]
     },
-    // 搜索配置 参考资料
-    // https://segmentfault.com/a/1190000041480102
-    // https://docsearch.algolia.com/docs/DocSearch-v3
-    // https://vuepress.vuejs.org/zh/theme/default-theme-config.html#algolia-%E6%90%9C%E7%B4%A2
+    nav: [
+      {
+        text: "Eight-legged essay",
+        link: "/en/eight-part-essay/internet-questions",
+        activeMatch: "/en/eight-part-essay/"
+      },
+      { text: "Tear the code by hand", link: "/en/tore-code/", activeMatch: "/en/tore-code/" }
+    ],
+    sidebar: {
+      "/en/eight-part-essay/": [
+        {
+          text: "Eight-legged essay",
+          collapsible: true,
+          items: [
+            { text: "computer network", link: "/en/eight-part-essay/internet-questions" },
+            { text: "browser", link: "/en/eight-part-essay/browser-questions" },
+            { text: "HTML、CSS", link: "/en/eight-part-essay/html-css" },
+            { text: "Javascript", link: "/en/eight-part-essay/javascript" },
+            { text: "TypeScript", link: "/en/eight-part-essay/typescript" },
+            { text: "mobile", link: "/en/eight-part-essay/mobile" },
+            { text: "Vue2", link: "/en/eight-part-essay/vue2" },
+            { text: "React", link: "/en/eight-part-essay/react" },
+            { text: "Webpack", link: "/en/eight-part-essay/webpack" },
+            { text: "Vite", link: "/en/eight-part-essay/vite" },
+            { text: "Node", link: "/en/eight-part-essay/node" }
+          ]
+        }
+      ],
+      "/en/tore-code/": [
+        {
+          text: "JavaScript handwriting",
+          collapsible: true,
+          items: [{ text: "handwriting Promise", link: "/en/tore-code/promise" }]
+        }
+      ]
+    },
+    socialLinks: [{ icon: "github", link: "https://github.com/ShuQingX/interview-questions-record" }],
+    lastUpdatedText: "Last update time",
+    footer: {
+      message: "Released under the MIT license.",
+      copyright: "Copyright © 2022-present shuqingx"
+    },
+    editLink: {
+      pattern: "https://github.com/ShuQingX/en/interview-questions-record/blob/main/docs/:path",
+      text: "Edit this page on GitHub"
+    }
+  };
+}
+
+export default defineConfig({
+  base: "/interview-questions-record/",
+  // title: "Web 前端开发",
+  // description: "总结 web 前端相关面试题，以及个人技术的文章总结。",
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  locales: {
+    "/": {
+      lang: "zh-CN",
+      title: "Web 前端开发",
+      description: "总结 web 前端相关面试题，以及个人技术的文章总结。"
+    },
+    "/en/": {
+      lang: "en-US",
+      title: "Web front-end development",
+      description:
+        "Summarize web front-end related interview questions, as well as personal technical article summaries."
+    }
+  },
+  themeConfig: {
+    locales: {
+      "/": getChineseThemeConfig(),
+      "/en/": getEnglishThemeConfig()
+    },
     algolia: {
       apiKey: "aea12a0a4281c855b5d23789e868f378",
       indexName: "interview-questions-record",
