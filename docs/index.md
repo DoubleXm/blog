@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: WebFront
-  tagline: 致力于整合前端面试真题，以及个人技术总结。妈妈再也不用担心面试的时候各种查资料了，一个站点全部搞定。。。
+  tagline: 致力于整合前端面试真题，本文档不再进行后续更新，但保留当前所有内容。请移步 https://github.com/xsqcoder/blog 查看更多内容
   image:
     src: /banner.jpeg
     alt: VitePress
@@ -13,7 +13,7 @@ hero:
       link: /eight-part-essay/internet-questions
     - theme: alt
       text: View on GitHub
-      link: https://github.com/ShuQingX/interview-questions-record
+      link: https://github.com/xsqcoder/blog
 
 features:
   - title: Vue
