@@ -1,0 +1,44 @@
+html {
+  text-rendering: optimizelegibility;
+}
+
+body {
+  overflow-y: auto;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial,
+    sans-serif !important;
+  font-size: 14px;
+}
+
+/* 滚动条样式修改 */
+::-webkit-resizer,
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c5c5cb;
+  background-clip: content-box;
+  border: 5px solid transparent;
+  border-radius: 999rem;
+}
+
+h1[tabindex="-1"] {
+  font-size: 30px !important;
+}
+
+h3[tabindex="-1"] {
+  margin-top: 28px !important;
+}
+
+h2[tabindex="-1"]{
+  margin-top: 38px !important;
+}
