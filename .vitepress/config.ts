@@ -35,7 +35,7 @@ export default defineConfig({
       text: '在 GitHub 上编辑此页面'
     },
     footer: {
-      message: `高质量专业前端内容网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
+      message: `DoubleX 的前端博客，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
       copyright: `<a target="_blank" href="${github}/blob/main/LICENSE">MIT License DoubleXm </a> | 版权所有 © 2023-${new Date().getFullYear()}`
     },
     socialLinks: createSocialLinks(),
