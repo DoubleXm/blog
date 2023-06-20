@@ -65,10 +65,10 @@ export function createSocialLinks(): SocialLink[] {
 
 export function createAlgolia() {
   return {
-    apiKey: 'aea12a0a4281c855b5d23789e868f378',
-    indexName: 'interview-questions-record',
+    apiKey: 'b537815b63bd12a83511061a06d783b9',
+    indexName: 'doublexmio',
     // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
-    appId: 'XQYLP2L9WC',
+    appId: 'R4FQPVX6VL',
     placeholder: '请输入关键词',
     translations: {
       button: {
