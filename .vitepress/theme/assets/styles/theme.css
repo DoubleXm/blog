@@ -8,37 +8,42 @@ body {
     'Hiragino Sans GB', 'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial,
     sans-serif !important;
   font-size: 14px;
+  color: var(--vp-c-text-1);
 }
 
-/* 滚动条样式修改 */
-::-webkit-resizer,
-::-webkit-scrollbar-corner,
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-track {
-  display: none;
-}
-
-::-webkit-scrollbar {
-  width: 14px;
-  height: 14px;
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #c5c5cb;
-  background-clip: content-box;
-  border: 5px solid transparent;
-  border-radius: 999rem;
-}
-
-h1[tabindex="-1"] {
+h1[tabindex='-1'] {
   font-size: 30px !important;
 }
 
-h3[tabindex="-1"] {
+h3[tabindex='-1'] {
   margin-top: 28px !important;
 }
 
-h2[tabindex="-1"]{
+h2[tabindex='-1'] {
   margin-top: 38px !important;
+}
+
+.VPNavBarTitle a {
+  display: flex;
+  align-items: center;
+  font-family: Comic Sans MS;
+  background: var(--vp-home-hero-name-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: var(--vp-home-hero-name-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--vp-c-text-1) !important;
+}
+
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
 }

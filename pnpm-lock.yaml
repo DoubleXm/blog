@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.15.0
+  medium-zoom: ^1.0.8
   sass: ^1.60.0
   terser: ^5.16.8
   vitepress: 1.0.0-alpha.64
@@ -13,6 +14,7 @@ dependencies:
 
 devDependencies:
   '@types/node': 18.15.0
+  medium-zoom: 1.0.8
   sass: 1.60.0
   vitepress: 1.0.0-alpha.64_ogttqe24xe7axllbasrc3wg2t4
 
@@ -599,7 +601,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /csstype/2.6.21:
@@ -644,6 +646,14 @@ packages:
     dependencies:
       to-regex-range: 5.0.1
     dev: true
+
+  /fsevents/2.3.2:
+    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -694,6 +704,10 @@ packages:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
     dependencies:
       sourcemap-codec: 1.4.8
+
+  /medium-zoom/1.0.8:
+    resolution: {integrity: sha512-CjFVuFq/IfrdqesAXfg+hzlDKu6A2n80ZIq0Kl9kWjoHh9j1N9Uvk5X0/MmN0hOfm5F9YBswlClhcwnmtwz7gA==}
+    dev: true
 
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
@@ -746,7 +760,7 @@ packages:
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /sass/1.60.0:
@@ -839,7 +853,7 @@ packages:
       sass: 1.60.0
       terser: 5.16.8
     optionalDependencies:
-      fsevents: r2.cnpmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: true
 
   /vitepress/1.0.0-alpha.64_ogttqe24xe7axllbasrc3wg2t4:
@@ -916,16 +930,6 @@ packages:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/commander/-/commander-2.20.3.tgz}
     name: commander
     version: 2.20.3
-
-  r2.cnpmjs.org/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
 
   r2.cnpmjs.org/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/function-bind/-/function-bind-1.1.1.tgz}

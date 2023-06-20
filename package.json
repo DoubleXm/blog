@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "只是一个菜鸡前端的随笔而已。",
+  "type": "module",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
@@ -12,6 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.0",
+    "medium-zoom": "^1.0.8",
     "sass": "^1.60.0",
     "vitepress": "1.0.0-alpha.64"
   },
