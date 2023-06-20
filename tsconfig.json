@@ -3,16 +3,18 @@
     "outDir": "dist",
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
     // "strict": true,
     "jsx": "preserve",
+    "moduleResolution": "Node16",
+
+    "composite": true,
     "baseUrl": ".",
     "paths": {
       "@theme/*": [".vitepress/theme/*"]
     }
   },
-  "include": ["env.d.ts", "src/**/*", ".vitepress/**/*"]
+  "include": ["env.d.ts", "src/**/*", ".vitepress/**/*", "typing.d.ts"]
 }
