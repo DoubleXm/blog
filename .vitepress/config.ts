@@ -161,6 +161,14 @@ function createSpecialColumnSidebar() {
             {
               text: '源码环境搭建',
               link: '/docs/special-column/vue/01-源码环境搭建'
+            },
+            {
+              text: 'reactiveApi 实现',
+              link: '/docs/special-column/vue/02-reactiveApi实现'
+            },
+            {
+              text: '依赖收集与更新 effect 的实现',
+              link: '/docs/special-column/vue/03-依赖收集与更新'
             }
           ]
         }
