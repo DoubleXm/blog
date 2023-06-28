@@ -114,7 +114,7 @@ function createNav() {
           activeMatch: '/docs/special-column/vue/'
         }
       ]
-    },
+    }
   ];
 }
 
@@ -169,6 +169,10 @@ function createSpecialColumnSidebar() {
             {
               text: '依赖收集与更新 effect 的实现',
               link: '/docs/special-column/vue/03-依赖收集与更新'
+            },
+            {
+              text: 'refApi 实现',
+              link: '/docs/special-column/vue/04-refApi实现'
             }
           ]
         }
