@@ -31,7 +31,14 @@ h2[tabindex='-1'] {
 .VPNavBarTitle a,
 .VPHero .container .clip {
   font-family: Comic Sans MS;
-  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%) !important;
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  ) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   color: transparent !important;
@@ -61,4 +68,8 @@ h6 {
   .VPHome {
     padding-bottom: 60px !important;
   }
+}
+
+span {
+  font-style: normal !important;
 }

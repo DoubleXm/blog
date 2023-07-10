@@ -173,6 +173,10 @@ function createSpecialColumnSidebar() {
             {
               text: 'refApi 实现',
               link: '/docs/special-column/vue/04-refApi实现'
+            },
+            {
+              text: 'computed 实现',
+              link: '/docs/special-column/vue/05-computedApi'
             }
           ]
         }
