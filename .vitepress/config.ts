@@ -152,16 +152,18 @@ function createInterviewSidebar() {
 function createSpecialColumnSidebar() {
   return [
     {
+      text: '手写 Vue3',
+      collapsed: false,
       items: [
+        { text: '📚 导读', link: '/docs/special-column/vue/00-导读' },
         {
-          text: 'VueJS',
-          collapsed: false,
+          text: '🌱 源码环境搭建',
+          link: '/docs/special-column/vue/01-源码环境搭建'
+        },
+        {
+          text: 'reactivity 响应式模块',
+          // collapsed: false,
           items: [
-            { text: '📚 导读', link: '/docs/special-column/vue/00-导读' },
-            {
-              text: '源码环境搭建',
-              link: '/docs/special-column/vue/01-源码环境搭建'
-            },
             {
               text: 'reactiveApi 实现',
               link: '/docs/special-column/vue/02-reactiveApi实现'
@@ -177,6 +179,29 @@ function createSpecialColumnSidebar() {
             {
               text: 'computed 实现',
               link: '/docs/special-column/vue/05-computedApi'
+            }
+          ]
+        },
+        {
+          text: '初始化渲染流程',
+          link: '/docs/special-column/vue/06-初始化前置',
+          // collapsed: false,
+          items: [
+            {
+              text: '前置',
+              link: '/docs/special-column/vue/06-初始化前置'
+            },
+            {
+              text: 'createApp',
+              link: '/docs/special-column/vue/07-初始化流程'
+            },
+            {
+              text: 'Vue 中的类型及 VNode 创建',
+              link: '/docs/special-column/vue/08-Vue类型'
+            },
+            {
+              text: 'render 渲染',
+              link: '/docs/special-column/vue/09-render'
             }
           ]
         }
