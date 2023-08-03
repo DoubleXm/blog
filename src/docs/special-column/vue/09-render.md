@@ -2,9 +2,8 @@
 
 目前为止，`vnode` 已经生成，似乎已经完事具备。继续分析 `render` 具体需要做哪些事情：
 
-- 前面的示例中 `setup`、`render` 方法的参数处理；
-- 如何让 `render` 变成一个 `effect`，使属性变更后重新执行；
-- 用户同时传入 `setup`、`render` 时程序应该如何处理；
+- 如何让 `render` 变成一个 `effect`，使属性变更后重新执行？
+- 用户同时传入 `setup`、`render` 时程序应该如何处理？
 - `setup` 中 `props`、`ctx` 与 `render` 中的 `proxy` 是什么？
 
 OK! 带着上面的问题，进一步实现 `createRenderer` 中的 `render` 方法。
@@ -14,11 +13,28 @@ OK! 带着上面的问题，进一步实现 `createRenderer` 中的 `render` 方
 ```ts [render.ts]
 import { ShapeFlags } from '@vue/shared/src';
 import { createComponentInstance, setupComponent } from './component';
+import { effect } from '@vue/reactivity/src';
 
 export function createRenderer(renderOptions) {
 
   const setupRenderEffect(instance, container) => {
+    // 创建一个 effect 在 effect 中调用 render 方法，保证属性更新后可以重新执行 render 方法。
 
+    // 每个组件都有一个 effect, vue3 组件级更新
+    // 数据变化后执行对应组件的 effect
+    effect(function componentEffect() {
+      // 没有被挂载，说明是初次挂载
+      if(!instance.isMounted) {
+        let proxyUse = instance.proxy;
+        // 在 vue3 中组件的虚拟节点叫做 vnode，render 的返回值称之为 subTree
+        let subTree = (instance.subTree = instance.render.call(proxyUse, proxyUse));
+        instance.isMounted = true;
+
+        patch(null, subTree, container);
+      } else {
+        // TODO 更新组件
+      }
+    });
   }
 
   /**
@@ -73,7 +89,7 @@ export function createRenderer(renderOptions) {
 
 :::
 
-## mountComponent 都在做什么
+## setup 和 render 参数处理及调用优先级
 
 ::: code-group
 
@@ -218,3 +234,21 @@ export const PublicInstanceProxyHandlers = {
 ```
 
 :::
+
+## 总结
+
+**`setup` 中 `props`、`ctx` 与 `render` 中的 `proxy` 是什么？**
+
+> - `props` 是基于 `vnode` 取出来的。
+> - `proxy` 在构建实例时，代理的 `{ _: instance }` 对象。
+> - `ctx` 通过 `createSetupContext` 创建，从 `instance` 上面取一些必要的属性生成新的上下文对象。
+
+**用户同时传入 `setup`、`render` 时程序应该如何处理？**
+
+> - `vue` 内部会维护一个 `instance`。 
+> - 当用户传入 `setup` 时，优先调用并会看一下其返回值；如果是对象就把对象的值实例放到 `setupState` 上面；如果是方法就将该方法放到实例的 `render` 上面；如果没有返回值就去 `vnode` 上面取用户传递进来的 `render`。
+> - 如果 `setup` 不存在，就看 `vnode` 上面的 `render` 存不存在。
+
+**如何让 `render` 变成一个 `effect`，使属性变更后重新执行？**
+
+> - 使用 `effect` 对其进行包裹，然后在内部去执行处理好的 `render` 方法。如果内部数据变化后，会重新执行这个 `effect` 达到重新 `render` 的效果。

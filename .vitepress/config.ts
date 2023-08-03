@@ -188,7 +188,7 @@ function createSpecialColumnSidebar() {
           // collapsed: false,
           items: [
             {
-              text: '前置',
+              text: '准备工作',
               link: '/docs/special-column/vue/06-初始化前置'
             },
             {
@@ -196,12 +196,16 @@ function createSpecialColumnSidebar() {
               link: '/docs/special-column/vue/07-初始化流程'
             },
             {
-              text: 'Vue 中的类型及 VNode 创建',
+              text: 'Vue 中的类型及 createVNode',
               link: '/docs/special-column/vue/08-Vue类型'
             },
             {
-              text: 'render 渲染',
+              text: '组件创建流程',
               link: '/docs/special-column/vue/09-render'
+            },
+            {
+              text: 'h 方法及元素挂载流程',
+              link: '/docs/special-column/vue/10-挂载'
             }
           ]
         }

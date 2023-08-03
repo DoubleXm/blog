@@ -6,8 +6,8 @@ titleTemplate: 前端已死
 hero:
   name: DoubleX
   text: 'Front-end learning document collection'
-  tagline: |
-    再不学习，前端就没了...
+  tagline: 
+    # 再不学习，前端就没了...
   image:
     src: /logo.svg
     alt: DoubleX
