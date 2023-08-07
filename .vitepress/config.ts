@@ -208,6 +208,16 @@ function createSpecialColumnSidebar() {
               link: '/docs/special-column/vue/10-挂载'
             }
           ]
+        },
+        {
+          text: '组件、元素更新 diff算法',
+          // collapsed: false,
+          items: [
+            {
+              text: '更新流程开始及回顾',
+              link: '/docs/special-column/vue/11-组件更新开始于回顾'
+            },
+          ]
         }
       ]
     }
