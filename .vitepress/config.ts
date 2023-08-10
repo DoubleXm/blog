@@ -45,6 +45,8 @@ export default defineConfig({
     sidebar: {
       // 专栏
       '/docs/special-column/vue/': createSpecialColumnSidebar(),
+      // Py
+      '/docs/py/basic/': createPySidebar(),
       // 面试
       '/docs/interview/': createInterviewSidebar(),
       // 随笔
@@ -94,6 +96,11 @@ function createNav() {
           activeMatch: '/docs/special-column/vue/'
         }
       ]
+    },
+    {
+      text: '📝 Python',
+      link: '/docs/py/basic/basic',
+      activeMatch: '/docs/py/basic/basic'
     },
     {
       text: '🎉 面试',
@@ -235,6 +242,21 @@ function createEssaySidebar() {
       items: [
         { text: 'Test 占位 0', link: '' },
         { text: 'Test 占位 1', link: '' }
+      ]
+    }
+  ];
+}
+
+/**
+ * @description Python sidebar
+ */
+function createPySidebar() {
+  return [
+    {
+      text: 'Basic',
+      collapsed: false,
+      items: [
+        { text: '练习时长两年半的前端学 PY', link: '/docs/py/basic/basic' },
       ]
     }
   ];
