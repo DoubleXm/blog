@@ -99,8 +99,8 @@ function createNav() {
     },
     {
       text: '📝 Python',
-      link: '/docs/py/basic/basic',
-      activeMatch: '/docs/py/basic/basic'
+      link: '/docs/py/basic/数据类型-运算符',
+      activeMatch: '/docs/py/basic/数据类型-运算符'
     },
     {
       text: '🎉 面试',
@@ -256,7 +256,8 @@ function createPySidebar() {
       text: 'Basic',
       collapsed: false,
       items: [
-        { text: '练习时长两年半的前端学 PY', link: '/docs/py/basic/basic' },
+        { text: '数据类型、运算符', link: '/docs/py/basic/数据类型-运算符' },
+        { text: '分支、循环、函数', link: '/docs/py/basic/循环-函数' },
       ]
     }
   ];
