@@ -257,6 +257,7 @@ function createPySidebar() {
       collapsed: false,
       items: [
         { text: '数据类型、运算符', link: '/docs/py/basic/数据类型-运算符' },
+        { text: '数据类型（高级）', link: '/docs/py/basic/数据类型-高级' },
         { text: '分支、循环、函数', link: '/docs/py/basic/循环-函数' },
       ]
     }
