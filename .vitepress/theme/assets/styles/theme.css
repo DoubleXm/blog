@@ -40,6 +40,7 @@ h2[tabindex='-1'] {
     #7ac5d8 100%
   ) !important;
   -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   color: transparent !important;
 }
@@ -72,4 +73,23 @@ h6 {
 
 span {
   font-style: normal !important;
+}
+
+.vp-doc a {
+  text-decoration: none !important;
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  ) !important;
+  background-repeat: no-repeat !important;
+  background-position: bottom left !important;
+  background-size: 0 1px !important;
+  transition: background-size 300ms ease-in-out !important;
+  &:hover {
+    background-size: 100% 1px !important;
+  }
 }

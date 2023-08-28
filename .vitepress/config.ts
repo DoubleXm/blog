@@ -47,10 +47,14 @@ export default defineConfig({
       '/docs/special-column/vue/': createSpecialColumnSidebar(),
       // Py
       '/docs/py/basic/': createPySidebar(),
+      // MySQL
+      '/docs/mysql/basic/': createMySQLSidebar(),
       // 面试
       '/docs/interview/': createInterviewSidebar(),
       // 随笔
-      '/docs/essay': createEssaySidebar()
+      '/docs/essay': createEssaySidebar(),
+
+      '/docs/code-tools': createCodeToolsSidebar(),
     }
   },
   vite: {
@@ -81,9 +85,13 @@ function createNav() {
       text: '🔥 专栏',
       items: [
         {
-          text: '😤 手撕源码',
-          link: '/docs/special-column/vue/00-导读',
-          activeMatch: '/docs/special-column/vue/'
+          items: [
+            {
+              text: '🌋 手写 Vue3',
+              link: '/docs/special-column/vue/00-导读',
+              activeMatch: '/docs/special-column/vue/'
+            }
+          ]
         },
         {
           text: '🤔 前端算法',
@@ -98,9 +106,19 @@ function createNav() {
       ]
     },
     {
-      text: '📝 Python',
-      link: '/docs/py/basic/数据类型-运算符',
-      activeMatch: '/docs/py/basic/数据类型-运算符'
+      text: '📜 笔记',
+      items: [
+        {
+          text: '🐍 Python',
+          link: '/docs/py/basic/数据类型-运算符',
+          activeMatch: '/docs/py/basic/数据类型-运算符'
+        },
+        {
+          text: '🐬 MySQL',
+          link: '/docs/mysql/basic/index',
+          activeMatch: '/docs/mysql/basic/index'
+        }
+      ],
     },
     {
       text: '🎉 面试',
@@ -108,19 +126,9 @@ function createNav() {
       activeMatch: '/docs/interview/'
     },
     {
-      text: '🎒 编程资源',
-      items: [
-        {
-          text: '🔧 编程工具',
-          link: '/docs/special-column/vue/00-导读',
-          activeMatch: '/docs/special-column/vue/'
-        },
-        {
-          text: '🔗 资源导航',
-          link: '/docs/special-column/vue/00-导读',
-          activeMatch: '/docs/special-column/vue/'
-        }
-      ]
+      text: '🔧 编程工具',
+      link: '/docs/code-tools/vscode',
+      activeMatch: '/docs/code-tools/'
     }
   ];
 }
@@ -263,4 +271,32 @@ function createPySidebar() {
       ]
     }
   ];
+}
+
+/**
+ * @descriptionc MySQL sidebar
+ */
+function createMySQLSidebar() {
+  return [
+    {
+      text: 'MySQL',
+      collapsed: false,
+      items: [
+        { text: '📚 导读', link: '/docs/mysql/basic/index' },
+        { text: '基础语法', link: '/docs/mysql/basic/语法' },
+      ]
+    }
+  ];
+}
+
+/**
+ * @description 编程工具 sidebar
+ */
+function createCodeToolsSidebar() {
+  return [
+    {
+      text: 'VSCode 配置',
+      link: '/docs/code-tools/vscode'
+    }
+  ]
 }
