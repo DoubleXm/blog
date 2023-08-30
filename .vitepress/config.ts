@@ -269,6 +269,10 @@ function createPySidebar() {
         { text: '分支、循环、函数、文件IO、异常捕获、模块', link: '/docs/py/basic/循环-函数' },
         { text: '面向对象', link: '/docs/py/basic/面向对象' },
         { text: 'pymysql 基本操作', link: '/docs/py/basic/pymysql' },
+        { text: '多线程', link: '/docs/py/basic/线程' },
+        { text: '内置模块', link: '/docs/py/basic/内置模块' },
+        { text: 'requiests', link: '/docs/py/basic/requiest' },
+        { text: '网络编程', link: '/docs/py/basic/网络编程' },
       ]
     }
   ];
