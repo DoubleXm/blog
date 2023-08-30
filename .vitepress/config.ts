@@ -232,6 +232,10 @@ function createSpecialColumnSidebar() {
               text: '更新流程开始及回顾',
               link: '/docs/special-column/vue/11-组件更新开始于回顾'
             },
+            {
+              text: '组件更新流程',
+              link: '/docs/special-column/vue/12-组件更新'
+            },
           ]
         }
       ]

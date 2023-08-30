@@ -93,3 +93,7 @@ span {
     background-size: 100% 1px !important;
   }
 }
+
+.vp-doc .custom-block code {
+  font-weight: normal;
+}
