@@ -271,6 +271,8 @@ function createPySidebar() {
         { text: '数据类型、运算符', link: '/docs/py/basic/数据类型-运算符' },
         { text: '数据类型（高级）', link: '/docs/py/basic/数据类型-高级' },
         { text: '分支、循环、函数、文件IO、异常捕获、模块', link: '/docs/py/basic/循环-函数' },
+        { text: '名称空间、作用域、闭包、nonlocal、global', link: '/docs/py/basic/作用域' },
+        { text: '装饰器', link: '/docs/py/basic/装饰器' },
         { text: '面向对象', link: '/docs/py/basic/面向对象' },
         { text: 'pymysql 基本操作', link: '/docs/py/basic/pymysql' },
         { text: '多线程', link: '/docs/py/basic/线程' },
