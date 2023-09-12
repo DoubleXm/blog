@@ -249,11 +249,18 @@ function createSpecialColumnSidebar() {
 function createEssaySidebar() {
   return [
     {
-      text: 'NuxtJS',
+      text: 'Vue',
       collapsed: false,
       items: [
-        { text: 'Test 占位 0', link: '' },
-        { text: 'Test 占位 1', link: '' }
+        { text: '源码角度分析, Vue3 做的优化', link: '' },
+      ]
+    },
+    {
+      text: '小程序',
+      collapsed: false,
+      items: [
+        { text: '微信原生开发入门', link: '' },
+        { text: '基于微信原生仿卖座网开发总结', link: '' },
       ]
     }
   ];
@@ -309,6 +316,10 @@ function createCodeToolsSidebar() {
     {
       text: 'VSCode 配置',
       link: '/docs/code-tools/vscode'
+    },
+    {
+      text: '资源导航',
+      link: '/docs/code-tools/nav'
     }
   ]
 }
