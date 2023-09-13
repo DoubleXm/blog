@@ -173,6 +173,12 @@ import Card from '../../../.vitepress/theme/components/Card.vue';
 
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
 <Card 
+  title="摸鱼人专属导航"
+  desc="收录国内外各类型的摸鱼网站,摸鱼游戏,办公网站，摸鱼游戏网址导航致力于为广大摸鱼人推荐各行各业优秀摸鱼网站，国内外网站大全尽在摸鱼游戏导航。" 
+  href="https://moyu.games/" 
+/>
+
+<Card 
   title="模拟人生"
   desc="对人生不满意？赶紧重新投胎。" 
   href="https://liferestart.syaro.io/public/index.html" 

@@ -23,7 +23,7 @@ defineProps<{
 .card-container {
   position: relative;
   width: calc(50% - 24px);
-  margin: 20px 12px;
+  margin: 20px 12px 0 12px;
   padding: 10px 10px;
   background-color: #fff;
   border: 1px solid var(--vp-c-brand);
