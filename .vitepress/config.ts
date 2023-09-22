@@ -283,10 +283,10 @@ function createPySidebar() {
         { text: "生成器、迭代器、表达式", link: '/docs/py/basic/生成器-迭代器-表达式' },
         { text: '面向对象', link: '/docs/py/basic/面向对象' },
         { text: 'pymysql 基本操作', link: '/docs/py/basic/pymysql' },
-        { text: '多线程', link: '/docs/py/basic/线程' },
         { text: '内置模块', link: '/docs/py/basic/内置模块' },
         { text: 'requiests', link: '/docs/py/basic/requiest' },
         { text: '网络编程', link: '/docs/py/basic/网络编程' },
+        { text: '异步编程', link: '/docs/py/basic/线程' },
       ]
     }
   ];
@@ -323,3 +323,8 @@ function createCodeToolsSidebar() {
     }
   ]
 }
+
+
+// dandanzan oletv + 电影名 =》 google
+// duyaoss
+// ddys
