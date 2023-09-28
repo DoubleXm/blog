@@ -303,7 +303,8 @@ function createMySQLSidebar() {
       items: [
         { text: '📚 导读', link: '/docs/mysql/basic/index' },
         { text: '基础语法', link: '/docs/mysql/basic/语法' },
-        { text: '操作表', link: '/docs/mysql/basic/表操作' },
+        { text: '数据类型及表操作', link: '/docs/mysql/basic/表操作' },
+        { text: '数据查询', link: '/docs/mysql/basic/数据查询' },
       ]
     }
   ];
