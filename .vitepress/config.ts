@@ -284,6 +284,7 @@ function createPySidebar() {
         { text: '面向对象', link: '/docs/py/basic/面向对象' },
         { text: 'pymysql 基本操作', link: '/docs/py/basic/pymysql' },
         { text: '内置模块', link: '/docs/py/basic/内置模块' },
+        { text: 'logging', link: '/docs/py/basic/logging' },
         { text: 'requiests', link: '/docs/py/basic/requiest' },
         { text: '网络编程', link: '/docs/py/basic/网络编程' },
         { text: '异步编程', link: '/docs/py/basic/线程' },
