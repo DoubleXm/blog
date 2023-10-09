@@ -262,6 +262,13 @@ function createEssaySidebar() {
         { text: '微信原生开发入门', link: '' },
         { text: '基于微信原生仿卖座网开发总结', link: '' },
       ]
+    },
+    {
+      text: '工具',
+      collapsed: false,
+      items: [
+        { text: 'Charles 入门到精通', link: '' },
+      ]
     }
   ];
 }
