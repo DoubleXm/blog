@@ -122,8 +122,18 @@ function createNav() {
     },
     {
       text: '🎉 面试',
-      link: '/docs/interview/internet-questions',
-      activeMatch: '/docs/interview/'
+      items: [
+        {
+          text: '🦄 Web 前端',
+          link: '/docs/interview/internet-questions',
+          activeMatch: '/docs/interview/'
+        },
+        {
+          text: '🐍 Py 后端',
+          link: '/docs/interview',
+          activeMatch: ''
+        }
+      ]
     },
     {
       text: '🔧 编程工具',
@@ -142,16 +152,14 @@ function createInterviewSidebar() {
       text: '',
       collapsed: false,
       items: [
-        {
-          text: '计算机网络',
-          link: '/docs/interview/internet-questions'
-        },
+        { text: '计算机网络', link: '/docs/interview/internet-questions' },
         { text: '浏览器', link: '/docs/interview/browser-questions' },
         { text: 'HTML、CSS', link: '/docs/interview/html-css' },
-        { text: 'Javascript', link: '/docs/interview/javascript' },
+        { text: 'JavaScript', link: '/docs/interview/javascript' },
         { text: 'TypeScript', link: '/docs/interview/typescript' },
         { text: '移动端', link: '/docs/interview/mobile' },
         { text: 'Vue2', link: '/docs/interview/vue2' },
+        { text: 'Vue3', link: '/docs/interview/vue2' },
         { text: 'React', link: '/docs/interview/react' },
         { text: 'Webpack', link: '/docs/interview/webpack' },
         { text: 'Vite', link: '/docs/interview/vite' },
