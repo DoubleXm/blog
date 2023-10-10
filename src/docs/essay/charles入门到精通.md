@@ -58,4 +58,10 @@
 
 ### Android
 
-### Iphone
+### iPhone
+
+`iPhone` 的抓包与 `android` 基本类似，打开 `Charles` 保存在同一局域网下，先设置手机的代理，具体配置如下：
+
+![charles9](/essay/charles9.jpg)
+
+`Safari` 中输入内容 `chls.pro/ssl` 下载安装证书，最后在关于本机中信任此证书即可。
