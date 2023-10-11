@@ -56,7 +56,27 @@
 
 ## Mobile 抓包
 
+移动端的抓包整体需要两步配置：
+
+- 移动端需要安装证书
+- 保证 `PC` 与 `Mobile` 处于同一网段下（连接同一个 `WIFI`）
+
 ### Android
+
+`Android 7.0` 之后 `Google` 推出了更加严格的安全机制，默认不信任用户的安装的证书，这也导致了对于 `https` 加密的请求，不再可以抓取了。
+
+解决方案主流的大致分为两种：
+
+- 既然不支持用户的 `CA` 证书，可以安装系统级别 `CA` 证书，但前提设备必须为 `root` 模式。
+- 如果是自己公司研发的产品可以在 `AndroidManifest` 中配置 `networkSecurityConfig` 具体不再这里演示。
+
+以小米手机为例进行抓包配置，示例如下：
+
+![charles8](/essay/charles8.jpg)
+
+打开手机浏览器输入 `chls.pro/ssl` 即会下载 `CA` 证书，下载完成后进行安装即可。
+
+如果手机浏览器失败可以尝试使用 `PC` 重复次操作即会得到 `charles-proxy-ssl-proxying-certificate.pem` 证书，将此证书传入手机进行安装即可。
 
 ### iPhone
 
