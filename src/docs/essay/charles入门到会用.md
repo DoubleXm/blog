@@ -85,3 +85,47 @@
 ![charles9](/essay/charles9.jpg)
 
 `Safari` 中输入内容 `chls.pro/ssl` 下载安装证书，最后在关于本机中信任此证书即可。
+
+## 模拟网络延迟（弱网测试）
+
+导航栏中 `Throttle Settings` 点击后出现窗口，开启后使用预设配置或者自定义配置，点击 `ok` 即开启网络模拟。具体效果如下：
+
+![charles10](/essay/charles10.jpg)
+
+## 篡改请求信息
+
+修改请求的方式分为三种，`Compose`、`Rewrite`、`BreakPoint`
+
+### Compose
+
+该方法只能只能修改 `url`、`method`、`params`。作用域仅限于 `Charles` 中，修改后即会重新发送一个请求，用来验证结果。
+
+选中指定的请求，右键 `-> Compose`，具体使用及效果如下：
+
+![charles11](/essay/charles11.jpg)
+
+### Rewrite
+
+该方法除了 `Request Body` 不能修改，其余都支持修改。该配置开启后，后续被代理宿主机的任何请求只要符合该条件都会被修改。
+
+导航栏 `Tools -> Rewrite Settings`，配置窗口如下：
+
+![charles12](/essay/charles12.jpg)
+![charles13](/essay/charles13.jpg)
+![charles14](/essay/charles14.jpg)
+
+### BreakPoint
+
+该方法值比较主流的修改请求方案，效果为拦截请求的响应，当你修改后再去给请求放行，不过页面有可能因为请求一直得不到回复导致崩溃。
+
+选中指定请求，右键 `-> Breakpoints` 即开启断点，每次经过这个请求就会进行拦截。关闭断点的方式则需要点击 **工具栏中的六边形** 效果如下：
+
+![charles15](/essay/charles15.jpg)
+
+一个 `http` 请求共需要放行四次，分别为 `Request Header`、`Request Body`、`Response Header`、`Response Body`；内容可以直接进行修改。
+
+**注意：** 直接右键是严格匹配的断点，如果请求每次参数都会变化，很可能会导致无法命中断点。在导航栏 `Proxy -> Breakpoints Settings` 中可以针对断点进行配置。
+
+![charles16](/essay/charles16.jpg)
+
+

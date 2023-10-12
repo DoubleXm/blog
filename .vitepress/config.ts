@@ -275,7 +275,7 @@ function createEssaySidebar() {
       text: '工具',
       collapsed: false,
       items: [
-        { text: 'Charles 入门到精通', link: '/docs/essay/charles入门到精通' },
+        { text: 'Charles 入门到掌握', link: '/docs/essay/charles入门到会用' },
       ]
     }
   ];
