@@ -54,7 +54,7 @@ export default defineConfig({
       // 随笔
       '/docs/essay': createEssaySidebar(),
 
-      '/docs/code-tools': createCodeToolsSidebar(),
+      '/docs/code-tools': createCodeToolsSidebar()
     }
   },
   vite: {
@@ -118,7 +118,7 @@ function createNav() {
           link: '/docs/mysql/basic/index',
           activeMatch: '/docs/mysql/basic/index'
         }
-      ],
+      ]
     },
     {
       text: '🎉 面试',
@@ -243,7 +243,7 @@ function createSpecialColumnSidebar() {
             {
               text: '组件更新流程',
               link: '/docs/special-column/vue/12-组件更新'
-            },
+            }
           ]
         }
       ]
@@ -259,23 +259,24 @@ function createEssaySidebar() {
     {
       text: 'Vue',
       collapsed: false,
-      items: [
-        { text: '源码角度分析, Vue3 做的优化', link: '' },
-      ]
+      items: [{ text: '源码角度分析, Vue3 做的优化', link: '' }]
     },
     {
       text: '小程序',
       collapsed: false,
       items: [
         { text: '微信原生开发入门', link: '' },
-        { text: '基于微信原生仿卖座网开发总结', link: '' },
+        { text: '基于微信原生仿卖座网开发总结', link: '' }
       ]
     },
     {
       text: '工具',
       collapsed: false,
       items: [
-        { text: 'Charles 入门到掌握', link: '/docs/essay/charles入门到会用' },
+        {
+          text: 'Charles 入门到掌握',
+          link: '/docs/essay/charles入门到会用'
+        }
       ]
     }
   ];
@@ -290,19 +291,31 @@ function createPySidebar() {
       text: 'Basic',
       collapsed: false,
       items: [
-        { text: '数据类型、运算符', link: '/docs/py/basic/数据类型-运算符' },
+        {
+          text: '数据类型、运算符',
+          link: '/docs/py/basic/数据类型-运算符'
+        },
         { text: '数据类型（高级）', link: '/docs/py/basic/数据类型-高级' },
-        { text: '分支、循环、函数、文件IO、异常捕获、模块', link: '/docs/py/basic/循环-函数' },
-        { text: '名称空间、作用域、闭包、nonlocal、global', link: '/docs/py/basic/作用域' },
+        {
+          text: '分支、循环、函数、文件IO、异常捕获、模块',
+          link: '/docs/py/basic/循环-函数'
+        },
+        {
+          text: '名称空间、作用域、闭包、nonlocal、global',
+          link: '/docs/py/basic/作用域'
+        },
         { text: '装饰器', link: '/docs/py/basic/装饰器' },
-        { text: "生成器、迭代器、表达式", link: '/docs/py/basic/生成器-迭代器-表达式' },
+        {
+          text: '生成器、迭代器、表达式',
+          link: '/docs/py/basic/生成器-迭代器-表达式'
+        },
         { text: '面向对象', link: '/docs/py/basic/面向对象' },
         { text: 'pymysql 基本操作', link: '/docs/py/basic/pymysql' },
         { text: '内置模块', link: '/docs/py/basic/内置模块' },
         { text: 'logging', link: '/docs/py/basic/logging' },
         { text: 'requiests', link: '/docs/py/basic/requiest' },
         { text: '网络编程', link: '/docs/py/basic/网络编程' },
-        { text: '异步编程', link: '/docs/py/basic/线程' },
+        { text: '异步编程', link: '/docs/py/basic/线程' }
       ]
     }
   ];
@@ -320,7 +333,8 @@ function createMySQLSidebar() {
         { text: '📚 导读', link: '/docs/mysql/basic/index' },
         { text: '基础语法', link: '/docs/mysql/basic/语法' },
         { text: '数据类型及表操作', link: '/docs/mysql/basic/表操作' },
-        { text: '数据查询', link: '/docs/mysql/basic/数据查询' },
+        { text: '单表数据查询', link: '/docs/mysql/basic/数据查询' },
+        { text: '多表数据查询', link: '/docs/mysql/basic/多表查询' }
       ]
     }
   ];
@@ -339,9 +353,8 @@ function createCodeToolsSidebar() {
       text: '资源导航',
       link: '/docs/code-tools/nav'
     }
-  ]
+  ];
 }
-
 
 // dandanzan oletv + 电影名 =》 google
 // duyaoss
