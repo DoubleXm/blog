@@ -21,7 +21,7 @@ layout: doc
 ```javascript
 console.log(typeof 1); // number
 console.log(typeof true); // boolean
-console.log(typeof "mc"); // string
+console.log(typeof 'mc'); // string
 console.log(typeof Symbol); // function
 console.log(typeof function () {}); // function
 console.log(typeof console.log()); // undefined
@@ -40,7 +40,7 @@ console.log(typeof undefined); // undefined
 ```javascript
 console.log(1 instanceof Number); // false
 console.log(true instanceof Boolean); // false
-console.log("str" instanceof String); // false
+console.log('str' instanceof String); // false
 console.log([] instanceof Array); // true
 console.log(function () {} instanceof Function); // true
 console.log({} instanceof Object); // true
@@ -56,7 +56,7 @@ console.log({} instanceof Object); // true
 var toString = Object.prototype.toString;
 console.log(toString.call(1)); //[object Number]
 console.log(toString.call(true)); //[object Boolean]
-console.log(toString.call("mc")); //[object String]
+console.log(toString.call('mc')); //[object String]
 console.log(toString.call([])); //[object Array]
 console.log(toString.call({})); //[object Object]
 console.log(toString.call(function () {})); //[object Function]
@@ -116,7 +116,7 @@ function myInstance(left, right) {
 使用 JSON 自带的.stringify 方法来判断：
 
 ```javascript
-if (JSON.stringify(target) === "{}") {
+if (JSON.stringify(target) === '{}') {
 }
 ```
 
@@ -264,18 +264,18 @@ CMD 规范与 AMD 规范很相似，都用于浏览器编程，依赖就近，�
 2. Promise 本身是同步的立即执行函数， 当在 executor 中执行 resolve 或者 reject 的时候, 此时是异步操作， 会先执行 then/catch 等，当主栈完成后，才会去调用 resolve/reject 中存放的方法执行。
 
 ```javascript
-console.log("script start");
+console.log('script start');
 let promise1 = new Promise(function (resolve) {
-  console.log("promise1");
+  console.log('promise1');
   resolve();
-  console.log("promise1 end");
+  console.log('promise1 end');
 }).then(function () {
-  console.log("promise2");
+  console.log('promise2');
 });
 setTimeout(function () {
-  console.log("settimeout");
+  console.log('settimeout');
 });
-console.log("script end");
+console.log('script end');
 // 输出顺序: script start->promise1->promise1 end->script end->promise2->settimeout
 ```
 
@@ -283,23 +283,74 @@ console.log("script end");
 
 ```javascript
 async function async1() {
-  console.log("async1 start");
+  console.log('async1 start');
   await async2();
-  console.log("async1 end");
+  console.log('async1 end');
 }
 async function async2() {
-  console.log("async2");
+  console.log('async2');
 }
 
-console.log("script start");
+console.log('script start');
 async1();
-console.log("script end");
+console.log('script end');
 // 输出顺序：script start->async1 start->async2->script end->async1 end
 ```
 
 ## Async/Await 如何通过同步的方式实现异步
 
-Async/Await 就是一个自执行的 generate 函数。利用 generate 函数的特性把异步的代码写成“同步”的形式,第一个请求的返回值作为后面一个请求的参数,其中每一个参数都是一个 promise 对象。
+`Async/Await` 就是一个自执行的 `generate` 函数。利用 `generate` 函数的特性把异步的代码写成“同步”的形式，第一个请求的返回值作为后面一个请求的参数，其中每一个参数都是一个 `promise` 对象。
+
+缺点在于滥用 `await` 可能会导致性能问题，因为 `await` 会阻塞代码，也许之后的异步代码并不依赖于前者，但仍然需要等待前者完成，导致代码失去了并发性。
+
+## Generate 原理
+
+`Generator` 是 `ES6` 中新增的语法，和 `Promise` ⼀样，都可以用来异步编程。在声明函数时 `function* test() {}` 即表示声明一个 `generator` 函数。内部通过 `yield` 暂停代码的执行。调用时通过 `next()` 执行代码。
+
+```js
+function* test() {
+  yield 2;
+  yield 3;
+}
+
+const y = test();
+console.log(y.next()); // { value: 2, done: false }
+console.log(y.next()); // { value: 3, done: false }
+console.log(y.next()); // { value: undefined, done: true }
+```
+
+::: details 手写 `generator` 函数
+
+```js
+function generator(cb) {
+  // 返回自执行函数
+  return (function () {
+    var obj = {
+      next: 0,
+      stop: function () {}
+    };
+
+    // y.next()
+    return {
+      next: function () {
+        var ret = cb(obj);
+        if (ret === undefined) {
+          return {
+            value: undefined,
+            done: true
+          };
+        }
+        return {
+          value: ret,
+          done: false
+        };
+      }
+    };
+  })();
+}
+```
+
+:::
 
 ## let、const、var 的区别
 
@@ -358,7 +409,7 @@ Function.prototype.myApply = function (context) {
   context.fn = this; //1.将函数挂载到传入的对象
   var arg = [...arguments].splice(1)[0]; //2.取参数
   if (!Array.isArray(arg)) {
-    throw new Error("apply的第二个参数必须是数组"); //3.限制参数类型为数组
+    throw new Error('apply的第二个参数必须是数组'); //3.限制参数类型为数组
   }
   context.fn(arg); //4.执行对象的方法
   delete context.fn; //5.移除对象的方法
@@ -372,14 +423,17 @@ Function.prototype.myCall = function (context) {
 };
 
 Function.prototype.myBind = function (oThis) {
-  if (typeof this !== "function") {
-    throw new TypeError("被绑定的对象需要是函数");
+  if (typeof this !== 'function') {
+    throw new TypeError('被绑定的对象需要是函数');
   }
   var self = this;
   var args = [].slice.call(arguments, 1);
   fBound = function () {
     //this instanceof fBound === true时,说明返回的fBound被当做new的构造函数调用
-    return self.apply(this instanceof fBound ? this : oThis, args.concat([].slice.call(arguments)));
+    return self.apply(
+      this instanceof fBound ? this : oThis,
+      args.concat([].slice.call(arguments))
+    );
   };
   var func = function () {};
   //维护原型关系
@@ -391,3 +445,21 @@ Function.prototype.myBind = function (oThis) {
   return fBound;
 };
 ```
+
+## 介绍 js 中执⾏上下⽂和执⾏栈
+
+![context](/interview/context.jpg)
+
+简单的来说，执⾏上下⽂是⼀种对 `Javascript` 代码执⾏环境的抽象概念，也就是说只要有 `Javascript` 代码运⾏，那么它就⼀定是运⾏在执⾏上下⽂中。
+
+执⾏上下⽂的类型分为三种：
+
+- 全局执⾏上下⽂：只有⼀个，浏览器中的全局对象就是 `window` 对象，`this` 指向这个全局对象
+- 函数执⾏上下⽂：存在⽆数个，只有在函数被调⽤的时候才会被创建，每次调⽤函数都会创建⼀个新的执⾏上下⽂
+- `Eval` 函数执⾏上下⽂： 指的是运⾏在 `eval` 函数中的代码，很少⽤⽽且不建议使⽤
+
+![context](/interview/context1.jpg)
+
+紫⾊框住的部分为全局上下⽂，蓝⾊和橘⾊框起来的是不同的函数上下⽂。只有全局上下⽂（的变量） 能被其他任何上下⽂访问
+
+可以有任意多个函数上下⽂，每次调⽤函数创建⼀个新的上下⽂，会创建⼀个私有作⽤域，函数内部声明的任何变量都不能在当前函数作⽤域外部直接访问

@@ -440,8 +440,8 @@
 
 :root {
   --vp-sidebar-width: 272px;
-  /* --vp-sidebar-bg-color: var(--vp-c-bg-alt); */
-  --vp-sidebar-bg-color: #f4f5f7;
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+  /* --vp-sidebar-bg-color: #f4f5f7; */
 }
 
 /**

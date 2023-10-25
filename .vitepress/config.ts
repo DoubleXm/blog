@@ -125,7 +125,7 @@ function createNav() {
       items: [
         {
           text: '🦄 Web 前端',
-          link: '/docs/interview/internet-questions',
+          link: '/docs/interview/javascript',
           activeMatch: '/docs/interview/'
         },
         {
@@ -149,21 +149,39 @@ function createNav() {
 function createInterviewSidebar() {
   return [
     {
-      text: '',
-      collapsed: false,
+      text: 'Native Code',
+      collapsed: true,
+      items: [
+        { text: 'JavaScript', link: '/docs/interview/javascript' },
+        { text: 'TypeScript', link: '/docs/interview/typescript' },
+        { text: 'Node.JS', link: '/docs/interview/node' },
+        { text: 'HTML、CSS', link: '/docs/interview/html-css' },
+      ]
+    },
+    {
+      text: 'Framework',
+      collapsed: true,
+      items: [
+        { text: 'Vue 2', link: '/docs/interview/vue2' },
+        { text: 'Vue 3', link: '/docs/interview/vue2' },
+        { text: 'React', link: '/docs/interview/react' },
+      ]
+    },
+    {
+      text: 'Build Util',
+      collapsed: true,
+      items: [
+        { text: 'Vite', link: '/docs/interview/vite' },
+        { text: 'Webpack', link: '/docs/interview/webpack' },
+      ]
+    },
+    {
+      text: 'Other Content',
+      collapsed: true,
       items: [
         { text: '计算机网络', link: '/docs/interview/internet-questions' },
         { text: '浏览器', link: '/docs/interview/browser-questions' },
-        { text: 'HTML、CSS', link: '/docs/interview/html-css' },
-        { text: 'JavaScript', link: '/docs/interview/javascript' },
-        { text: 'TypeScript', link: '/docs/interview/typescript' },
         { text: '移动端', link: '/docs/interview/mobile' },
-        { text: 'Vue2', link: '/docs/interview/vue2' },
-        { text: 'Vue3', link: '/docs/interview/vue2' },
-        { text: 'React', link: '/docs/interview/react' },
-        { text: 'Webpack', link: '/docs/interview/webpack' },
-        { text: 'Vite', link: '/docs/interview/vite' },
-        { text: 'Node', link: '/docs/interview/node' }
       ]
     }
   ];

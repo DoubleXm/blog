@@ -20,6 +20,7 @@ export default {
         background: 'var(--vp-c-bg)',
       });
     };
+
     onMounted(() => {
       initZoom();
     });
