@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.45bffcbf.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/py/basic/面向对象.md","lastUpdated":1694073596000}'),e={name:"docs/py/basic/面向对象.md"},o=[l("",76)];const c=s(e,[["render",function(s,l,p,e,c,t){return n(),a("div",null,o)}]]);export{p as __pageData,c as default};

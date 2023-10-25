@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.45bffcbf.js";const e=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/mysql/basic/语法.md","lastUpdated":1695724939000}'),p={name:"docs/mysql/basic/语法.md"},o=[l("",25)];const t=s(p,[["render",function(s,l,e,p,t,c){return n(),a("div",null,o)}]]);export{e as __pageData,t as default};

@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,Q as l}from"./chunks/framework.45bffcbf.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/py/basic/内置模块.md","lastUpdated":1693902843000}'),e={name:"docs/py/basic/内置模块.md"},o=[l("",38)];const t=s(e,[["render",function(s,l,p,e,t,r){return n(),a("div",null,o)}]]);export{p as __pageData,t as default};
