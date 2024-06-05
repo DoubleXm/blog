@@ -1,24 +1,35 @@
 {
-  "name": "blog",
+  "name": "vitepress-blog",
   "version": "1.0.0",
-  "description": "只是一个菜鸡前端的随笔而已。",
-  "type": "module",
+  "private": true,
+  "author": "粥里有勺糖",
+  "license": "MIT",
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "deploy": "bash ./deploy.sh",
-    "docs:preview": "vitepress preview"
-  },
-  "author": "xsqCoder",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^18.15.0",
-    "medium-zoom": "^1.0.8",
-    "sass": "^1.60.0",
-    "vitepress": "1.0.0-alpha.64"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
   },
   "dependencies": {
-    "terser": "^5.16.8",
-    "vue": "^3.2.47"
+    "@element-plus/icons-vue": "^2.3.1",
+    "@sugarat/theme": "^0.3.6",
+    "element-plus": "^2.7.2",
+    "vue": "3.4.26"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "pagefind": "^1.1.0",
+    "sass": "^1.76.0",
+    "typescript": "^5.4.5",
+    "vitepress": "1.2.2"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
   }
 }

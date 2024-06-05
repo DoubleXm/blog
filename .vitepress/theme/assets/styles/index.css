@@ -1,9 +1,0 @@
-@import url(./var.css);
-@import url(./theme.css);
-
-body {
-  font-family: 'Comic Sans MS', 'Helvetica Neue', Helvetica, 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial,
-    sans-serif !important;
-  font-size: 14px;
-}

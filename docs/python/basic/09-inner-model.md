@@ -1,0 +1,331 @@
+---
+isTimeLine: true
+title: 内置模块
+date: 2020-10-27
+tags:
+ - Python
+---
+
+## time 模块
+
+| 方法名             |                               描述                                |
+| ------------------ | :---------------------------------------------------------------: |
+| `time.time()`      |                            获取时间戳                             |
+| `time.localtime()` |                   获取本地时区的 `struct_time`                    |
+| `time.ctime()`     |                   格式化时间，接收参数为时间戳                    |
+| `time.strftime()`  |     格式化指定格式时间，参数一为格式，参数二为 `struct_time`      |
+| `time.strptime()`  | 将日期转换为 `struct_time` 格式，参数一为字符串日期，参数二为格式 |
+| `time.sleep()`     |                   强制使进程停止 `n` 秒后再执行                   |
+
+```py
+import time
+
+# 1693797458.067049
+print(time.time())
+
+# Mon Sep  4 11:18:29 2023
+print(time.ctime(time.time()))
+
+# time.struct_time(tm_year=2023, tm_mon=9, tm_mday=4, tm_hour=11, tm_min=24, tm_sec=6, tm_wday=0, tm_yday=247, tm_isdst=0)
+print(time.localtime())
+
+# 2023-09-04 11:24:06
+print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+
+# time.struct_time(tm_year=2023, tm_mon=9, tm_mday=4, tm_hour=15, tm_min=23, tm_sec=45, tm_wday=0, tm_yday=247, tm_isdst=-1)
+print(time.strptime("2023-09-04 15:23:45", "%Y-%m-%d %H:%M:%S"))
+```
+
+### 日期格式
+
+- `%Y`: 4 位年份
+- `%m`: 2 位月份
+- `%d`: 2 位日期
+- `%H`: 2 位小时
+- `%M`: 2 位分钟
+- `%S`: 2 位秒
+
+## datetime 模块
+
+| 方法名                       |                         描述                          |
+| ---------------------------- | :---------------------------------------------------: |
+| `datetime.now()`             |               获取当前时间的格式化时间                |
+| `datetime.utcnow()`          |               获取 utc 时间的格式化时间               |
+| `datetime()`                 |      获取自定义的格式化时间，参数为 年月日时分秒      |
+| `datetime.strftime()`        | 格式化指定格式时间，参数一为`datetime` ，参数二为格式 |
+| `datetime.date()`            |             获取年月日，参数为 `datetime`             |
+| `datetime.now().timestamp()` |                      获取时间戳                       |
+
+```py
+from datetime import datetime
+
+# 2023-09-04 12:16:34.810023
+print(datetime.now())
+
+# 2023-09-04 04:16:34.810056
+print(datetime.utcnow())
+
+# 2022-10-16 19:40:30
+print(datetime(2022, 10, 16, 19, 40, 30))
+
+# 2023,09,04 12:16:34
+print(datetime.strftime(datetime.now(), '%Y,%m,%d %H:%M:%S'))
+
+# 2023-09-04
+print(datetime.date(datetime.now()))
+
+# 1693800994.810241
+print(datetime.now().timestamp())
+```
+
+## os 操作系统交互模块
+
+| 方法名            |                             描述                             |
+| ----------------- | :----------------------------------------------------------: |
+| `os.mkdir()`      |         创建文件夹, 如果不存在就报错 FileExistsError         |
+| `os.makedirs()`   |       递归创建文件夹, 如果不存在就报错 FileExistsError       |
+| `os.rmdir()`      |                删除空目录，目录不为空则会报错                |
+| `os.removedirs()` |                         递归删除目录                         |
+| `os.listdir()`    |                    列出指定目录下的文件夹                    |
+| `os.remove()`     |           删除指定目录下的文件, FileNotFoundError            |
+| `os.rename()`     |                          修改文件名                          |
+| `os.state()`      |                       获取文件基本信息                       |
+| `os.chdir()`      |             将目录改变为指定的路径，cd 命令类似              |
+| `os.system()`     | 执行 shell, 可以将创建类的工作交给他， 然后用 api 去查询结果 |
+
+```py
+import os
+
+print(os.getcwd()) # /Users/a1234/Desktop/py
+os.mkdir('test')
+os.makedirs('one/two/three/four/log')
+os.chdir('utils')
+print(os.listdir('utils')) # ['xxx', '__init__.py', 'file_util.py', '__pycache__', 'str_util.py']
+os.remove('xxx.txt')
+os.rmdir('one/two/three/four/log')
+os.removedirs('one/two/three/four')
+os.rename('test', 'testing')
+os.system('mkdir system') # 执行 shell 指令
+
+# os.stat_result(st_mode=33188, st_ino=33088666, st_dev=16777229, st_nlink=1, st_uid=501, st_gid=20, st_size=1102, st_atime=1693889731, st_mtime=1693889731, st_ctime=1693889731)
+print(os.stat('test.py'))
+
+```
+
+### os.path
+
+| 方法名               |                 描述                  |
+| -------------------- | :-----------------------------------: |
+| `os.path.abspath()`  |             返回绝对路径              |
+| `os.path.basename()` |        返回路径中文件名的部分         |
+| `os.path.dirname()`  |       返回路径部分不包含文件名        |
+| `os.path.exists()`   | 判断文件或者文件夹是否存在 True False |
+| `os.path.isabs()`    |            是否为绝对路径             |
+| `os.path.isdir()`    |              是否为目录               |
+| `os.path.isfile()`   |              是否为文件               |
+| `os.path.getsize()`  |      获取文件或目录大小 字节单位      |
+| `os.path.join()`     |               路径拼接                |
+
+```py
+import os
+
+print(os.path.abspath('test')) # /Users/a1234/Desktop/py/test
+print(os.path.basename('utils/file_util.py')) # file_util.py
+print(os.path.dirname('utils/file_util.py')) # utils
+print(os.path.exists('clienst.py')) # False
+print(os.path.isabs('utils')) # False
+print(os.path.isdir('utils')) # True
+print(os.path.isfile('clicent.py')) # False
+print(os.path.getsize('utils')) # 224
+print(os.path.join('utils', 'haha')) # utils/haha
+```
+
+## re 正则模块
+
+| 方法名              |                        描述                        |                              示例 |
+| ------------------- | :------------------------------------------------: | --------------------------------: |
+| `pattern.match()`   |     找开头符合规范的字符串, 找不到返回 `None`      |    `pattern.match("hello world")` |
+| `pattern.search()`  |  找全局符合要求的第一个字符串, 找不到返回 `Node`   |   `pattern.search("hello world")` |
+| `pattern.findall()` | 找全局符合要求的全部字符串，返回数组, 找不到空数组 |  `pattern.findall("hello world")` |
+| `re.sub()`          |               替换匹配到的内容字符串               | `re.sub(pattern, target, source)` |
+| `re.compile()`      |             将正则字符串转换为正则对象             |               `re.compile("\w+")` |
+
+```py
+# 示例
+import re
+
+pattern = re.compile('\d+')
+
+# match 返回一个对象, 使用时记得加判断, 有可能为 None
+m = pattern.match("124")
+print(m.span()) # 返回匹配到的下标元组 (0, 3)
+print(m.group()) # 返回匹配到的内容 124
+
+# search 与 match 使用方法一致
+s = pattern.search('123, 345')
+
+print(pattern.findall('123, 345')) # ['123', '345']
+
+# 匹配到所有的数字，全部替换成 hello world
+print(re.sub(pattern, "hello world", '123, 456')) # hello world, hello world
+```
+
+## hashlib 加密
+
+用于对数据进行加密的模块，常用的加密算法有 MD5 哈希算法、SHA1 哈希算法、SHA256 哈希算法、SHA512 哈希算法。
+
+| 方法名             |              描述               |
+| ------------------ | :-----------------------------: |
+| `hashlib.md5()`    |     定义内容的加密方式 md5      |
+| `hashlib.sha1()`   |     定义内容的加密方式 sha1     |
+| `hashlib.sha256()` |    定义内容的加密方式 sha256    |
+| `hashlib.sha512()` |    定义内容的加密方式 sha512    |
+| `hash.update()`    | 传入加入内容需要使用 bytes 类型 |
+| `hash.digest()`    |   返回加密后的二进制字节对象    |
+| `hash.hexdigest()` |  返回加密后的 16 进制加密对象   |
+
+```py
+import hashlib
+
+hash = hashlib.md5()
+# hash = hashlib.sha1()
+# hash = hashlib.sha256()
+# hash = hashlib.sha512()
+hash.update(b'admin123')
+hash.digest() # b'\x01\x92\x02:{\xbds%\x05\x16\xf0i\xdf\x18\xb5\x00'
+hash.hexdigest() # 0192023a7bbd73250516f069df18b500
+```
+
+## configparser 操作配置文件
+
+`py` 中用于操作配置文件的模块，配置文件的声明方式为 `.ini` 结尾。数据内容为
+
+```ini
+# 注释内容
+; 也是注释内容
+[default]
+locale = 'ZH-CN'
+api_version = 'v2'
+
+[mysql]
+host = 'localhost'
+port = '3306'
+username = 'admin'
+password = 'admin123'
+```
+
+### ini 文件的查询操作
+
+```py
+import configparser
+import os
+
+path = os.path.join(os.path.abspath(os.getcwd()), 'config.ini')
+
+config = configparser.ConfigParser()
+config.read(path, encoding='utf-8')
+
+# 获取所有的 sections
+print(config.sections()) # ['default', 'mysql']
+# 获取某个 options
+print(config.options('mysql')) # ['host', 'port', 'username', 'password']
+# 获取某个 options 的全部内容，数组套元祖
+print(config.items('default')) # [('locale', "'ZH-CN'"), ('api_version', "'v2'")]
+
+"""
+使用 get 方法获取的内容默认都是字符串, py 提供了可以获取其他类型的方法
+
+config.getboolean()
+config.getint()
+config.getint()
+"""
+# 获取某个 sections 下某个 options 的值
+print(config.get('mysql', 'host')) # 'localhost'
+
+
+# 是否存在某个 section
+print(config.has_section('default'))
+# 是否存在某个 option
+print(config.has_option('default', 'api_version'))
+```
+
+### ini 文件的新增、删除
+
+```py
+import configparser
+import os
+
+path = os.path.join(os.path.abspath(os.getcwd()), 'config.ini')
+
+config = configparser.ConfigParser()
+config.read(path, encoding='utf-8')
+
+"""
+新增
+"""
+# 添加 section
+config.add_section('thread')
+# 为 section 添加 option
+config.set('thread', 'thread_num', '5')
+
+## 新增，修改，删除时一定要调用该方法
+## 此外写入方式分为两种 w 覆盖写 a 追加写
+config.write(open(path, 'w'))
+
+"""
+删除
+"""
+config.remove_option('thread', 'thread_num')
+config.remove_section('thread')
+## 新增，修改，删除时一定要调用该方法
+## 此外写入方式分为两种 w 覆盖写 a 追加写
+config.write(open(path, 'w'))
+```
+
+## logging 日志模块
+
+## subprocess 子进程模块
+
+## math 数学计算模块
+
+| 方法名         |   描述   |
+| -------------- | :------: |
+| `math.ceil()`  | 向上取整 |
+| `math.floor()` | 向下取整 |
+| `math.trunc()` |  取整数  |
+| `math.pi`      | 取圆周率 |
+| `round`        | 四舍五入 |
+
+```py
+import math
+
+print(math.ceil(100.2)) # 101
+print(math.floor(100.9)) # 100
+print(math.trunc(100.55)) # 100
+print(math.pi) # 3.141592653589793
+print(round(0.5)) # 0, 5 舍 6 入？
+```
+
+## random 随机数模块
+
+| 方法名             |         描述         |
+| ------------------ | :------------------: |
+| `random.random()`  | 0 - 1 之间随机浮点数 |
+| `random.randint()` |  x - y 之间随机整数  |
+| `random.choice()`  | 序列中随机取一个元素 |
+
+```py
+import random
+
+print(random.random()) # 0 - 1 之间随机浮点数 0.5402681700044645
+print(random.randint(1, 1)) # 1 - 10 之间随机整数
+l = [1, 2, 3, 4 ,5 ,6]
+print(random.choice(l)) # 序列中随机取一个元素
+```
+
+## sys 系统功能模块
+
+| 方法名         |          描述          |
+| -------------- | :--------------------: |
+| `sys.version`  | 当前 python 解释器版本 |
+| `sys.platform` |   当前脚本执行的平台   |
