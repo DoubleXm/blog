@@ -19,7 +19,7 @@ export default defineConfig({
   // 详见：https://vitepress.dev/zh/reference/site-config#head
   head: [
     // 配置网站的图标（显示在浏览器的 tab 上）
-    ['link', { rel: 'icon', href: '../src/public/favicon.png' }]
+    ['link', { rel: 'icon', href: '/blog/favicon.ico', type: 'image/png' }]
   ],
   markdown: {
     lineNumbers: true
@@ -39,7 +39,7 @@ export default defineConfig({
     lastUpdatedText: '上次更新于',
 
     // 设置logo
-    logo: '/logo.jpeg',
+    logo: '/logo.png',
     socialLinks: [
       {
         icon: 'github',

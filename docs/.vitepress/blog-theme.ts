@@ -17,6 +17,7 @@ import type { Theme } from '@sugarat/theme'
 
 // 所有配置项，详见文档: https://theme.sugarat.top/
 const blogTheme = getThemeConfig({
+  srcDir: './docs/src',
   // 开启RSS支持
   // RSS,
 
