@@ -77,7 +77,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs/.vitepress/dist
+          source: ./dist
           destination: ./_site
 
         # 上传 _site 的资源，用于后续部署
