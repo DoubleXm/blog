@@ -4,22 +4,22 @@ import { getThemeConfig } from '@sugarat/theme/node'
 // 开启RSS支持（RSS配置）
 import type { Theme } from '@sugarat/theme'
 
-// const baseUrl = 'https://sugarat.top'
-// const RSS: Theme.RSSOptions = {
-//   title: '粥里有勺糖',
-//   baseUrl,
-//   copyright: 'Copyright (c) 2018-present, 粥里有勺糖',
-//   description: '你的指尖,拥有改变世界的力量（大前端相关技术分享）',
-//   language: 'zh-cn',
-//   image: '/logo.jpeg',
-//   favicon: '/favicon.ico',
-// }
+const baseUrl = 'https://doublexm.github.io'
+const RSS: Theme.RSSOptions = {
+  title: 'DoubleX',
+  baseUrl,
+  copyright: 'Copyright (c) 2018-present, DoubleX',
+  description: '你的指尖,拥有改变世界的力量（大前端相关技术分享）',
+  language: 'zh-cn',
+  image: 'https://doublexm.github.io/blog/logo.png',
+  favicon: 'https://doublexm.github.io/blog/favicon.ico',
+}
 
 // 所有配置项，详见文档: https://theme.sugarat.top/
 const blogTheme = getThemeConfig({
   srcDir: './docs/src',
   // 开启RSS支持
-  // RSS,
+  RSS,
 
   // 搜索
   // 默认开启 pagefind 离线的全文搜索支持（如使用其它的可以设置为false）
@@ -39,6 +39,28 @@ const blogTheme = getThemeConfig({
     //   name: '公网安备xxxxx',
     //   link: 'https://www.beian.gov.cn/portal/index.do'
     // },
+  },
+
+  comment: {
+    type: 'giscus',
+    options: {
+      repo: 'DoubleXm/blog',
+      repoId: 'R_kgDOH5r6XQ',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOH5r6Xc4Cf5sV',
+      inputPosition: 'top'
+    },
+    mobileMinify: true
+  },
+
+  recommend: {
+    showSelf: true,
+    nextText: '下一页',
+    style: 'sidebar'
+  },
+
+  hotArticle: {
+    pageSize: 12
   },
 
   // 主题色修改
@@ -78,6 +100,13 @@ const blogTheme = getThemeConfig({
       url: 'https://vitepress.dev/',
     },
   ],
+
+  buttonAfterArticle: {
+    openTitle: '投"币"支持',
+    closeTitle: '下次一定',
+    content: `<img src="${baseUrl}/blog/money.jpeg">`,
+    icon: 'wechatPay',
+  },
 
   // 公告
   // popover: {

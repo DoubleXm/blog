@@ -8,6 +8,9 @@ import { nav } from './nav-config';
 // 详见文档：https://vitepress.dev/reference/site-config
 export default defineConfig({
   extends: blogTheme,
+  sitemap: {
+    hostname: 'https://doublexm.github.io',
+  },
   base: '/blog/',
   srcDir: 'src',
   outDir: '../dist',
