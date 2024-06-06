@@ -18,14 +18,18 @@ export default defineConfig({
   lang: 'zh-cn',
   title: 'DoubleX',
   description: 'DoubleX 的技术博客, 记录学习和总结...',
-  lastUpdated: true,
   // 详见：https://vitepress.dev/zh/reference/site-config#head
   head: [
     // 配置网站的图标（显示在浏览器的 tab 上）
     ['link', { rel: 'icon', href: '/blog/favicon.ico', type: 'image/png' }]
   ],
+  lastUpdated: true,
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    theme: {
+      light: "vitesse-dark",
+      dark: "vitesse-light",
+    },
   },
   themeConfig: {
     search: {
