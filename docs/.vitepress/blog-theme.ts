@@ -2,7 +2,7 @@
 import { getThemeConfig } from '@sugarat/theme/node'
 
 // 开启RSS支持（RSS配置）
-// import type { Theme } from '@sugarat/theme'
+import type { Theme } from '@sugarat/theme'
 
 // const baseUrl = 'https://sugarat.top'
 // const RSS: Theme.RSSOptions = {
@@ -11,8 +11,8 @@ import { getThemeConfig } from '@sugarat/theme/node'
 //   copyright: 'Copyright (c) 2018-present, 粥里有勺糖',
 //   description: '你的指尖,拥有改变世界的力量（大前端相关技术分享）',
 //   language: 'zh-cn',
-//   image: 'https://img.cdn.sugarat.top/mdImg/MTY3NDk5NTE2NzAzMA==674995167030',
-//   favicon: 'https://sugarat.top/favicon.ico',
+//   image: '/logo.jpeg',
+//   favicon: '/favicon.ico',
 // }
 
 // 所有配置项，详见文档: https://theme.sugarat.top/
@@ -23,7 +23,7 @@ const blogTheme = getThemeConfig({
   // 搜索
   // 默认开启 pagefind 离线的全文搜索支持（如使用其它的可以设置为false）
   // 如果npx pagefind 时间过长，可以手动将其安装为项目依赖 pnpm add pagefind
-  // search: false,
+  search: false,
 
   // 页脚
   footer: {
@@ -41,10 +41,24 @@ const blogTheme = getThemeConfig({
   },
 
   // 主题色修改
-  themeColor: 'el-blue',
+  themeColor: 'vp-default',
 
   // 文章默认作者
   author: 'DoubleX',
+
+  oml2d: {
+    mobileDisplay: true,
+    models: [
+      {
+        path: 'https://sugarat.s3.bitiful.net/npm/oml2d-model/models/Senko_Normals/senko.model3.json',
+      }
+    ],
+    libraryUrls: {
+      complete: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/complete.js',
+      cubism2: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/cubism2.js',
+      cubism5: 'https://sugarat.s3.bitiful.net/npm/oh-my-live2d/latest/lib/cubism5.js'
+    }
+  },
 
   // 友链
   friend: [

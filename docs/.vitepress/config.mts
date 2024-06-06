@@ -25,6 +25,9 @@ export default defineConfig({
     lineNumbers: true
   },
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     // 展示 2,3 级标题在目录中
     outline: {
       level: [2, 3],
@@ -40,9 +43,9 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/DoubleXm/blog/tree/main/docs'
+        link: 'https://github.com/DoubleXm/blog/tree/main/docs/src'
       }
     ],
     nav
-  }
+  },
 })
