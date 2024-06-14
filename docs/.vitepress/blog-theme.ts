@@ -17,6 +17,8 @@ const RSS: Theme.RSSOptions = {
 
 // 所有配置项，详见文档: https://theme.sugarat.top/
 const blogTheme = getThemeConfig({
+  darkTransition: false,
+
   srcDir: './docs/src',
   // 开启RSS支持
   RSS,
@@ -64,7 +66,7 @@ const blogTheme = getThemeConfig({
   },
 
   // 主题色修改
-  themeColor: 'vp-default',
+  themeColor: 'el-blue',
 
   // 文章默认作者
   author: 'DoubleX',

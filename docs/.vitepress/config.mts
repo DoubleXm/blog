@@ -27,7 +27,7 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     lineNumbers: true,
-    theme: 'vitesse-dark'
+    theme: 'vitesse-dark',
     // theme: {
     //   light: 'vitesse-dark',
     //   dark: 'vitesse-black',

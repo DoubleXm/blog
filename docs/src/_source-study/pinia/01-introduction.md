@@ -219,71 +219,39 @@ createApp(App) // [!code focus]
 
 - state: 保存所有的 store 数据，store 的 id 作为 key; state 为 value; 用于存储 store 的所有可访问变量。
 
-### todoList options demo
+### counter options demo
 
 ```js
 import { defineStore } from 'pinia';
 
-export const useTodoList1 = defineStore('todoList1', {
+export const useCounter1 = defineStore('counter1', {
   state: () => ({
-    todoList: []
+    count: []
   }),
   getters: {
-    count: state => state.todoList.length,
+    doubleCount: state => state.count * 2,
   },
   actions: {
-    addTodo (todo) {
-      this.todoList.unshift(todo);
-    },
-    removeTodo (todo) {
-      this.todoList = this.todoList.filter((item) => item.id !== todo.id);
-    },
-    toggleTodo (todo) {
-      this.todoList = this.todoList.map((item) => {
-        if (item.id === todo.id) {
-          item.done = todo.done;
-        }
-        return item;
-      });
+    increment() {
+      this.state.count++
     }
   }
 })
 ```
 
-### todoList setup demo
+### counter setup demo
 
 ```js
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
-export const useTodoList2 = defineStore('todoList2', () => {
-  const todoList = ref([]);
-
-  const count = computed(() => todoList.value.length);
-
-  const addTodo = (todo) => {
-    todoList.value.unshift(todo);
-  };
-
-  const removeTodo = (todo) => {
-    todoList.value = todoList.value.filter((item) => item.id !== todo.id);
-  }
-
-  const toggleTodo = (todo) => {
-    todoList.value = todoList.value.map((item) => {
-      if (item.id === todo.id) {
-        item.done = todo.done;
-      }
-      return item;
-    });
-  }
+export const useCounter2 = defineStore('counter2', () => {
+  const count = ref(0);
+  const doubleCount = computed(() => count * 2);
+  const increment = () => count.value += 1;
 
   return {
-    todoList,
-    count,
-    addTodo,
-    removeTodo,
-    toggleTodo
+    count, doubleCount, increment
   }
 });
 ```
@@ -291,70 +259,31 @@ export const useTodoList2 = defineStore('todoList2', () => {
 ### 使用
 
 ```js
-import { useTodoList1 } from './store/todoList1';
-import { useTodoList2 } from './store/todoList2';
+import { useCounter1 } from './store/counter1';
+import { useCounter2 } from './store/counter2';
 
-const { todoList: todoList1 } = useTodoList1();
-const { todoList: todoList2 } = useTodoList2();
+const { counter: counter1 } = useCounter1();
+const { counter: counter2 } = useCounter2();
 ```
 
-使用之后可以看出在实例的 `_e, _s, state` 中已经存在了对应的数据
+使用之后可以看出在实例的 `_e, _s, state` 中已经存在了对应的数据, 也就是说只有当用户 use 的时候数据才会被填充进 store 中
 
 ![02-pinia](/source-study/pinia/02-pinia.jpg)
 
-### todoList 视图 demo
+### counter 视图 demo
 
 ```vue
 <template>
-  <div>
-    <input v-model="todoText" />
-
-    <ul>
-      <li v-for="(todo, index) in todoList" :key="todo.id">
-        <input 
-          type="checkbox" 
-          :value="todo.done" 
-          v-model="todo.done" 
-          @change="onChangeTodo(todo)" 
-        />
-        {{ todo.text }}
-
-        <button @click="onRemoveTodo(todo)">Remove</button>
-      </li>
-    </ul>
-    <div>{{ count }}</div>
-
-    <button @click="onAddTodo">Add Todo</button>
-  </div>
+  <button @click="increment">{{ store.count }}</button>
+  <span style="padding-left: 10px">{{ store.doubleCount }}</span>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import { storeToRefs } from 'pinia';
-import { useTodoList1 } from '../store/todoList1';
+import { useCounter1 } from '../store/counter1';
 
-const todoText = ref('');
-const { addTodo, removeTodo, toggleTodo } = useTodoList1();
-const { count, todoList } = storeToRefs(useTodoList1());
-
-function onAddTodo() {
-  if (!todoText.value) return;
-  const todo = {
-    id: new Date().getTime(),
-    text: todoText.value,
-    done: false,
-  };
-  addTodo(todo);
-  todoText.value = '';
-}
-
-function onChangeTodo(todo) {
-  toggleTodo(todo);
-}
-
-function onRemoveTodo (todo) {
-  removeTodo(todo);
-}
+const store = useCounter1();
+const { increment } = useCounter1();
 </script>
 
 ```
