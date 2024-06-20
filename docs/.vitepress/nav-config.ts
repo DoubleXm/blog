@@ -53,6 +53,20 @@ export const nav = [
     ]
   },
   {
+    text: '前端运维',
+    items: [
+      {
+        text: '基础',
+        link: '/_dev-ops/basic/01-introduction',
+        activeMatch: '^/python/basic'
+      },
+      {
+        text: '进阶',
+        link: '/_dev-ops/advanced/01-introduction',
+      }
+    ]
+  },
+  {
     text: '面试',
     items: [
       {
