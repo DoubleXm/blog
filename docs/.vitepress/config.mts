@@ -27,11 +27,11 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     lineNumbers: true,
-    theme: 'vitesse-dark',
-    // theme: {
-    //   light: 'vitesse-dark',
-    //   dark: 'vitesse-black',
-    // },
+    // theme: 'material-theme',
+    theme: {
+      light: 'vitesse-light',
+      dark: 'vitesse-dark',
+    },
   },
   themeConfig: {
     search: {
