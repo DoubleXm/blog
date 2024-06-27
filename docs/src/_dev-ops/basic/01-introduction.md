@@ -1,14 +1,14 @@
 ---
 isTimeLine: true
-title: Linux 入门篇：系统组成及目录结构
+title: 入门篇：系统组成及目录结构
 description: Linux 基础学习
-date: 2024-06-17
+date: 2024-06-25
 tags:
  - Linux
 sticky: 1
 ---
 
-# Linux 入门篇：系统组成及目录结构
+# 入门篇：系统组成及目录结构
 
 ## 系统组成
 

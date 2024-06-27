@@ -19,3 +19,48 @@
 .VPNavBarSearch #local-search .DocSearch-Button:hover {
   background-color: transparent !important;
 }
+
+.vp-doc ul {
+  list-style: none;
+  li {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0.7em;
+      left: -1em;
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 50%;
+      margin-right: 0.5em;
+      background-color: #bbb8b8;
+    }
+  }
+}
+
+body {
+  font-size: 14px;
+  .vp-doc {
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.1em;
+      text-indent: initial;
+      text-decoration: none;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin: 2px 0;
+      line-height: 1.8em;
+    }
+    h3 {
+      font-size: 1.4em;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+    p {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      line-height: 24px;
+    }
+  }
+}
