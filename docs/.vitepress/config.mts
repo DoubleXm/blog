@@ -57,4 +57,9 @@ export default defineConfig({
     ],
     nav
   },
+  vite: {
+    server: {
+      port: 3000
+    }
+  }
 })

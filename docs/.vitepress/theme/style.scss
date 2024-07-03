@@ -40,20 +40,48 @@
 
 body {
   font-size: 14px;
+  .outline-link,
+  #hack-article-des {
+    font-size: 12px !important;
+  }
+  .VPLink.link {
+    font-size: 12px;
+  }
+  .info-part {
+    .pc-visible.title {
+      font-size: 15px !important;
+    }
+    .description {
+      font-size: 13px !important;
+    }
+    .badge-list {
+      font-size: 11px !important;
+    }
+  }
+  
+  .VPNavBarMenuGroup .button span.text, .VPNavBarMenuLink {
+    font-size: 12px !important;
+  }
+  .recommend-container li .title span {
+    font-size: 12px;
+  }
   .vp-doc {
+    blockquote > p {
+      font-size: 14px;
+    }
     h1 {
       margin: 0 0 10px 0;
-      font-size: 2.1em;
+      font-size: 1.6em;
       text-indent: initial;
       text-decoration: none;
     }
     h2 {
-      font-size: 1.8em;
+      font-size: 1.2em;
       margin: 2px 0;
       line-height: 1.8em;
     }
     h3 {
-      font-size: 1.4em;
+      font-size: 1em;
       font-weight: 700;
       margin: 8px 0;
     }
@@ -63,4 +91,5 @@ body {
       line-height: 24px;
     }
   }
+  
 }
