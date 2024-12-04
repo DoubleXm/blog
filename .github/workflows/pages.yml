@@ -3,7 +3,9 @@ name: GitHub Pages
 
 on:
   push:
-    branches: main
+    branches: 
+      - main
+      - test
   workflow_dispatch:
 
 permissions:
