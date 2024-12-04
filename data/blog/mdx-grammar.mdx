@@ -1,0 +1,147 @@
+---
+title: 'Markdown 语法'
+date: '2024-12-04'
+lastmod: '2024-12-04'
+tags: ['markdown']
+draft: false
+summary: 'Markdown 语法'
+images: ['/static/images/canada/mountains.jpg', '/static/images/canada/toronto.jpg']
+layout: PostSimple
+authors: ['default']
+---
+
+<TOCInline toc={props.toc} exclude="Introduction" />
+
+# 一级标题
+
+## 二级标题
+
+### 三级标题
+
+#### 四级标题
+
+##### 五级标题
+
+###### 六级标题
+
+## code
+
+```js
+console.log('hello world')
+```
+
+```ts:bubbleSort.ts
+// 冒泡排序
+function bubbleSort(arr: number[]): number[] {
+  const len = arr.length
+  for (let i = 0; i < len - 1; i++) {
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+      }
+    }
+  }
+  return arr
+}
+```
+
+```diff-js:siteMetadata.js
+analytics: {
+-   umamiAnalytics: {
+-     // We use an env variable for this site to avoid other users cloning our analytics ID
+-     umamiWebsiteId: process.env.NEXT_UMAMI_ID, // e.g. 123e4567-e89b-12d3-a456-426614174000
+-   },
++    plausibleAnalytics: {
++      plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
++    },
+},
+```
+
+## 视频
+
+<video controls>
+  <source
+    src="https://github-production-user-asset-6210df.s3.amazonaws.com/28362229/258559849-2124c81f-b99d-4431-839c-347e01a2616c.webm"
+    type="video/webm"
+  />
+</video>
+
+## 链接
+
+[Next.js App router](https://nextjs.org/docs/app)
+
+## 无序列表
+
+- Analytics
+  - Google Analytics
+  - Plausible Analytics
+  - Simple Analytics
+  - Umami Analytics
+  - Posthog
+
+## 有序列表
+
+1. Analytics
+2. Comments
+3. Newsletter
+4. Command palette search
+5. UI utility components
+
+## table
+
+| 功能 | 描述 | 支持情况 |
+| --- | --- | --- |
+| 分析 | 支持多种分析工具 | ✅ |
+| 评论 | 支持多种评论系统 | ✅ |
+| 通讯 | 支持多种邮件订阅服务 | ✅ |
+| 搜索 | 命令面板搜索功能 | ✅ |
+| UI组件 | 实用的UI组件库 | ✅ |
+
+## 引用
+
+> [!NOTE]
+> 这是一个注释
+
+> [!WARNING]
+> 这是一个警告
+
+> [!TIP]
+> 这是一个提示
+
+> [!IMPORTANT]
+> 这是一个重要信息
+
+> [!CAUTION]
+> 这是一个警告
+
+## 分割线
+
+---
+
+## 任务列表
+
+- [x] 完成任务1
+- [ ] 完成任务2
+- [ ] 完成任务3
+
+## 图片
+
+![tailwind-nextjs-banner](/static/images/google.png)
+
+## 数学公式
+
+$$
+\mathbf{Y} = \left[\begin{array}
+  {c}
+  y_1 \\
+  . \\
+  . \\
+  y_n
+\end{array}\right]
+$$
+
+## 脚注
+
+这是一个脚注[^1]
+
+[^1]: 这是一个脚注
