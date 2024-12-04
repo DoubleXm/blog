@@ -5,14 +5,15 @@ import PageTitle from '@/components/PageTitle'
 import { components } from '@/components/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
 import { sortPosts, coreContent, allCoreContent } from 'pliny/utils/contentlayer'
-import { allBlogs, allAuthors } from 'contentlayer/generated'
-import type { Authors, Blog } from 'contentlayer/generated'
+import { allNotes, allAuthors } from 'contentlayer/generated'
+import type { Authors, Note } from 'contentlayer/generated'
 import PostSimple from '@/layouts/PostSimple'
 import PostLayout from '@/layouts/PostLayout'
 import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -26,7 +27,7 @@ export async function generateMetadata(props: {
 }): Promise<Metadata | undefined> {
   const params = await props.params
   const slug = decodeURI(params.slug.join('/'))
-  const post = allBlogs.find((p) => p.slug === slug)
+  const post = allNotes.find((p) => p.slug === slug)
   const authorList = post?.authors || ['default']
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author)
@@ -74,14 +75,14 @@ export async function generateMetadata(props: {
 }
 
 export const generateStaticParams = async () => {
-  return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
+  return allNotes.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
 }
 
 export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
   const params = await props.params
   const slug = decodeURI(params.slug.join('/'))
   // Filter out drafts in production
-  const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
+  const sortedCoreContents = allCoreContent(sortPosts(allNotes))
   const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
   if (postIndex === -1) {
     return notFound()
@@ -89,7 +90,7 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
 
   const prev = sortedCoreContents[postIndex + 1]
   const next = sortedCoreContents[postIndex - 1]
-  const post = allBlogs.find((p) => p.slug === slug) as Blog
+  const post = allNotes.find((p) => p.slug === slug) as Note
   const authorList = post?.authors || ['default']
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author)
@@ -106,6 +107,8 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
 
   const Layout = layouts[post.layout || defaultLayout]
 
+  const basePath = post.path.split('/')[0]
+
   return (
     <>
       <script
@@ -115,6 +118,13 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
       <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
         <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
       </Layout>
+      <Link
+        href={`/${basePath}`}
+        className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+        aria-label="Back to the notes"
+      >
+        &larr; Back to the notes
+      </Link>
     </>
   )
 }

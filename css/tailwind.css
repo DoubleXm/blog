@@ -10,7 +10,7 @@
   @apply list-none;
 }
 
-.footnotes {
+.footnote {
   @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
 
