@@ -86,11 +86,11 @@ scope.stop();
 
 如果换种方式，将 `subScope` 在 `scope` 中声明，则会被当做 `scope` 的作用域。此时可以通过参数来确定是否需要独立的作用域；
 
-```js
+```diff-js
 import { ref, computed, effectScope, effect } from 'vue';
 
 const scope = effectScope();
-- const subScope = effectScope(); 
+-  const subScope = effectScope(); 
 
 scope.run(() => {
 +  const subScope = effectScope(); 
@@ -201,20 +201,14 @@ createApp(App)
 
 **注意 `createPinia` 的返回到底是什么**
 
-![01-pinia](/source-study/pinia/01-pinia.jpg)
+![01-pinia](/static/images/note/vue/pinia/01.jpg)
 
 - install: 注册函数。
-
 - use: install 阶段之前的插件保存在 toBeInstalled 中, install 的过程中会将 toBeInstalled 转移到 _p 中。
-
 - _p: 插件集合
-
 - _a: 当前 Vue 实例
-
 - _e: effectScope 副作用空间，用于存储所有 store 的副作用函数 (getters)，并且每个 store 会在 _e 中单独声明，方便统一管理（销毁等）
-
 - _s: map 数据结构，保存所有 store，store 的 id 作为 key; 实例为 value; 存储每个 store
-
 - state: 保存所有的 store 数据，store 的 id 作为 key; state 为 value; 用于存储 store 的所有可访问变量。
 
 ### counter options demo
@@ -266,7 +260,7 @@ const { counter: counter2 } = useCounter2();
 
 使用之后可以看出在实例的 `_e, _s, state` 中已经存在了对应的数据, 也就是说只有当用户 use 的时候数据才会被填充进 store 中
 
-![02-pinia](/source-study/pinia/02-pinia.jpg)
+![02-pinia](/static/images/note/vue/pinia/02.jpg)
 
 ### counter 视图 demo
 
