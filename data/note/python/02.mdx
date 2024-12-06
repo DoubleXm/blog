@@ -9,7 +9,7 @@ layout: PostSimple
 authors: ['default']
 ---
 
-<TOCInline toc={props.toc} exclude="Introduction" />
+<TOCInline toc={props.toc} exclude="^(笔试题|选择题|编程题|问答题|代码阅读题).*" />
 
 ## if 语句
 
@@ -136,7 +136,7 @@ def fib():
 fib()
 ```
 
-函数默认的返回值是 `None`。可以接受多个参数，也可以返回多个值。
+函数默认的返回值是 `None`。可以接受多个参数，也可以���回多个值。
 
 ```python
 def add(a, b):
