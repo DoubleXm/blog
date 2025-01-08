@@ -14,6 +14,14 @@ const ImagePreview = ({ src, onClose, style }: ImagePreviewProps) => {
         e.stopPropagation()
         onClose()
       }}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape' || e.key === 'Enter') {
+          e.stopPropagation()
+          onClose()
+        }
+      }}
+      role="button"
+      tabIndex={0}
       style={style}
     >
       <div className="preview-outer">
