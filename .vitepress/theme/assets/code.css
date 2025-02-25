@@ -1,0 +1,69 @@
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+
+ :root {
+  --vp-code-line-height: 1.7;
+  --vp-code-font-size: 0.875em;
+  --vp-code-color: var(--vp-c-brand-1);
+  --vp-code-link-color: var(--vp-c-brand-1);
+  --vp-code-link-hover-color: var(--vp-c-brand-2);
+  --vp-code-bg: var(--vp-c-default-soft);
+
+  --vp-code-block-color: #98989f;
+  --vp-code-block-bg: #161618;
+  --vp-code-block-divider-color: #000000;
+
+  --vp-code-lang-color: #98989f;
+
+  --vp-code-line-highlight-color: rgba(101, 117, 133, 0.16);
+  --vp-code-line-number-color: #98989f;
+
+  --vp-code-line-diff-add-color: rgba(16, 185, 129, 0.16);
+  --vp-code-line-diff-add-symbol-color: #3dd68c;
+
+  --vp-code-line-diff-remove-color: rgba(244, 63, 94, 0.16);
+  --vp-code-line-diff-remove-symbol-color: #f66f81;
+
+  --vp-code-line-warning-color: rgba(234, 179, 8, 0.16);
+  --vp-code-line-error-color: rgba(244, 63, 94, 0.16);
+
+  --vp-code-copy-code-border-color: #2e2e32;
+  --vp-code-copy-code-bg: #202127;
+  --vp-code-copy-code-hover-border-color: #2e2e32;
+  --vp-code-copy-code-hover-bg: #1b1b1f;
+  --vp-code-copy-code-active-text: #98989f;
+  --vp-code-copy-copied-text-content: 'Copied';
+
+  --vp-code-tab-divider: #000000;
+  --vp-code-tab-text-color: #98989f;
+  --vp-code-tab-bg: #161618;
+  --vp-code-tab-hover-text-color: #dfdfd6;
+  --vp-code-tab-active-text-color: #dfdfd6;
+  --vp-code-tab-active-bar-color: #a8b1ff;
+}
+
+img {
+  cursor: pointer;
+}
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .3);
+  transition: all 0.3s;
+}
+
+.image-overlay-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  border-radius: 6px;
+}
