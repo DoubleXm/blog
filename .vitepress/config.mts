@@ -27,10 +27,11 @@ export default defineConfig({
     },
         
     nav: [
-      { text: '🤔...😲🚚💰', link: '/' },
+      { text: '🤔...😲🚚💰', link: '/_project/module_standard' },
       { 
         text: '大前端',
         items: [
+          { text: '🌚 JavaScript', link: '/python/01' },
           { text: '🔞 Vue', link: '/vue/pinia/01' },
           { text: '♻️ React', link: '/react' },
           { text: '🐜 微前端', link: '/micro-web/single-spa' },
@@ -40,7 +41,7 @@ export default defineConfig({
           { text: '🐛 Python', link: '/python/01' },
         ]
       },
-      { text: '八股文', link: '/' },
+      { text: '面试', link: '/interview/ba-gu/js' },
     ],
 
     sidebar: {
@@ -49,6 +50,13 @@ export default defineConfig({
           text: '工程化',
           items: [
             { text: '模块化的发展及 SystemJS 原理', link: '/_project/module_standard' },
+          ]
+        },
+        {
+          text: '提效工具',
+          items: [
+            { text: 'Charles 使用指南', link: '/_project/01-use-charles' },
+            { text: 'iTerm2 + Oh-my-zh + p10k 终端美化', link: '/_project/02-use-iterm2' },
           ]
         }
       ],
@@ -104,6 +112,36 @@ export default defineConfig({
             { text: '06. 面向对象', link: '/python/06' },
           ]
         }
+      ],
+      "/interview/": [
+        { 
+          text: 'AI',
+          items: [
+            { text: 'AI 专业名词的解释', link: '/interview/ai/01' },
+          ]
+        },
+        {
+          text: '八股文',
+          items: [
+            { text: '浏览器', link: '/interview/ba-gu/browser' },
+            { text: '计算机网络', link: '/interview/ba-gu/network' },
+            { text: 'HTML', link: '/interview/ba-gu/html' },
+            { text: 'CSS', link: '/interview/ba-gu/css' },
+            { text: 'JavaScript', link: '/interview/ba-gu/js' },
+            { text: 'TypeScript', link: '/interview/ba-gu/ts' },
+            { text: 'Vue2', link: '/interview/ba-gu/vue2' },
+            { text: 'Vue3', link: '/interview/ba-gu/vue3' },
+            { text: 'React', link: '/interview/ba-gu/react' },
+            { text: '构建工具', link: '/interview/ba-gu/webpack' },
+            { text: 'NodeJS', link: '/interview/ba-gu/node' },
+          ]
+        },
+        {
+          text: '面试记录',
+          items: [
+            { text: '2025-x-x 占位', link: '' },
+          ]
+        },
       ]
     },
 
