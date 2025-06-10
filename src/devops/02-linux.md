@@ -222,4 +222,157 @@ which ls
 
 ## 压缩、解压缩
 
-### 
+### zip
+
+`zip [ 选项 ] target.zip 文件1 文件2...` 可以是多个文件或者目录。
+
+- `-r`  递归压缩目录
+
+示例
+
+```shell :no-line-numbers
+zip -r test.zip /tmp/test
+```
+
+`unzip [ 选项 ] target.zip`
+
+- `-d`  指定解压目录
+
+示例
+
+```shell :no-line-numbers
+unzip test.zip -d /tmp/
+```
+
+### gzip
+
+`gzip [ 选项 ] 文件` 只能压缩文件。比 `zip` 压缩比高。
+
+- `-d`  解压缩文件，不保留压缩包
+- `-r`  递归压缩目录下的所有文件
+- `-c`  将压缩后的文件输出到标准输出 `gzip -c a.txt > b.txt.gz` 有点重命名的意思
+
+示例
+
+```shell :no-line-numbers
+gzip a.txt
+```
+
+`gunzip [ 选项 ] 文件`
+
+- `-c`  将解压缩后的文件输出到标准输出 `gunzip -c a.txt.gz` 解压缩并保留压缩包
+
+### bzip2
+
+`bzip2 [ 选项 ] 文件` 只能压缩文件。`gzip` 的升级版。可能需要下载 `yum install bzip2`
+
+- `-d`  解压缩文件，不保留压缩包
+- `-k`  压缩为 `.bz2` 文件，保留源文件
+
+示例
+
+```shell :no-line-numbers
+bzip2 -k a.txt
+```
+
+`bunzip2 [ 选项 ] 文件`
+
+- `-k`  解压缩文件，保留压缩包。 `bunzip2 -k a.txt.bz2`
+
+### tar 打包、解包
+
+`tar` 本身是打包工具，不能压缩。但是可以和 `gzip` 和 `bzip2` 结合使用，创建压缩文件后缀为 `tar.gz、tar.bz2` 的压缩包。
+
+`tar [ 选项 ] 打包后的文件名 文件或者目录`
+
+- `-c`  打包
+- `-x`  解包
+- `-v`  显示打包过程
+- `-f`  指定打包后的文件名
+- `-z`  `gz` 打包时使用 `gzip` 压缩，解包时使用 `gunzip` 解压
+- `-j`  `bz2` 打包时使用 `bzip2` 压缩，解包时使用 `bunzip2` 解压
+
+示例
+
+```shell :no-line-numbers
+# 使用 gzip 打包 /tmp 目录下的所有文件
+tar -zcvf test.tar.gz /tmp
+
+# 使用 bzip2 解包 /tmp 目录下的所有文件
+tar -jxvf test.tar.bz2
+```
+
+## 用户
+
+### w 查看登录用户信息
+
+![alt text](/devops/03.png)
+
+- :sewing_needle: `23:24:26 up 40 min` 开机时间
+- :sewing_needle: `3 users` 登录用户数
+- :sewing_needle: `load average` 平均负载 `0.00, 0.00, 0.00` 1分钟、5分钟、15分钟平均负载
+- `USER`  登录用户名
+- `TTY`  登录终端 `pts/n` 远程登录
+- `FROM`  登录 IP
+- `LOGIN@` 登录时间
+- `IDLE`  用户空闲时间
+- `JCPU`  该终端所有进程占用的时间
+- `PCPU`  当前进程占用的时间
+- `WHAT`  正在执行的命令
+
+### who 查看登录用户信息
+
+显示登录的用户名、登录的终端以及登录的时间。
+
+![alt text](/devops/04.png)
+
+### last 查看当前和过去登录用户信息
+
+显示登录的用户名、登录的终端、登录的 IP、登录的时间、退出的时间以及在线时间。
+
+![alt text](/devops/05.png)
+
+### lastlog 显示所有用户最近一次登录信息
+
+![alt text](/devops/06.png)
+
+## 磁盘管理
+
+### df 查看磁盘使用情况
+
+`df [ 选项 ] [ 文件 ]`
+
+- `-l` 进现实本地磁盘 (默认)
+- `-a` 显示所有文件系统信息
+- `-T` 显示磁盘分区类型
+- `-t` 显示指定类型文件系统的磁盘分区
+- `-H` 以 `1000` 进制显示
+- `-h` 以 `1024` 进制显示
+- `-x` 不显示指定文件类型的磁盘分区
+
+示例
+```shell :no-line-numbers
+# 以 1024 进制显示 /dev/shm 分区信息
+df -ht tmpfs
+```
+
+### du 统计磁盘上文件大小
+
+`du [ 选项 ] [ 文件 ]`
+
+- `-b` 以 byte 显示统计文件
+- `-k` 以 kb 显示统计文件
+- `-m` 以 mb 显示统计文件
+- `-h` 以 `1024` 进制显示
+- `-H` 以 `1000` 进制显示
+- `-s` 只显示总和
+
+示例
+
+```shell :no-line-numbers
+# 以 1024 进制显示 /tmp 目录下所有文件大小
+du -h /tmp
+
+# 以 1024 进制显示 /tmp 目录下所有文件大小，只显示总和
+du -s /tmp
+```

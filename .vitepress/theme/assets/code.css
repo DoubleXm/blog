@@ -70,7 +70,7 @@ img {
 
 
 .aside-container {
-  width: fit-content;
+  width: fit-content !important;
 }
 .VPDocOutlineItem .outline-link {
   white-space: nowrap;
