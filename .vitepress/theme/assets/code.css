@@ -67,3 +67,11 @@ img {
   width: 70%;
   border-radius: 6px;
 }
+
+
+.aside-container {
+  width: fit-content;
+}
+.VPDocOutlineItem .outline-link {
+  white-space: nowrap;
+}
