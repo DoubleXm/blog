@@ -1,6 +1,6 @@
-### man 查看命令帮助信息
+<!-- ### man 查看命令帮助信息
 
-**示例** `man ls`
+**示例** `man ls` -->
 
 ## 目录、文件操作
 
@@ -197,7 +197,7 @@ grep -n 'root' /etc/passwd
 find /tmp -name a.txt | grep -in test
 ```
 
-### whereis 搜索指令信息位置
+<!-- ### whereis 搜索指令信息位置
 
 `whereis [ 选项 ] 命令`
 
@@ -218,7 +218,7 @@ whereis ls
 
 ```shell :no-line-numbers
 which ls
-```
+``` -->
 
 ## 压缩、解压缩
 
@@ -302,7 +302,88 @@ tar -zcvf test.tar.gz /tmp
 tar -jxvf test.tar.bz2
 ```
 
-## 用户
+## 查看文件
+
+### cat 查看文件
+
+`cat [ 选项 ] 文件名`
+
+- `-n`  显示行号
+- `-b`  显示行号，空行不显示
+- `-s`  压缩连续的空行
+
+示例
+```shell :no-line-numbers
+cat -n /etc/passwd
+
+# 将 cat 的输出结果保存到文件的末尾
+cat /etc/passwd >> a.txt
+
+# 将 cat 的输出结果覆盖到文件
+cat /etc/passwd > a.txt
+
+# 将 cat 的输出当做下一个命令的输入
+# 查找 /etc/passwd 文件中包含 root 字符串的行
+cat /etc/passwd | grep root
+```
+
+### more 分页查看文件
+
+`more [ 选项 ] 文件名`
+
+- `-[num]` 指定每页显示的行数
+- `+[num]` 从指定行开始显示
+
+常用翻页快捷键
+
+- `enter`  向下翻一行
+- `Ctrl + f` 或者 `space`  向下翻一屏
+- `Ctrl + b`  向上翻一屏
+- `q`  退出
+- `:f`  显示文件名和当前行号
+
+### less 分页查看文件
+`less [ 选项 ] 文件名` 与 `more` 类似，支持行号、搜索关键词高亮等操作。
+
+- `-f` 强制打开特殊文件，例如二进制和目录
+- `/字符串` 向下搜索字符串
+- `?字符串` 向上搜索字符串
+
+**翻页与退出快捷键**与 `more` 相同
+
+示例
+```shell :no-line-numbers
+# 查看进程并用 less 分页查看
+ps -ef | less
+```
+
+
+### head 查看文件开头内容
+
+`head [ 选项 ] 文件名`
+
+- `-n` 显示的行数
+
+示例
+```shell :no-line-numbers
+# 显示 /etc/passwd 文件的前 10 行
+head -n 10 /etc/passwd
+```
+
+### tail 查看文件结尾内容
+
+`tail [ 选项 ] 文件名`
+
+- `-n` 显示文件的尾部 n 行内容
+- `-f` 动态显示文件末尾内容
+
+## vi/vim 编辑器
+
+![alt text](/devops/vi.png)
+
+`vim 文件名`
+
+## 用户登录信息
 
 ### w 查看登录用户信息
 
@@ -376,3 +457,20 @@ du -h /tmp
 # 以 1024 进制显示 /tmp 目录下所有文件大小，只显示总和
 du -s /tmp
 ```
+
+### fdisk 管理磁盘分区
+
+`fdisk [ 选项 ] 设备`
+
+- `-l`  列出所有分区
+- `-u`  与 `-l` 搭配，显示分区数目
+
+示例
+
+```shell :no-line-numbers
+fdisk -lu
+```
+
+`fdisk /dev/sdb` 进入分区管理界面，输入 `m` 查看帮助信息。
+
+![alt text](/devops/07.png)
