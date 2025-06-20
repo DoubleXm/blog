@@ -50,17 +50,16 @@ export default defineConfig({
       "/_project/": [
         {
           text: '工程化',
-          collapsed: true,
           items: [
             { text: '模块化的发展及 SystemJS 原理', link: '/_project/module_standard' },
           ]
         },
         {
           text: '提效工具',
-          collapsed: true,
           items: [
             { text: 'Charles 使用指南', link: '/_project/01-use-charles' },
             { text: 'iTerm2 + Oh-my-zh + p10k 终端美化', link: '/_project/02-use-iterm2' },
+            { text: '基于 whistle + SwitchyOmega 的前端代理方案', link: '/_project/03-webfront-proxy' },
           ]
         }
       ],
