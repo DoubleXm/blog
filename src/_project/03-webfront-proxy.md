@@ -17,14 +17,14 @@ brew install whistle
 
 成功之后入 `w2 start` 启动 `whistle`。默认占用端口为 `8899`
 
-![alt text](01.png)
+![alt text](/_project/01.png)
 
 打开链接进入控制台注意以下两处
 
 - 点击侧边栏 `rules` 添加规则，以图为例，本地为 `vite` 项目前面为测试环境域名。
 - 点击顶栏 `https` 下载证书，然后将证书安装到钥匙串中，然后信任证书（仅针对 MacOS 系统）。
 
-![alt text](02.png)
+![alt text](/_project/02.png)
 
 ## 安装 & 配置 SwitchyOmega
 
@@ -38,7 +38,7 @@ unzip SwitchyOmega_Chromium.zip -d SwitchyOmega
 
 安装完成之后，点击插件的选项 - 新建**代理服务器**的情景模式 - 将代理服务器设置为 `127.0.0.1` 端口为 `8899` 即可。不经过代理的域名可以设置为空，或者按照自己的需求设置。
 
-![alt text](03.png)
+![alt text](/project/03.png)
 
 当不适用时就使用系统代理或者直接连接，使用时选择对应的情景模式即可。
 
