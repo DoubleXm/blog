@@ -38,7 +38,7 @@ unzip SwitchyOmega_Chromium.zip -d SwitchyOmega
 
 安装完成之后，点击插件的选项 - 新建**代理服务器**的情景模式 - 将代理服务器设置为 `127.0.0.1` 端口为 `8899` 即可。不经过代理的域名可以设置为空，或者按照自己的需求设置。
 
-![alt text](/project/03.png)
+![alt text](/_project/03.png)
 
 当不适用时就使用系统代理或者直接连接，使用时选择对应的情景模式即可。
 
