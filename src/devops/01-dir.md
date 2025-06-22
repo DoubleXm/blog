@@ -28,15 +28,102 @@
 └── var				 存放经常被修改的文件，比如日志、邮件。	
 ```
 
-## 指令快捷键
+## 看一遍就会的指令
 
-| 快捷键        |      作用      |
-| ------------- | :-----------: |
-| `Control + a`      | 光标移动到行首 |
-| `Control + e`      |   光标移动到行尾    |
-| `Control + w` |   剪切 前面一个单词    |
-| `Control + u` |   剪切 前面所有内容    |
-| `Control + y` |   复制剪切的内容    |
+### ls 查看目录信息
+
+`ls [ 选项 ] [ 文件或者目录 ]`
+
+- `-a` 显示所有文件，包括隐藏文件
+- `-l`  显示详细信息
+- `-d`  查看目录本身的属性，并不是查看文件。示例 `ls -d /etc/`
+- `-h`  人性化的方式显示文件大小
+- `-i`  显示文件的 `inode` 号
+
+示例
+
+```shell :no-line-numbers
+ls -lai /etc/
+```
+
+### mkdir 创建目录
+
+`mkdir [ 选项 ] 目录名`，默认不能创建多级目录，需要递归创建。
+
+- `-p`  递归创建目录
+
+示例
+
+```shell :no-line-numbers
+mkdir -p /tmp/test/a/b/c
+```
+
+### rmdir 删除目录
+
+`rmdir [ 选项 ] 目录名`，只能删除空目录
+
+示例
+
+```shell :no-line-numbers
+rmdir /test
+```
+
+### rm 删除文件、目录
+
+`rm [ 选项 ] 文件或者目录`
+
+- `-r`  递归删除目录
+- `-f`  强制删除
+
+示例
+
+```shell :no-line-numbers
+rm -rf /tmp/test
+```
+
+### touch 创建文件
+
+`touch [ 选项 ] 文件名`
+
+示例
+
+```shell :no-line-numbers
+touch a.txt
+```
+
+## 用户登录信息
+
+### w 查看登录用户信息
+
+![alt text](/devops/03.png)
+
+- :sewing_needle: `23:24:26 up 40 min` 开机时间
+- :sewing_needle: `3 users` 登录用户数
+- :sewing_needle: `load average` 平均负载 `0.00, 0.00, 0.00` 1分钟、5分钟、15分钟平均负载
+- `USER`  登录用户名
+- `TTY`  登录终端 `pts/n` 远程登录
+- `FROM`  登录 IP
+- `LOGIN@` 登录时间
+- `IDLE`  用户空闲时间
+- `JCPU`  该终端所有进程占用的时间
+- `PCPU`  当前进程占用的时间
+- `WHAT`  正在执行的命令
+
+### who 查看登录用户信息
+
+显示登录的用户名、登录的终端以及登录的时间。
+
+![alt text](/devops/04.png)
+
+### last 查看当前和过去登录用户信息
+
+显示登录的用户名、登录的终端、登录的 IP、登录的时间、退出的时间以及在线时间。
+
+![alt text](/devops/05.png)
+
+### lastlog 显示所有用户最近一次登录信息
+
+![alt text](/devops/06.png)
 
 ## 指令通配符
 
@@ -48,7 +135,7 @@
 | `[a-z]` |   匹配 a-z 中任意一个字符    |
 | `[!xyz]` |   不匹配 [] 中任意一个字符    |
 
-## 文件权限
+<!-- ## 文件权限
 
 ![01](/devops/01.png)
 ![02](/devops/02.png)
@@ -61,4 +148,4 @@ drwxr-xr-x.  2 root root   4096 4月  11 2018 etc
 - `2` 硬链接引用计数
 - `root` 所有者
 - `root` 所有组
-- `4096` 文件大小
+- `4096` 文件大小 -->
