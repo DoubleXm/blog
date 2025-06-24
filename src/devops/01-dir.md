@@ -91,7 +91,22 @@ rm -rf /tmp/test
 touch a.txt
 ```
 
+### wc 统计文件内容
+
+`wc [ 选项 ] 文件名`
+
+- `-l`  统计行数
+- `-w`  统计单词数
+- `-c`  统计字节数
+- `-m`  统计字符数
+
 ## 用户登录信息
+
+### whoami 查看当前登录用户
+
+```shell :no-line-numbers
+whoami
+```
 
 ### w 查看登录用户信息
 
