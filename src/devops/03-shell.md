@@ -401,3 +401,102 @@ func_name(){
 }
 func_name "hello" "world"
 ```
+
+## 重点
+
+:zany_face: 各种符号搞的我好乱啊~~~，到底啥时候用 `$` 什么时候不用呢？
+
+### `[]` `[[]]` `(())` `$(())` `$()` `${}` 中 $ 的生存法则
+
+> [!TIP]
+> &emsp; `[]` 比较传统的条件判断方案，比较大小时需要实用 `-eq` 等运算符。且或关系使用 `-a` 和 `-o` 。**内部变量时需要加上 `$`**
+>
+> &emsp; 注意内部两侧加上空格。
+> ```shell :no-line-numbers
+> a=1
+> if [ $a -eq 1 ]; then
+>     echo "a 等于 1"
+> fi
+> ```
+> &emsp; `[[]]` 是 `Bash` 特有，`[]` 的升级版，支持 `&&` 和 `||` ，**内部变量加不加 `$` 都可以**
+>
+> &emsp; 注意内部两侧加上空格。
+> ```shell :no-line-numbers
+> a=1
+> b=2
+> if [[ $a -eq 1 && b -eq 2 ]]; then
+>     echo "a 等于 1"
+> fi
+> ```
+> &emsp; `(())` 用户算数运算和判断支持各种运算符，也可以赋值，整数运算和比较时使用，**内部变量不需要 `$`**
+> ```shell :no-line-numbers
+> a=1
+> while ((a < 10)); do
+>     echo "Loop count is $a"
+>     # ((i += 1))
+>     ((i++))
+> done
+> ```
+> &emsp; `$()` 一般用于执行命令
+> ```shell :no-line-numbers
+> echo $(ls -l | grep "^-" | wc -l)
+> ```
+> &emsp; `$(())` 一般用于算数运算，会计算内部的算数表达式并返回结果，**内部变量不需要 `$`**
+> ```shell :no-line-numbers
+> num1=1
+> num2=2
+> result=$((num1 + num2))
+> echo $result
+> 
+> for ((i = 0; i < 10; i++)); do
+>     result=$((result + i))
+>     echo "result 的值当前是 ${result}"
+> done
+> ```
+> &emsp; `${}` 一般用于获取变量值，在字符串中使用，虽然也可以获取变量值，但是不推荐。
+> ```shell :no-line-numbers
+> str="hello"
+> echo "${str} world"
+> ```
+> 剩下的场景基本上就是直接使用了。酌情使用。
+> ```shell :no-line-numbers
+> name="alice"
+> echo $name "$name"
+> ```
+
+### `$n` `$*` `$@` `$#` 以及数组的 `${#array[@]}` 获取
+
+:zany_face: `$` 真是令人头疼的存在
+
+> [!IMPORTANT]
+> &emsp; 首先是字符串的环节，直接使用没有任何问题。
+> ```shell :no-line-numbers
+> site=("a" "b" "c")
+> echo $1 $@ $# $* ${#site[@]}  #  1 1 2 2 1 2 3
+> echo "$1 $@ $# $* ${#site[@]}" # 1 1 2 2 1 2 3
+> # ./code.sh 1 2
+> ```
+> &emsp; 在 `[]` 中 `$*` 和 `$@` 没有太大的用处，因为一个是合并字符串一个是数组。在表达式中，用不用和字符串的使用方法保持一致
+> ```shell :no-line-numbers
+> site=("a" "b" "c")
+> if [ $1 -eq 1 -a ${#site[@]} -eq 3 ]; then
+>     echo "第一个参数是 ${1}，数组长度是 ${#site[@]}"
+> fi
+> ```
+> &emsp; 在 `[[]]` 与 `[]` 的使用方案保持一致
+> ```shell :no-line-numbers
+> site=("a" "b" "c")
+> if [[ $1 == 2 && "$2" != 3 && ${#site[@]} -eq 3 ]]; then
+>     echo "第一个参数是 ${1}，第二个参数是 ${2}，数组长度是 ${#site[@]}"
+> fi
+> ```
+> &emsp; 在 `(())` 和 `$(())` 中主要是运算，需要事先考虑好这些内容的返回值是什么。
+> ```shell :no-line-numbers
+> site=("a" "b" "c")
+> for ((i = $1; i <= ${#site[@]}; i++)); do
+>     echo $i
+> done
+> 
+> sum = $(($1 + "$1" + ${#site[@]} + "${#site[@]}"))
+> echo $sum
+> ```
