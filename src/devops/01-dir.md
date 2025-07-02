@@ -110,6 +110,12 @@ touch a.txt
 ping www.runoob.com
 ```
 
+### pwd 显示当前目录
+
+### date 显示系统时间
+
+### ifconfig 查看网络信息（ip 地址）
+
 ### sudo 以管理员身份执行命令
 
 `sudo [ 选项 ] 命令` 不带参数默认就是 `root` 权限
