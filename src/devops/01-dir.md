@@ -100,6 +100,93 @@ touch a.txt
 - `-c`  统计字节数
 - `-m`  统计字符数
 
+### clear 清屏
+
+或者 `Contrl + l` 可以实现同等效果
+
+### ping 测试网络连通性
+
+```sh :no-line-numbers
+ping www.runoob.com
+```
+
+### sudo 以管理员身份执行命令
+
+`sudo [ 选项 ] 命令` 不带参数默认就是 `root` 权限
+
+- `-u`  指定用户
+
+```shell :no-line-numbers
+sudo -u root touch /etc/test.txt
+```
+
+### ssh 远程连接
+
+```shell :no-line-numbers
+# 用户名@主机地址
+ssh root@192.168.1.100
+```
+
+
+## 用户管理
+
+### useradd/adduser用户添加
+
+`useradd [ 选项 ] 用户名`
+
+- `-g` 指定用户组
+- `-d` 指定用户主目录
+- `-r` 创建系统用户
+
+```sh :no-line-numbers
+# 添加用户并指定用户组
+useradd -g devops test
+# 添加用户,指定工作目录
+useradd -d /home/test test
+# 添加系统用户
+useradd -r test
+# 添加普通用户
+useradd test
+```
+
+### userdel 用户删除
+
+`userdel [ 选项 ] 用户名` 默认只删除用户账号，不删除相关文件
+
+- `-r`  删除用户的同时删除用户主目录
+
+### userconf 用户配置
+
+`userconf [ 选项 ]`
+
+- `--addgroup [ 组名 ]`  新增群组
+- `--adduser [ 用户 ID ] [ 群组 ] [ 用户名 ]  [ shell ]`  新增用户账号
+- `--deluser [ 用户 ID ]` 删除用户账号
+- `--delgroup [ 群组 ]` 删除群组
+
+```sh :no-line-numbers
+# 添加用户
+userconf --adduser 1000 devops username /bin/bash
+```
+
+## 用户组管理
+
+### groupadd 组添加
+
+`groupadd [ 选项 ] 组名`
+
+- `-g`  指定组 ID
+- `-r`  创建系统组，系统组 Id 小于 500
+
+```shell :no-line-numbers
+# 添加运维组并指定组 id
+groupadd -g 30 devops
+```
+
+### groupdel 组删除
+
+`groupdel 组名`
+
 ## 用户登录信息
 
 ### whoami 查看当前登录用户
