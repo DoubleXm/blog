@@ -111,8 +111,10 @@ export default defineConfig({
           text: 'Linux',
           collapsed: true,
           items: [
-            { text: '目录结构 & 基础', link: '/devops/01-dir' },
-            { text: '常用命令', link: '/devops/02-linux' },
+            { text: '目录结构 & 基础命令', link: '/devops/01-dir' },
+            { text: '常用命令 1', link: '/devops/02-linux' },
+            { text: '常用命令 2', link: '/devops/03-linux' },
+            { text: '服务操作 & 包管理器', link: '/devops/04-linux' },
             { text: 'Shell 基础', link: '/devops/03-shell' },
             { text: 'Shell 实践', link: '/devops/04-shell' },
           ]
