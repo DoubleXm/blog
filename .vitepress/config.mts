@@ -127,7 +127,9 @@ export default defineConfig({
         {
           text: 'Docker',
           collapsed: true,
-          items: []
+          items: [
+            { text: '介绍&安装', link: '/devops/docker/01-docker' }
+          ]
         },
         {
           text: 'K8s',
