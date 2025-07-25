@@ -43,6 +43,7 @@ export default defineConfig({
           { text: '🐛 Python', link: '/python/01' },
         ]
       },
+      { text: '🌸 资源导航', link: '/navigator-site' },
       { text: '面试', link: '/interview/ba-gu/js' },
     ],
 

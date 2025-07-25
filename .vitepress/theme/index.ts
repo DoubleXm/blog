@@ -2,6 +2,7 @@ import type { Theme } from 'vitepress';
 import DefaultTheme from 'vitepress/theme'
 // code block styles
 import './assets/code.css'
+import 'element-plus/dist/index.css';
 
 export default {
   extends: DefaultTheme,

@@ -1,0 +1,36 @@
+{
+  "list": [
+    {
+      "title": "AI",
+      "list": [
+        {
+          "title": "DeepSeek",
+          "link": "https://chat.deepseek.com/",
+          "cover": "/blog/site-logo/deepseek.png",
+          "description": "深度求索（DeepSeek）助力编程代码开发、创意写作、文件处理等任务，支持文件上传及长文本对话，随时为您提供高效的AI支持。"
+        }
+      ]
+    },
+    { 
+      "title": "实用工具",
+      "list": [
+      ]
+    },
+    {
+      "title": "画图文档工具",
+      "list": [
+      ]
+    },
+    {
+      "title": "编码艺术",
+      "list": [
+      ]
+    },
+    {
+      "title": "学生天地",
+      "list": [
+        
+      ]
+    }
+  ]
+}
