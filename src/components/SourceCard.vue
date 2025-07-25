@@ -8,16 +8,21 @@
     @click="onOpenHref(data.link)"
   >
     <div class="title">
-      <img :src="data.cover" @click.prevent.stop="onOpenHref(data.link)">
+      <img 
+        :src="data.cover"
+        onerror="javascript:this.src='/blog/site-logo/error.png'"
+        @click.prevent.stop="onOpenHref(data.link)"
+      >
       <a
         :style="{ color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.88)' }"
         href="#"
       >{{ data.title }}</a>
     </div>
+
     <span
       :style="{ color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.45)'}"
     >
-      {{ data.description }}
+      <div v-html="data.description"></div>
     </span>
   </div>
 </template>
@@ -46,6 +51,7 @@ const onOpenHref = (link: string) => {
 <style lang="scss">
 .source-card {
   padding: 20px;
+  min-height: 180px;
   /* border: 1px solid #f0f0f0; */
   border-width: 1px;
   border-style: solid;

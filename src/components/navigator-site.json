@@ -1,35 +1,142 @@
 {
   "list": [
     {
-      "title": "AI",
+      "title": "AI对话助手",
       "list": [
         {
           "title": "DeepSeek",
           "link": "https://chat.deepseek.com/",
           "cover": "/blog/site-logo/deepseek.png",
           "description": "深度求索（DeepSeek）助力编程代码开发、创意写作、文件处理等任务，支持文件上传及长文本对话，随时为您提供高效的AI支持。"
+        },
+        {
+          "title": "Kimi",
+          "link": "https://www.kimi.com/chat/empty",
+          "cover": "https://statics.moonshot.cn/kimi-web-seo/assets/kimi-logo-CegIMkbU.png",
+          "description": "Kimi K2 是我们最新升级的 AI 助手，擅长推理、编程和调用工具，帮助你高效解决复杂问题。无论是工作、学习还是创作，都可以试试用 Kimi K2 来完成。"
+        },
+        {
+          "title": "Gemini",
+          "link": "https://gemini.google.com/app",
+          "cover": "https://www.gstatic.com/lamda/images/gemini_sparkle_4g_512_lt_f94943af3be039176192d.png",
+          "description": "Google 旗下的 AI 助理。在写作、规划和开展头脑风暴等方面获得帮助。体验生成式 AI 的强大功能。"
+        },
+        {
+          "title": "ChatGPT",
+          "link": "https://chatgpt.com/",
+          "cover": "https://cdn.oaistatic.com/assets/favicon-180x180-od45eci6.webp",
+          "description": "ChatGPT帮助您获得答案，找到灵感，提高工作效率。它免费使用，易于尝试。Just ask和ChatGPT可以帮助写作、学习、头脑风暴等。"
+        },
+        {
+          "title": "豆包",
+          "link": "https://www.doubao.com/chat/",
+          "cover": "https://lf-flow-web-cdn.doubao.com/obj/flow-doubao/doubao/logo_new.png",
+          "description": "豆包是你的 AI 聊天智能对话问答助手，写作文案翻译编程全能工具。豆包为你答疑解惑，提供灵感，辅助创作，也可以和你畅聊任何你感兴趣的话题。"
+        },
+        {
+          "title": "AIHub",
+          "link": "https://www.aihub.cn/",
+          "cover": "https://www.aihub.cn/wp-content/uploads/2023/06/cropped-aihub_logo-270x270.png",
+          "description": "AIHub精选国内外999+优质AI工具、资源和资讯，包括AI绘画工具、AI写作工具、AI聊天工具、AI音视频工具、AI办公工具、AI游戏制作工具、AI营销工具等AI工具大全。我们希望通过努力，让更多个人和企业，了解人工智能，用好人工智能，高效工作，快乐生活。"
         }
-      ]
-    },
-    { 
-      "title": "实用工具",
-      "list": [
-      ]
-    },
-    {
-      "title": "画图文档工具",
-      "list": [
       ]
     },
     {
       "title": "编码艺术",
       "list": [
+        {
+          "title": "quickref",
+          "link": "https://quickref.me/index.html",
+          "cover": "https://quickref.me/images/favicon.png?v=1",
+          "description": "主流编程语言快速参考和备忘单"
+        },
+        {
+          "title": "JetBrains 全家桶破解工具",
+          "link": "https://3.jetbra.in/",
+          "cover": "/blog/site-logo/default.png",
+          "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com"
+        }
       ]
     },
     {
-      "title": "学生天地",
+      "title": "图片生成",
       "list": [
-        
+        {
+          "title": "头像生成",
+          "link": "https://txstc55.github.io/ugly-avatar/",
+          "cover": "https://txstc55.github.io/ugly-avatar/avatar.png",
+          "description": "如果你需要一个很抽象很潦草的头像，没错！就是这个网站"
+        }
+      ]
+    },
+    {
+      "title": "绘图工具",
+      "list": [
+        {
+          "title": "Excalidraw",
+          "link": "https://excalidraw.com/",
+          "cover": "https://excalidraw.com/favicon-32x32.png",
+          "description": "免费开源的手绘风格在线绘图工具，支持多平台使用，含丰富组件库，适合流程图、示意图等创作。"
+        },
+        {
+          "title": "iCraft Editor",
+          "link": "https://icraft.gantcloud.com/",
+          "cover": "https://icraft.gantcloud.com/_next/static/media/logo.70d174ef.png",
+          "description": "iCraft 是一个在线 3D 信息图、场景图设计平台，用 iCraft 轻松快速构建 3D 架构图、流程图、产品演示和 3D 信息场景，让你的想法更直观、出色。既可可视化展示，也可作为前端组件直接集成。"
+        }
+      ]
+    },
+    {
+      "title": "上班摸鱼",
+      "list": [
+        {
+          "title": "LINUX DO",
+          "link": "https://linux.do/latest",
+          "cover": "https://linux.do/uploads/default/optimized/3X/7/d/7de31932a4fd533496cfe35979a4d9d995bb5c63_2_180x180.png",
+          "description": "沉浸式摸鱼，摸鱼佬最后一片净土。"
+        },
+        {
+          "title": "掘金 沸点",
+          "link": "https://juejin.cn/pins/hot",
+          "cover": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
+          "description": "从技术社区沦落到摸鱼社区的典范，各种矛盾体的战场..."
+        },
+        {
+          "title": "人生重开模拟器",
+          "link": "https://liferestart.syaro.io/public/index.html",
+          "cover": "/blog/site-logo/default.png",
+          "description": "这垃圾人生一秒也不想待了..."
+        },
+        {
+          "title": "召唤神龙",
+          "link": "https://www.mutegame.com/170/",
+          "cover": "/blog/site-logo/mete.png",
+          "description": "蝌蚪变青蛙，青蛙变乌龟，乌龟变...."
+        },
+        {
+          "title": "植物大战僵尸",
+          "link": "https://game.moe.ms/",
+          "cover": "/blog/site-logo/moe.png",
+          "description": "体验经典塔防游戏《植物大战僵尸》网页版，无需下载即可在线畅玩。防御你的庭院，种植强大的植物，抵御一波又一波的僵尸入侵。立即开战，享受前所未有的便捷游戏体验！"
+        },
+        {
+          "title": "汉兜 - 汉字 Wordle",
+          "link": "https://handle.antfu.me/",
+          "cover": "/blog/site-logo/handel.png",
+          "description": "你有十次的机会猜一个四字成语 ,每次猜测后，汉字与拼音的颜色将会标识其与正确答案的区别。"
+        },
+        {
+          "title": "猜病",
+          "link": "https://xiaoce.fun/guessdisease",
+          "cover": "https://x24v.static.secure-cdn.top/quiz/daily/1744861287115_8ab947cf189546fe9b25570d3b7e6659_0.png?x-oss-process=image/resize,h_80/quality,q_75",
+          "description": "你能通过对话猜出病人得了什么病吗？"
+        },
+        {
+          "title": "魔方小站",
+          "link": "http://www.rubik.com.cn/fridrich3.htm",
+          "cover": "/blog/site-logo/cubes.gif",
+          "description": "魔方的玩法，魔方口诀，魔方公式，魔方秘诀，魔方手法，CFOP(视频教程+单个公式视频演示+3D动画)"
+        }
       ]
     }
   ]
