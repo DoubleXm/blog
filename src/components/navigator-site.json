@@ -1,7 +1,7 @@
 {
   "list": [
     {
-      "title": "AI对话助手",
+      "title": "AI",
       "list": [
         {
           "title": "DeepSeek",
@@ -34,10 +34,58 @@
           "description": "豆包是你的 AI 聊天智能对话问答助手，写作文案翻译编程全能工具。豆包为你答疑解惑，提供灵感，辅助创作，也可以和你畅聊任何你感兴趣的话题。"
         },
         {
+          "title": "Google AI Studio",
+          "link": "https://aistudio.google.com/prompts/new_chat",
+          "cover": "https://www.gstatic.com/aistudio/ai_studio_favicon_2_32x32.png",
+          "description": "相比 Gemini 更加专业的会话"
+        },
+        {
+          "title": "Claude",
+          "link": "https://claude.ai/login?returnTo=%2F%3F",
+          "cover": "https://claude.ai/images/claude_app_icon.png",
+          "description": "写代码最好用的 AI， 就是中国区的选手一言难尽...."
+        },
+        {
           "title": "AIHub",
           "link": "https://www.aihub.cn/",
           "cover": "https://www.aihub.cn/wp-content/uploads/2023/06/cropped-aihub_logo-270x270.png",
           "description": "AIHub精选国内外999+优质AI工具、资源和资讯，包括AI绘画工具、AI写作工具、AI聊天工具、AI音视频工具、AI办公工具、AI游戏制作工具、AI营销工具等AI工具大全。我们希望通过努力，让更多个人和企业，了解人工智能，用好人工智能，高效工作，快乐生活。"
+        },
+        {
+          "title": "MaxKB",
+          "link": "https://maxkb.cn/",
+          "cover": "https://maxkb.cn/images/favicon.png",
+          "description": "是飞致云旗下开源的企业级智能体平台，致力于解决企业AI 落地面临的技术门槛高、部署成本高、迭代周期长等问题。更专注于知识库问答和智能助手"
+        },
+        {
+          "title": "Stitch - Design with AI",
+          "link": "https://stitch.withgoogle.com/",
+          "cover": "https://www.gstatic.com/labs-code/favicon-48x48.png",
+          "description": "为移动和web应用程序生成UI，使设计构思快速简单。"
+        },
+        {
+          "title": "扣子空间 - AI 办公助手",
+          "link": "https://space.coze.cn/?from=landingpage&open=1&category=7524912604796452873",
+          "cover": "https://lf-coze-web-cdn.coze.cn/obj/coze-web-cn/coze-space/static/favicon.ico",
+          "description": "办公效率低？扣子空间AI助手支持播客生成、PPT制作、网页开发及报告写作，覆盖科研、商业、舆情等领域的专家 Agent 7x24小时响应，生活工作无缝切换，提升50%效率！"
+        },
+        {
+          "title": "Open Router",
+          "link": "https://openrouter.ai/docs/quickstart",
+          "cover": "https://files.buildwithfern.com/openrouter.docs.buildwithfern.com/docs/2025-07-25T03:23:20.956Z/content/assets/favicon.ico",
+          "description": "LLM的统一接口。根据提示查找最佳型号和价格"
+        },
+        {
+          "title": "Ollama",
+          "link": "https://ollama.com/search",
+          "cover": "https://ollama.com/public/icon-48x48.png",
+          "description": "在本地启动并运行大型语言模型。"
+        },
+        {
+          "title": "DeepSeek 提示词书写规范",
+          "link": "https://api-docs.deepseek.com/zh-cn/prompt-library/",
+          "cover": "https://cdn.deepseek.com/platform/favicon.png",
+          "description": "DeepSeek Prompt Library"
         }
       ]
     },
