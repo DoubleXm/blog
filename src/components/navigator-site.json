@@ -90,23 +90,6 @@
       ]
     },
     {
-      "title": "编码艺术",
-      "list": [
-        {
-          "title": "quickref",
-          "link": "https://quickref.me/index.html",
-          "cover": "https://quickref.me/images/favicon.png?v=1",
-          "description": "主流编程语言快速参考和备忘单"
-        },
-        {
-          "title": "JetBrains 全家桶破解工具",
-          "link": "https://3.jetbra.in/",
-          "cover": "/blog/site-logo/default.png",
-          "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com"
-        }
-      ]
-    },
-    {
       "title": "程序员工具箱",
       "list": [
         {
@@ -144,6 +127,12 @@
           "link": "https://cli.im/",
           "cover": "https://static.clewm.net/static/images/favicon.ico",
           "description": "一站式二维码生成工具，免费可用。提供编码解码、数据统计、富文本和多媒体展示、表单制作、美化标签、批量管理等功能，并可作为无代码平台，搭建二维码信息系统。"
+        },
+        {
+          "title": "在线生成",
+          "link": "https://www.lddgo.net/index",
+          "cover": "https://www.lddgo.net/img/icon.png",
+          "description": "在线工具大全,提供在线的编程工具软件,比如随机生成,加密解密,数据转换、正则表达式测试等开发人员常用工具"
         },
         {
           "title": "文件视频转换",
@@ -191,6 +180,76 @@
           "link": "https://zhongguose.com/",
           "cover": "https://zhongguose.com/img/favicon.ico",
           "description": "中国传统颜色网站，提供各种中国传统颜色的名称，CMYK值，RGB值，16进制表示。可用于AI制作中国色图片和视频，设计参考"
+        },
+        {
+          "title": "渐变颜色参考",
+          "link": "https://color.oulu.me/",
+          "cover": "https://color.oulu.me/favicon.ico",
+          "description": "一个集合 180 种免费的线性渐变网站，可以在任何网站使用"
+        },
+        {
+          "title": "网站插图",
+          "link": "https://www.manypixels.co/gallery",
+          "cover": "https://cdn.prod.website-files.com/63a9cb71c629474d4ae334b9/64a5f701714b5fe13a08253f_favicons%201%20(2).png",
+          "description": "各种中台的插图，支持 SVG 和图片的下载"
+        },
+        {
+          "title": "CSS3动画代码大集合",
+          "link": "https://www.webhek.com/post/css3-animation-sniplet-collection/#/",
+          "cover": "https://cdn.jiler.cn/webhek/favicon.ico",
+          "description": "这是一个能方便的找到CSS动画制作的代码片段的地方。"
+        },
+        {
+          "title": "拟态设计",
+          "link": "https://neumorphism.io/#55b9f3",
+          "cover": "https://neumorphism.io/favicon.ico",
+          "description": "CSS代码生成器，一种一直很火，但没有人用的设计风格"
+        }
+      ]
+    },
+    {
+      "title": "前端切图仔",
+      "list": [
+        {
+          "title": "Animate.js",
+          "link": "https://animejs.cn/documentation/",
+          "cover": "https://animejs.cn/assets/images/favicon.png",
+          "description": "JavaScript 动画引擎，很厉害，但是不支持直接集成 Vue，只能原生 js 或者 React"
+        },
+        {
+          "title": "动效展示 - Ant Motion",
+          "link": "https://motion.ant.design/exhibition-cn/",
+          "cover": "https://zos.alipayobjects.com/rmsportal/HzvPfCGNCtvGrdk.png",
+          "description": "Ant Motion 是以 React 组件来实现动画效果，用 Ant Design 实现页面后，可以轻松的增加页面里的动画效果。"
+        },
+        {
+          "title": "DataV",
+          "link": "http://datav.jiaminghi.com/",
+          "cover": "http://datav.jiaminghi.com/favicon.ico",
+          "description": "一个支持 Vue & React 的大屏组件库。"
+        },
+        {
+          "title": "VueDataUI",
+          "link": "https://vue-data-ui.graphieros.com/",
+          "cover": "https://vue-data-ui.graphieros.com/favicon.ico",
+          "description": "一个很新的 Vue 图表库，UI很好看，但是很难找到与之风格匹配的中台。"
+        }
+      ]
+    },
+    {
+      "title": "编码艺术",
+      "list": [
+        {
+          "title": "quickref",
+          "link": "https://quickref.me/index.html",
+          "cover": "https://quickref.me/images/favicon.png?v=1",
+          "description": "主流编程语言快速参考和备忘单"
+        },
+        {
+          "title": "JetBrains 全家桶破解工具",
+          "link": "https://3.jetbra.in/",
+          "cover": "/blog/site-logo/default.png",
+          "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html"
         }
       ]
     },
@@ -249,6 +308,12 @@
           "link": "https://juejin.cn/pins/hot",
           "cover": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
           "description": "从技术社区沦落到摸鱼社区的典范，各种矛盾体的战场..."
+        },
+        {
+          "title": "H5 小游戏合集",
+          "link": "https://game.ur1.fun/",
+          "cover": "https://game.ur1.fun/favicon.ico",
+          "description": "五子棋、飞机大战、恐龙快跑、像素鸟、俄罗斯方块.... 玩不过来，根本玩不过来。哈哈哈..."
         },
         {
           "title": "打字姿势纠正",
@@ -410,6 +475,12 @@
           "link": "https://github.com/TapXWorld/ChinaTextbook",
           "cover": "https://github.com/fluidicon.png",
           "description": "github 上的一个项目，收录了小学到大学的所有教科书。"
+        },
+        {
+          "title": "国家中小学智慧教育平台",
+          "link": "https://basic.smartedu.cn/",
+          "cover": "https://basic.smartedu.cn/favicon.ico",
+          "description": "包含小学到高中的教科书讲课视频。"
         }
       ]
     },
