@@ -107,19 +107,26 @@
       ]
     },
     {
-      "title": "图片生成",
+      "title": "程序员工具箱",
       "list": [
         {
-          "title": "头像生成",
-          "link": "https://txstc55.github.io/ugly-avatar/",
-          "cover": "https://txstc55.github.io/ugly-avatar/avatar.png",
-          "description": "如果你需要一个很抽象很潦草的头像，没错！就是这个网站"
-        }
-      ]
-    },
-    {
-      "title": "绘图工具",
-      "list": [
+          "title": "Free Compress",
+          "link": "https://freecompress.com/zh-cn",
+          "cover": "https://freecompress.com/favicon-16x16.png",
+          "description": "完全免费的在线压缩工具，支持图片、音频、视频、代码&文件压缩"
+        },
+        {
+          "title": "Scan PDF",
+          "link": "https://scanpdf.online/scan",
+          "cover": "https://scanpdf.online/favicon.ico",
+          "description": "支持生成 pdf 扫描件，在线签名等操作。重点是免费"
+        },
+        {
+          "title": "魔方简历",
+          "link": "https://magicv.art/app/dashboard/resumes",
+          "cover": "https://magicv.art/favicon.ico?v=2",
+          "description": "在线简历编辑器，非常方便，不用登录，免费使用。"
+        },
         {
           "title": "Excalidraw",
           "link": "https://excalidraw.com/",
@@ -131,17 +138,35 @@
           "link": "https://icraft.gantcloud.com/",
           "cover": "https://icraft.gantcloud.com/_next/static/media/logo.70d174ef.png",
           "description": "iCraft 是一个在线 3D 信息图、场景图设计平台，用 iCraft 轻松快速构建 3D 架构图、流程图、产品演示和 3D 信息场景，让你的想法更直观、出色。既可可视化展示，也可作为前端组件直接集成。"
+        },
+        {
+          "title": "草料二维码",
+          "link": "https://cli.im/",
+          "cover": "https://static.clewm.net/static/images/favicon.ico",
+          "description": "一站式二维码生成工具，免费可用。提供编码解码、数据统计、富文本和多媒体展示、表单制作、美化标签、批量管理等功能，并可作为无代码平台，搭建二维码信息系统。"
+        },
+        {
+          "title": "文件视频转换",
+          "link": "https://www.alltoall.net/",
+          "cover": "https://www.alltoall.net/qfy-content/uploads/2022/07/b42759ab5cf74aa8f1ce08d1317b6940.jpg",
+          "description": "PDF转Word 免费PDF转化 免费在线格式转换工具 免费在线转换工具  免费视频在线转换 免费音频在线转换 免费在线转换"
+        },
+        {
+          "title": "图片格式转换器",
+          "link": "https://anywebp.com/",
+          "cover": "https://anywebp.com/favicon.ico",
+          "description": "任意图片格式互相转换，免费"
         }
       ]
     },
     {
-      "title": "工具集合",
+      "title": "素材",
       "list": [
         {
-          "title": "Toepub",
-          "link": "https://toepub.com/zh/",
-          "cover": "https://toepub.com/images/toepub/icon.png",
-          "description": "此免费在线转换软件软件可转换PDF或其它文档至最流行的电子书格式：EPUB，MOBI/ AZW3，FB2，微软阅读器LIT和Sony LRF。"
+          "title": "王者荣耀素材库",
+          "link": "https://pvp.icreate.qq.com/index?biz=397",
+          "cover": "https://pvp.icreate.qq.com/favicon.ico",
+          "description": "荣耀萤火开放素材库为广大王者创作者提供所需要的素材，包括英雄、皮肤海报，游戏CG视频，角色模型等海量内容。"
         },
         {
           "title": "Worldvectorlogo",
@@ -154,6 +179,59 @@
           "link": "https://www.urongda.com/",
           "cover": "https://www.urongda.com/favicon/favicon-48x48.png",
           "description": "汇集全国高校的矢量校徽，提供高质量的可缩放SVG文件，适合设计师、学生和机构使用。"
+        },
+        {
+          "title": "免费商用字体",
+          "link": "https://www.100font.com/",
+          "cover": "https://www.100font.com/view/img/favicon.ico",
+          "description": "100font.com是一个专业免费商用字体下载网站。专注于收集整理商用免费字体、免费无版权可商用字体。免费字体下载、免费放心商用。"
+        },
+        {
+          "title": "中国色",
+          "link": "https://zhongguose.com/",
+          "cover": "https://zhongguose.com/img/favicon.ico",
+          "description": "中国传统颜色网站，提供各种中国传统颜色的名称，CMYK值，RGB值，16进制表示。可用于AI制作中国色图片和视频，设计参考"
+        }
+      ]
+    },
+    {
+      "title": "其他工具",
+      "list": [
+        {
+          "title": "Toepub",
+          "link": "https://toepub.com/zh/",
+          "cover": "https://toepub.com/images/toepub/icon.png",
+          "description": "此免费在线转换软件软件可转换PDF或其它文档至最流行的电子书格式：EPUB，MOBI/ AZW3，FB2，微软阅读器LIT和Sony LRF。"
+        },
+        {
+          "title": "33 字幕图",
+          "link": "https://zmt.agilestudio.cn/",
+          "cover": "https://zmt.agilestudio.cn/logo.svg",
+          "description": "刷抖音的时候肯定会看一个影视画面下面叠加了很多字幕，没错，这个网站就可以帮你制作"
+        },
+        {
+          "title": "头像生成",
+          "link": "https://txstc55.github.io/ugly-avatar/",
+          "cover": "https://txstc55.github.io/ugly-avatar/avatar.png",
+          "description": "如果你需要一个很抽象很潦草的头像，没错！就是这个网站"
+        },
+        {
+          "title": "懒人 Excel",
+          "link": "https://www.lanrenexcel.com/",
+          "cover": "https://www.lanrenexcel.com/wp-content/uploads/icon.png",
+          "description": "Excel 函数公式、操作技巧、数据分析、图表模板、VBA、数据透视表教程"
+        },
+        {
+          "title": "纸由我",
+          "link": "https://paperme.toolooz.com/",
+          "cover": "https://paperme.toolooz.com/favicon-32x32.png",
+          "description": "免费在线创建和打印自定义纸张。设计横线纸、方格纸、点阵纸、音乐纸等多种类型，调整大小、颜色和间距，满足您的所有需求。"
+        },
+        {
+          "title": "P 站风格 logo 生成器",
+          "link": "https://www.logoly.pro/",
+          "cover": "https://www.logoly.pro/favicon.ico",
+          "description": "没错，就是你心里想的那个 P 站"
         }
       ]
     },
@@ -171,6 +249,42 @@
           "link": "https://juejin.cn/pins/hot",
           "cover": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
           "description": "从技术社区沦落到摸鱼社区的典范，各种矛盾体的战场..."
+        },
+        {
+          "title": "打字姿势纠正",
+          "link": "https://dazidazi.com/",
+          "cover": "https://dazidazi.com/images/dazilogo.png",
+          "description": "冲浪没有手速，你冲什么浪..."
+        },
+        {
+          "title": "打字手速提升",
+          "link": "https://www.keybr.com/",
+          "cover": "https://www.keybr.com/assets/a4de433bd238eb45.png",
+          "description": "冲浪没有手速，你冲什么浪..."
+        },
+        {
+          "title": "你的电子女友生气了，快哄哄吧",
+          "link": "https://hong.greatdk.com/",
+          "cover": "https://hong.greatdk.com/favicon.ico",
+          "description": "哄哄模拟器Web版基于AI技术，让你进入到不同场景之中，用语言技巧和沟通能力去哄你的对象"
+        },
+        {
+          "title": "oldswf",
+          "link": "https://oldswf.com/",
+          "cover": "https://oldswf.com/favicon.ico",
+          "description": "oldswf - 无需安装flash即可在线游玩的小游戏站，游戏超多..."
+        },
+        {
+          "title": "Slow Roads",
+          "link": "https://slowroads.io/",
+          "cover": "https://slowroads.io/favicon.svg",
+          "description": "在线开车软件，不要误会，就是开车而已..."
+        },
+        {
+          "title": "猜省份",
+          "link": "https://vultr.youmu.moe/quiz/",
+          "cover": "/blog/site-logo/default.png",
+          "description": "我知道你很想用它摸鱼，但是学地理也是个不错的主意。"
         },
         {
           "title": "人生重开模拟器",
@@ -209,12 +323,6 @@
           "description": "这b班上得值不值 - 计算你的工作性价比 | Job Worth Calculator - Calculate your job's value"
         },
         {
-          "title": "魔方小站",
-          "link": "http://www.rubik.com.cn/fridrich3.htm",
-          "cover": "/blog/site-logo/cubes.gif",
-          "description": "魔方的玩法，魔方口诀，魔方公式，魔方秘诀，魔方手法，CFOP(视频教程+单个公式视频演示+3D动画)"
-        },
-        {
           "title": "Keyboard Simulator",
           "link": "https://keyboardsimulator.xyz/",
           "cover": "https://keyboardsimulator.xyz/favicon.png",
@@ -231,6 +339,106 @@
           "link": "https://territorial.io/",
           "cover": "https://territorial.io/favicon.ico",
           "description": "在线多人联机领土大作战"
+        },
+        {
+          "title": "Pcol Snooker",
+          "link": "https://ztr8.online/",
+          "cover": "/blog/site-logo/default.png",
+          "description": "在线斯诺克，台球党的福利"
+        },
+        {
+          "title": "CPS Check",
+          "link": "https://cps-check.com/",
+          "cover": "https://cps-check.com/img/favicon.ico?v=1",
+          "description": "测试你鼠标点击手速的网站。"
+        },
+        {
+          "title": "Pranx",
+          "link": "https://pranx.com/",
+          "cover": "https://pranx.com/favicon.ico",
+          "description": "恶搞网站，比如模拟黑客入侵，系统更新"
+        },
+        {
+          "title": "魔方小站",
+          "link": "http://www.rubik.com.cn/fridrich3.htm",
+          "cover": "/blog/site-logo/cubes.gif",
+          "description": "魔方的玩法，魔方口诀，魔方公式，魔方秘诀，魔方手法，CFOP(视频教程+单个公式视频演示+3D动画)"
+        },
+        {
+          "title": "折纸网",
+          "link": "https://www.aizhezhi.com/index.html",
+          "cover": "https://www.aizhezhi.com/favicon.ico",
+          "description": "爱折纸网用心做最好的折纸大全图解网站，包括简单的儿童折纸大全、适合成年人的折纸图解及较难的创意折纸教程和作品，与你分享手工折纸的乐趣。"
+        },
+        {
+          "title": "只因网",
+          "link": "https://hsdmf.github.io/kunkun.pages/",
+          "cover": "https://hsdmf.github.io/kunkun.pages/icon.ico",
+          "description": "我知道你很忙，你还是过来看看吧..."
+        }
+      ]
+    },
+    {
+      "title": "学生天地",
+      "list": [
+        {
+          "title": "考试酷",
+          "link": "https://www.examcoo.com/",
+          "cover": "https://www.examcoo.com/favicon.ico",
+          "description": "这是一个收录 300 多万份试卷和 200 多万套试题的网站"
+        },
+        {
+          "title": "中国试卷网",
+          "link": "https://sj.zxxk.com/",
+          "cover": "https://sj.zxxk.com/favicon.ico",
+          "description": "中学试卷网为您提供优质的初中高中试卷资源,包括语文/数学/英语试卷等全部学科试卷。同时提供高考试卷的最新追踪,第一时间呈现高考模拟试卷,及高考试卷及答案。借助学科网海量的教学资源,中学试卷网将竭力打造权威的试卷资源网。"
+        },
+        {
+          "title": "PhET",
+          "link": "https://phet.colorado.edu/en/simulations/filter?locale=zh_CN",
+          "cover": "https://phet.colorado.edu/favicon.ico",
+          "description": "从小学到大学，包含数学、物理、化学、生物、地理等知识的可交互性操作网站。点点屏幕在家就能做实验。"
+        },
+        {
+          "title": "写个字吧",
+          "link": "https://xgzb.top/han",
+          "cover": "https://xgzb.top/favicon.ico",
+          "description": "字帖生成器，如果你有个打印机，估计会剩下不少字帖的钱，哈哈哈...."
+        },
+        {
+          "title": "Chind  Textbook",
+          "link": "https://github.com/TapXWorld/ChinaTextbook",
+          "cover": "https://github.com/fluidicon.png",
+          "description": "github 上的一个项目，收录了小学到大学的所有教科书。"
+        }
+      ]
+    },
+    {
+      "title": "Windows",
+      "list": [
+        {
+          "title": "雨滴皮肤",
+          "link": "https://zhutix.com/tag/rainmeter/",
+          "cover": "https://zhutix.com/favicon.ico",
+          "description": "雨滴皮肤（Rainmeter皮肤），是一些有特定功能的Windows桌面小工具。让你的 Windows 焕然一新"
+        },
+        {
+          "title": "Bit Dock",
+          "link": "https://bitdock.cn/",
+          "cover": "https://bitdock.cn/favicon.ico",
+          "description": "BitDock 是一款运行在Windows系统中的停靠栏工具。让 Windows 用有和 Mac 一样的 dock 栏。"
+        },
+        {
+          "title": "UTools",
+          "link": "https://www.u-tools.cn/index.html",
+          "cover": "https://www.u-tools.cn/assets/favicon.png",
+          "description": "Windows 上一个非常快速的全局搜索工具。速度超出你的想象"
+        },
+        {
+          "title": "MyDockFinder",
+          "link": "https://www.mydockfinder.com/",
+          "cover": "https://www.mydockfinder.com/wp-content/uploads/2021/09/dock.ico",
+          "description": "付费软件，白嫖党还是 BitDock 香..."
         }
       ]
     },
@@ -256,6 +464,12 @@
           "description": "乡间郎中-中医文化，让养生深入你我健康生活，女性、男性、老人、儿童，我们用心让中医养生深入每个国人的点滴生活，更加健康、快乐，养生防病于未然，健康成就你我生活！"
         },
         {
+          "title": "默沙东诊疗手册",
+          "link": "https://www.msdmanuals.cn/",
+          "cover": "https://www.msdmanuals.cn/_next/static/media/favicon.f7343459.ico",
+          "description": "一个涵盖了医学所有领域成千上万主题的广泛医学信息来源。它们作为免费的公众服务提供给医疗专业人士和普罗大众。"
+        },
+        {
           "title": "worldlicenseplates",
           "link": "http://www.worldlicenseplates.com/",
           "cover": "/blog/site-logo/default.png",
@@ -278,29 +492,42 @@
           "link": "https://beddystories.com/zh",
           "cover": "https://beddystories.com/favicon.svg",
           "description": "探索来自世界各地的精选睡前故事，让孩子在温馨的故事中进入梦乡"
-        }
-      ]
-    },
-    {
-      "title": "学生天地",
-      "list": [
-        {
-          "title": "考试酷",
-          "link": "https://www.examcoo.com/",
-          "cover": "https://www.examcoo.com/favicon.ico",
-          "description": "这是一个收录 300 多万份试卷和 200 多万套试题的网站"
         },
         {
-          "title": "PhET",
-          "link": "https://phet.colorado.edu/en/simulations/filter?locale=zh_CN",
-          "cover": "https://phet.colorado.edu/favicon.ico",
-          "description": "从小学到大学，包含数学、物理、化学、生物、地理等知识的可交互性操作网站。点点屏幕在家就能做实验。"
+          "title": "IFixIT",
+          "link": "https://zh.ifixit.com/",
+          "cover": "https://assets.cdn.ifixit.com/static/icons/ifixit/apple-touch-icon-76x76.png",
+          "description": "互联网电子产品维修指南，比如给你的 iphone 换个电池"
         },
         {
-          "title": "写个字吧",
-          "link": "https://xgzb.top/han",
-          "cover": "https://xgzb.top/favicon.ico",
-          "description": "字帖生成器，如果你有个打印机，估计会剩下不少字帖的钱，哈哈哈...."
+          "title": "实时天气图、台风追踪",
+          "link": "https://zoom.earth/maps/satellite/#view=31.8,142.7,4z",
+          "cover": "https://zoom.earth/assets/images/icon-400.8.jpg",
+          "description": "近乎实时的全球气象卫星图像。在美国每10分钟更新一次。"
+        },
+        {
+          "title": "Emoji 合成器",
+          "link": "https://emoji6.com/emojimix/",
+          "cover": "https://emoji6.com/emojimix/emojimix_files/icons/meowtle.png",
+          "description": "简单，好玩，稍微有点用"
+        },
+        {
+          "title": "网页版 win96 系统",
+          "link": "https://windows96.net/",
+          "cover": "https://img.ywyj.cn/1ad76794-bfde-4da8-908a-885760f417e3?imageView2/1/w/180/h/180",
+          "description": "非常好用的Windows虚拟机，比win93正式，直接使用，无需注册登录！"
+        },
+        {
+          "title": "卡通计时器",
+          "link": "https://cn.easycattimer.com/",
+          "cover": "data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAAAAyv/pAMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/1AMr/9QDK//UAyv/pAMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//IAyv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//IAyv/yAMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv/yAMr/8gDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr/9ADK//IAyv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDK//8Ayv//AMr//wDL//8Ay///AMr//wDK//YAyf/yAMz//wDS//8A0v//AMj//wDD//8Axv//AMr//wDL//8Ayv//AMb//wDL//8A0P//AM///wDL//8Ayf/TAM7/8gDE//8Ap///AKr//wzL//811///F8///wDE//8AyP//AML//wzY//8Fyv//AKL//wCs//8Ay///AMz/ngDQ//sAw///AI3//wCN///b8/////////z///9u3///BML//5Xp///k7ev/mND1/wB+//8Akv//AMf//wDP/2cAyf/zAMj//x7K///z9f///+3l/5mTkv////r//f///zDa////////roN4//HY0f/H6P//Cb7//wDK//8Ayv8jAMr/eQDG//8Qzv//6f/////+9P//39b////+/7vy//8Hwv//iOX//+/u7/////z/xvr//wTM//8AyP/dAMr/AADK/wAAy//tAMX//wPJ//9o4v//kvT//2Xf//8Gyf//AMT//wDD//8i2f//JdT//wDG//8AyP//AMv/mQDK/wAAyv8AAMr/XQDL//8Ax///AMH/8wDB/94Awf/cAMf/xwDM/6EAyv98AMb/WwDF/zIAyf9IAMv//wDK/2UAyv8AAMr/AADK/wAAyv/IAMr//wDK/x4Ayv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/0QAyv8XAMr/AADK/wAAyv8AAMr/HADK/2AAyv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/wAAyv8AAMr/AADK/wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAACAAQAAgAEAAMf5AADP/wAA//8AAA==",
+          "description": "支持桌面端下载，虽然没卵用"
+        },
+        {
+          "title": "人格测试",
+          "link": "https://www.16personalities.com/ch/%E4%BA%BA%E6%A0%BC%E6%B5%8B%E8%AF%95",
+          "cover": "https://www.16personalities.com/static/images/favicons/favicon-32x32.png",
+          "description": "免费人格测试"
         }
       ]
     }
