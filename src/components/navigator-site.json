@@ -237,7 +237,7 @@
       ]
     },
     {
-      "title": "编码艺术",
+      "title": "全栈开发",
       "list": [
         {
           "title": "quickref",
@@ -250,6 +250,18 @@
           "link": "https://3.jetbra.in/",
           "cover": "/blog/site-logo/default.png",
           "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html"
+        },
+        {
+          "title": "1 Panel",
+          "link": "https://1panel.cn/",
+          "cover": "https://1panel.cn/favicon.png",
+          "description": "1Panel 提供了一个直观的 Web 界面，帮助用户轻松管理 Linux 服务器中的应用、网站、文件、数据库以及大语言模型（LLMs）等。"
+        },
+        {
+          "title": "小飞的空间",
+          "link": "https://xfei.flowus.cn/",
+          "cover": "https://tc-cdn.flowus.cn/oss/85111b96-ede9-40d3-a78c-5bf2374537e6/280.png?time=1753696800&token=f628551c4141f8b60fb9f7da8e3547a8c3cd73b4be516553f582c18a5093f038&role=sharePaid",
+          "description": "一个很好的 Python 的全栈学习视频，包含 Python 基础、MySQL 基础、前端基础... 目前还在更新。授课风格类似于 “老男孩”，好在视频很短有学习欲望... 多平台视频 B站、抖音... 坐地铁也能看。"
         }
       ]
     },
@@ -302,12 +314,6 @@
           "link": "https://linux.do/latest",
           "cover": "https://linux.do/uploads/default/optimized/3X/7/d/7de31932a4fd533496cfe35979a4d9d995bb5c63_2_180x180.png",
           "description": "沉浸式摸鱼，摸鱼佬最后一片净土。"
-        },
-        {
-          "title": "掘金 沸点",
-          "link": "https://juejin.cn/pins/hot",
-          "cover": "https://lf-web-assets.juejin.cn/obj/juejin-web/xitu_juejin_web/static/favicons/apple-touch-icon.png",
-          "description": "从技术社区沦落到摸鱼社区的典范，各种矛盾体的战场..."
         },
         {
           "title": "H5 小游戏合集",
@@ -465,13 +471,19 @@
           "description": "从小学到大学，包含数学、物理、化学、生物、地理等知识的可交互性操作网站。点点屏幕在家就能做实验。"
         },
         {
+          "title": "化学实验软件",
+          "link": "https://hx.nobook.com/console/templates/resource",
+          "cover": "https://hx.nobook.com/chem.ico",
+          "description": "初高中所有类型教科书的化学实验在线操作。部分需要 VIP"
+        },
+        {
           "title": "写个字吧",
           "link": "https://xgzb.top/han",
           "cover": "https://xgzb.top/favicon.ico",
           "description": "字帖生成器，如果你有个打印机，估计会剩下不少字帖的钱，哈哈哈...."
         },
         {
-          "title": "Chind  Textbook",
+          "title": "China  Textbook",
           "link": "https://github.com/TapXWorld/ChinaTextbook",
           "cover": "https://github.com/fluidicon.png",
           "description": "github 上的一个项目，收录了小学到大学的所有教科书。"
