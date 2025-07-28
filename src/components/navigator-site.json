@@ -135,6 +135,29 @@
       ]
     },
     {
+      "title": "工具集合",
+      "list": [
+        {
+          "title": "Toepub",
+          "link": "https://toepub.com/zh/",
+          "cover": "https://toepub.com/images/toepub/icon.png",
+          "description": "此免费在线转换软件软件可转换PDF或其它文档至最流行的电子书格式：EPUB，MOBI/ AZW3，FB2，微软阅读器LIT和Sony LRF。"
+        },
+        {
+          "title": "Worldvectorlogo",
+          "link": "https://worldvectorlogo.com/",
+          "cover": "https://cdn.worldvectorlogo.com/static/img/favicon.ico",
+          "description": "收录了各大品牌的 Logo，拥有最大的SVG徽标矢量集合。所有徽标均适用于EPS、AI、PSD和Adobe PDF。无账号，免费无限下载。"
+        },
+        {
+          "title": "urongda",
+          "link": "https://www.urongda.com/",
+          "cover": "https://www.urongda.com/favicon/favicon-48x48.png",
+          "description": "汇集全国高校的矢量校徽，提供高质量的可缩放SVG文件，适合设计师、学生和机构使用。"
+        }
+      ]
+    },
+    {
       "title": "上班摸鱼",
       "list": [
         {
@@ -180,10 +203,104 @@
           "description": "你能通过对话猜出病人得了什么病吗？"
         },
         {
+          "title": "这 B 班值不值得上",
+          "link": "https://worthjob.zippland.com/",
+          "cover": "https://worthjob.zippland.com/favicon.ico",
+          "description": "这b班上得值不值 - 计算你的工作性价比 | Job Worth Calculator - Calculate your job's value"
+        },
+        {
           "title": "魔方小站",
           "link": "http://www.rubik.com.cn/fridrich3.htm",
           "cover": "/blog/site-logo/cubes.gif",
           "description": "魔方的玩法，魔方口诀，魔方公式，魔方秘诀，魔方手法，CFOP(视频教程+单个公式视频演示+3D动画)"
+        },
+        {
+          "title": "Keyboard Simulator",
+          "link": "https://keyboardsimulator.xyz/",
+          "cover": "https://keyboardsimulator.xyz/favicon.png",
+          "description": "设计和测试虚拟键盘"
+        },
+        {
+          "title": "redian.me",
+          "link": "https://www.redian.me/",
+          "cover": "https://www.redian.me/favicon-32x32.png",
+          "description": "如果你真的没机会摸鱼，请务必使用此网站摸鱼，支持 Excel、Wrod 模式。"
+        },
+        {
+          "title": "territorial",
+          "link": "https://territorial.io/",
+          "cover": "https://territorial.io/favicon.ico",
+          "description": "在线多人联机领土大作战"
+        }
+      ]
+    },
+    {
+      "title": "杂七杂八",
+      "list": [
+        {
+          "title": "Animeted Drawings",
+          "link": "https://sketch.metademolab.com/canvas",
+          "cover": "https://sketch.metademolab.com/M_Favicon_1632.ico",
+          "description": "将你的手绘图片，想动画片一样，动起来。"
+        },
+        {
+          "title": "乡音苑",
+          "link": "https://phonemica.net/",
+          "cover": "https://phonemica.net/img/favicon.png?v=0.12",
+          "description": "一个收录了全国各地「方言」的网站，各位老乡，听听标准不。"
+        },
+        {
+          "title": "乡间郎中",
+          "link": "https://www.xjlz365.com/",
+          "cover": "https://www.xjlz365.com/favicon.ico",
+          "description": "乡间郎中-中医文化，让养生深入你我健康生活，女性、男性、老人、儿童，我们用心让中医养生深入每个国人的点滴生活，更加健康、快乐，养生防病于未然，健康成就你我生活！"
+        },
+        {
+          "title": "worldlicenseplates",
+          "link": "http://www.worldlicenseplates.com/",
+          "cover": "/blog/site-logo/default.png",
+          "description": "查看全世界各个国家不同年代的汽车车牌设计。"
+        },
+        {
+          "title": "书签地球",
+          "link": "https://www.bookmarkearth.cn/page?currentPage=1",
+          "cover": "/blog/site-logo/default.png",
+          "description": "书签地球，中国首家浏览器书签搜索引擎平台。提供浏览器书签分享、在线制作、下载等，让书签动起来，全国最好用的浏览器书签共享平台"
+        },
+        {
+          "title": "FMHY",
+          "link": "https://fmhy.net/",
+          "cover": "https://fmhy.net/test.png",
+          "description": "号称是互联网上最大的免费资料收藏！"
+        },
+        {
+          "title": "BeddyStories - 全球经典儿童睡前故事库",
+          "link": "https://beddystories.com/zh",
+          "cover": "https://beddystories.com/favicon.svg",
+          "description": "探索来自世界各地的精选睡前故事，让孩子在温馨的故事中进入梦乡"
+        }
+      ]
+    },
+    {
+      "title": "学生天地",
+      "list": [
+        {
+          "title": "考试酷",
+          "link": "https://www.examcoo.com/",
+          "cover": "https://www.examcoo.com/favicon.ico",
+          "description": "这是一个收录 300 多万份试卷和 200 多万套试题的网站"
+        },
+        {
+          "title": "PhET",
+          "link": "https://phet.colorado.edu/en/simulations/filter?locale=zh_CN",
+          "cover": "https://phet.colorado.edu/favicon.ico",
+          "description": "从小学到大学，包含数学、物理、化学、生物、地理等知识的可交互性操作网站。点点屏幕在家就能做实验。"
+        },
+        {
+          "title": "写个字吧",
+          "link": "https://xgzb.top/han",
+          "cover": "https://xgzb.top/favicon.ico",
+          "description": "字帖生成器，如果你有个打印机，估计会剩下不少字帖的钱，哈哈哈...."
         }
       ]
     }
