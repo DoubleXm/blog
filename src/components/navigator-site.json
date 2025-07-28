@@ -233,6 +233,12 @@
           "link": "https://vue-data-ui.graphieros.com/",
           "cover": "https://vue-data-ui.graphieros.com/favicon.ico",
           "description": "一个很新的 Vue 图表库，UI很好看，但是很难找到与之风格匹配的中台。"
+        },
+        {
+          "title": "Vxe Table",
+          "link": "https://vxetable.cn/#/demo/list",
+          "cover": "https://vxetable.cn/v4/favicon.ico",
+          "description": "号称 Vue 的 Table 解决方案，功能确实挺完善的。"
         }
       ]
     },
