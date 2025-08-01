@@ -129,7 +129,9 @@ export default defineConfig({
           text: 'Docker',
           collapsed: true,
           items: [
-            { text: '介绍&安装', link: '/devops/docker/01-docker' }
+            { text: '安装&基本指令', link: '/devops/docker/01-docker' },
+            { text: 'Dockerfile & docker compose', link: '/devops/docker/02-dockerfile'},
+            { text: '实践', link: '/devops/docker/03-dockerfile' }
           ]
         },
         {

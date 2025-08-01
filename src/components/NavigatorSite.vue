@@ -174,7 +174,7 @@ const onKeywordInput = (val: string) => {
     
     .navigator-site-anchor {
       width: 180px;
-      padding: 20px;
+      padding-left: 20px;
       margin: 60px 20px 0 0;
     }
 
@@ -232,6 +232,12 @@ const onKeywordInput = (val: string) => {
         background-color: var(--el-backtop-hover-bg-color)
       }
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .navigator-site-page {
+    padding: 0 32px;
   }
 }
 </style>
