@@ -223,6 +223,12 @@
           "description": "Ant Motion 是以 React 组件来实现动画效果，用 Ant Design 实现页面后，可以轻松的增加页面里的动画效果。"
         },
         {
+          "title": "Motion",
+          "link": "https://github.com/motiondivision/motion",
+          "cover": "https://framerusercontent.com/images/3aQX5dnH5Yqgsn98QXKF2ZXxIE.png",
+          "description": "一个适用于React、JS和Vue的快速轻量级动画库。强大的AI和VS Code开发工具。Motion使用浏览器API来实现微小的文件大小和超快的性能。"
+        },
+        {
           "title": "DataV",
           "link": "http://datav.jiaminghi.com/",
           "cover": "http://datav.jiaminghi.com/favicon.ico",
@@ -239,6 +245,42 @@
           "link": "https://vxetable.cn/#/demo/list",
           "cover": "https://vxetable.cn/v4/favicon.ico",
           "description": "号称 Vue 的 Table 解决方案，功能确实挺完善的。"
+        },
+        {
+          "title": "Rough.js",
+          "link": "https://github.com/rough-stuff/rough",
+          "cover": "https://roughjs.com/images/fav.png",
+          "description": "<9kb, 一个手绘风格的图形库，可让您以粗略的手绘风格进行绘图。该库定义了用于绘制直线、曲线、圆弧、多边形、圆形和椭圆形图形。可以与 SVG Canvas 配合使用。"
+        },
+        {
+          "title": "hotkeys.js",
+          "link": "https://github.com/jaywcjlove/hotkeys-js",
+          "cover": "https://wangchujiang.com/favicon.ico",
+          "description": "~6kb, gzip 2.8kb。一个非常方便的按键事件绑定库。"
+        },
+        {
+          "title": "driver.js",
+          "link": "https://driverjs.com/docs/installation",
+          "cover": "https://driverjs.com/favicon.svg",
+          "description": "一个轻量级、无依赖性的普通JavaScript用户引导库，可以在整个页面上吸引用户的注意力。与 element-plus 中的 Tour 和 antd 中的 Tour 组件功能一致。"
+        },
+        {
+          "title": "rellax",
+          "link": "https://github.com/dixonandmoe/rellax",
+          "cover": "/blog/site-logo/default.png",
+          "description": "一个轻量级的视差滚动库。<br>React 视差滚动： https://github.com/jscottsmith/react-scroll-parallax"
+        },
+        {
+          "title": "typed.js",
+          "link": "https://github.com/mattboldt/typed.js/",
+          "cover": "https://mattboldt.com/favicon.ico",
+          "description": "轻轻松松让文字实现打字机效果"
+        },
+        {
+          "title": "wavesurfer.js",
+          "link": "https://github.com/katspaugh/wavesurfer.js",
+          "cover": "https://wavesurfer.xyz/favicons/favicon-32x32.png",
+          "description": "Wavesurfer.js是一个开源的音频可视化库，用于创建交互式、可定制的波形。"
         }
       ]
     },
