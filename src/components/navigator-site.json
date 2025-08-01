@@ -300,16 +300,22 @@
           "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html"
         },
         {
-          "title": "1 Panel",
-          "link": "https://1panel.cn/",
-          "cover": "https://1panel.cn/favicon.png",
-          "description": "1Panel 提供了一个直观的 Web 界面，帮助用户轻松管理 Linux 服务器中的应用、网站、文件、数据库以及大语言模型（LLMs）等。"
+          "title": "Hello 算法",
+          "link": "https://www.hello-algo.com/chapter_hello_algo/",
+          "cover": "https://www.hello-algo.com/assets/images/favicon.png",
+          "description": "动画图解、一键运行的数据结构与算法教程，学完这本书我强的可怕。"
         },
         {
           "title": "小飞的空间",
           "link": "https://xfei.flowus.cn/",
-          "cover": "https://tc-cdn.flowus.cn/oss/85111b96-ede9-40d3-a78c-5bf2374537e6/280.png?time=1753696800&token=f628551c4141f8b60fb9f7da8e3547a8c3cd73b4be516553f582c18a5093f038&role=sharePaid",
+          "cover": "/blog/site-logo/280.png",
           "description": "一个很好的 Python 的全栈学习视频，包含 Python 基础、MySQL 基础、前端基础... 目前还在更新。授课风格类似于 “老男孩”，好在视频很短有学习欲望... 多平台视频 B站、抖音... 坐地铁也能看。"
+        },
+        {
+          "title": "1 Panel",
+          "link": "https://1panel.cn/",
+          "cover": "https://1panel.cn/favicon.png",
+          "description": "1Panel 提供了一个直观的 Web 界面，帮助用户轻松管理 Linux 服务器中的应用、网站、文件、数据库以及大语言模型（LLMs）等。"
         }
       ]
     },
@@ -333,6 +339,12 @@
           "link": "https://txstc55.github.io/ugly-avatar/",
           "cover": "https://txstc55.github.io/ugly-avatar/avatar.png",
           "description": "如果你需要一个很抽象很潦草的头像，没错！就是这个网站"
+        },
+        {
+          "title": "卡通头像编辑",
+          "link": "https://katong.xygalaxy.com/",
+          "cover": "https://katong.xygalaxy.com/favicon.svg",
+          "description": "一个纯粹为了好玩的在线头像生成器"
         },
         {
           "title": "懒人 Excel",

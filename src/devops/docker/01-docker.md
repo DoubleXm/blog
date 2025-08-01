@@ -277,3 +277,38 @@ docker volume rm node-logger node-logger-1 node-logger-2 ...
 
 默认情况下如果什么参数也没有，则是 `Docker` 自动创建可写的容器层，只有执行 `docker rm` 的时候，数据才会被删除。
 
+### Bind Mount
+
+绑定到主机的文件系统，每个容器运行起来其实就是一个完整的 `linux` 系统。此操作就是将容器内的某个文件夹和外部的做出绑定，有点类似于软连接
+
+```bash :no-line-numbers
+# 启动 service:v1 容器，指定容器名，并且将系统的 tmp 和 容器的 tmp 绑定。
+# -v 前面是主机路径，后面是容器内路径
+docker run --name bind-mount -v /tmp:/tmp -d service:v1
+
+# 此时 /tmp 的任何变动都会被同步，达到持久化的目的。只能手动清理
+# 可以通过以下指令进入容器内部，测试效果
+docker exec -it bind-mount /bin/bash
+```
+
+### Named Volume
+
+使用 `docker volume` 创建数据卷进行绑定。只要数据卷不被删除，数据就会被保留。同时存在两份，一份在容器内，一份在宿主机。
+
+```bash :no-line-numbers
+docker volume create named_volume
+# 需要查看 inspect 中的 Mountpoint 地址
+docker volume inspect named_volume
+
+# -v 前面是数据卷名称，后面是数据卷地址
+docker run --name named-volume -v named_volume:/var/lib/docker/volumes/named_volume/_data -d service:v1
+```
+
+### Tmpfs Volume
+
+```bash :no-line-numbers
+docker run --tmpfs /tmp:rw,size=100m -d alpine
+
+# 也可以不指定，这样可能会把内存占满
+docker run --tmpfs /tmp -d alpine
+```
