@@ -281,6 +281,12 @@
           "link": "https://github.com/katspaugh/wavesurfer.js",
           "cover": "https://wavesurfer.xyz/favicons/favicon-32x32.png",
           "description": "Wavesurfer.js是一个开源的音频可视化库，用于创建交互式、可定制的波形。"
+        },
+        {
+          "title": "NES.css",
+          "link": "https://github.com/nostalgic-css/NES.css",
+          "cover": "https://nostalgic-css.github.io/NES.css/favicon.png",
+          "description": "提供了一套像素风的 css 预设，可以让你轻松的实现游戏机的风格。遗憾的是默认不支持中文，不过官网也有解决方案。"
         }
       ]
     },
