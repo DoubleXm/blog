@@ -306,6 +306,12 @@
           "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html"
         },
         {
+          "title": "LangShift.dev",
+          "link": "https://langshift.dev/",
+          "cover": "https://langshift.dev/favicon.ico",
+          "description": "LangShift.dev 是专门为开发者设计的编程语言转换学习平台。通过对比不同编程语言的语法特性和概念映射，帮助开发者快速掌握新语言。支持 JavaScript 到 Python、Rust 等多种语言转换学习，提供交互式代码编辑器和渐进式学习路径。"
+        },
+        {
           "title": "Hello 算法",
           "link": "https://www.hello-algo.com/chapter_hello_algo/",
           "cover": "https://www.hello-algo.com/assets/images/favicon.png",
