@@ -303,7 +303,7 @@
           "title": "JetBrains 全家桶破解工具",
           "link": "https://3.jetbra.in/",
           "cover": "/blog/site-logo/default.png",
-          "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html"
+          "description": "如果操作失败了，不放尝试配置一下代理<br>设置 -> HTTP 代理 -> 手动代理模式 <br>主机名：127.0.1.1  <br>端口号：80  <br>不为以下项使用代理：plugins.jetbrains.com <br>参考：https://www.cnblogs.com/yangyanrui/p/idea-ji-huo-fang-shi--mac.html<br>备用地址：https://jetbrains.xf233.net/"
         },
         {
           "title": "LangShift.dev",
