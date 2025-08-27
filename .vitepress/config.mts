@@ -152,6 +152,10 @@ export default defineConfig({
       ],
       "/python/": [
         {
+          text: '多版本&虚拟环境&依赖管理',
+          link: '/python/00-env'
+        },
+        {
           text: 'Python 基础教程',
           collapsed: true,
           items: [
@@ -162,7 +166,7 @@ export default defineConfig({
             { text: '05. 字符串格式化、文件、异常处理', link: '/python/05' },
             { text: '06. 面向对象', link: '/python/06' },
           ]
-        }
+        },
       ],
       "/interview/": [
         { 
