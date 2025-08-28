@@ -203,5 +203,181 @@ docs = [
 
 ## uv 基于 Py 的包和项目管理工具
 
-我觉得可以把他看成升级后的 `pyenv + pip`
+我觉得可以把他看成升级后的 `pyenv + pip` [文档](https://hellowac.github.io/uv-zh-cn/)
 
+[指令参考](https://hellowac.github.io/uv-zh-cn/reference/cli/)
+
+### 安装仅适用于 macOS
+
+```bash :no-line-numbers
+brew install uv
+# 如果版本过低，可以自行更新
+brew upgrade uv
+# 验证 uv 0.8.13 (Homebrew 2025-08-21)
+uv --version
+```
+
+### Py 版本管理
+
+摒弃 `pyenv` 的使用习惯，比如你下载后设置了 `global` 就想要验证 `python` 的版本号，在 `uv` 中是不可取的。
+
+`uv` 以项目优先，没有全局的版本的概念。如果你想要验证的话可以使用 `uv run python --version`，返回当前下载的最高版本。
+
+```bash :no-line-numbers
+# 安装版本 可以是多个 3.10 3.11
+uv python install 3.10
+
+# 查看当前安装的版本
+# 默认显示当前安装的版本和每个大版本的最新
+# --all-platforms 列出所有的平台版本
+# --only-installed 列出已安装版本
+# --all-versions 列出当前平台所有版本
+uv python list 
+
+# 卸载版本
+uv python uninstall 3.10
+
+# 在当前目录下使用指定的 python 版本
+uv python pin 3.10
+```
+
+### uv pip 指令
+
+兼容了原生的 `pip` 指令，更加容易被记忆。
+
+```bash :no-line-numbers
+uv pip install requests
+uv pip uninstall requests
+uv pip list
+# 列出已安装包及其版本
+uv pip freeze
+# 检查当前环境中的包是否兼容
+uv pip check
+# 查看环境的依赖树
+uv pip tree
+
+# 将需求文件编译为锁文件
+uv pip compile
+# 根据锁文件同步环境
+uv pip sync
+```
+
+### uv 缓存管理
+
+```bash :no-line-numbers
+# 清空缓存
+uv cache clean
+# 清空过期的缓存
+uv cache prune
+# 查看缓存的目录
+uv cache dir
+# 查看 py 的安装目录
+uv python dir
+```
+
+### Py 脚本运行
+
+```bash :no-line-numbers
+# uv run 运行一个脚本或者一个命令
+uv run python --version
+uv run example.py
+
+# 如果在包含 pyproject.toml 的目录中（项目内）执行，需要增加参数 --no-project
+uv run --no-project example.py
+
+# 也可以增加参数，在文件内部通过 sys.argv 获取
+uv run example.py hello wrold
+
+# --with 可以增加依赖的包
+echo "import requests; res = requests.get('https://jsonplaceholder.typicode.com/posts').json(); print(res)" |  uv run --with requests -
+```
+
+### Py 项目管理
+
+使用 `uv venv` 默认会在当前目录创建一个 `.venv` 的虚拟目录，如果该目录已经存在则会删除老的创建一个新的。
+
+`uv init` 提供基于 `python` 的最小项目模板[文档](https://hellowac.github.io/uv-zh-cn/concepts/projects/init/)，有两种模式 `--app` 及 `--lib`，默认是前者。
+
+```bash :no-line-numbers
+# 会在项目中创建 .python-version 和 pyproject.toml 文件
+# --lib 则创建出一个符合上传 PyPi 规范的项目结构
+uv init py-project
+```
+
+在 `pyproject.toml` 中有几个选项至关重要
+
+```bash
+project.dependencies # 生产依赖
+project.optional-dependencies # 可选依赖，比如代码格式化
+dependency-groups # 本地开发依赖，我的理解如果项目不会被打包，这里面基本不会存在任何内容
+tool.uv.source # 开发期间依赖项的替代，可以是 git 上的某个库的地址，并且支持指定 tag
+```
+
+`uv` 可以通过 `add` 和 `remove` 指令来管理项目中的依赖，可以通过 `--dev` `--group` 或者 `--optional` 添加到对应的依赖中。默认都是放在 `dependencies` 中。
+
+[文档](https://hellowac.github.io/uv-zh-cn/concepts/projects/dependencies/#_9)
+
+```bash :no-line-numbers
+uv add pandas
+
+# 安装到 dependency-groups 中的 dev 下
+uv add --dev django 
+
+# 安装 group 时需要指定名称，删除同理
+uv add --group dev-group numpy
+
+# 安装 optional 同样需要指定名称，删除同理。安装到 optional-dependencies 下 name 下
+uv add --optional optional flask
+```
+
+如果通过 `uv run main.py` 执行项目内的文件时，会自动生成 `uv.lock` 文件，当项目内没有 `.lock` 文件时则可以使用如下任意命令生成。
+
+```bash :no-line-numbers
+uv sync # 创建最新的 lock 文件
+uv lock # 同步项目依赖创建 lock 文件
+```
+
+[文档](https://hellowac.github.io/uv-zh-cn/concepts/projects/sync/) **将疑问交给时间沉淀吧！！！**
+
+### 项目实践
+
+实际开发中，存在也存在几种场景，接手老项目或者新开项目
+
+```bash :no-line-numbers
+# 指定项目中的 python 版本
+uv python pin 3.10.18
+
+# 创建 venv 环境
+uv venv
+
+# 安装依赖，有可能是 requirements 有可能是 pyproject.toml 文件
+# 默认只能安装 dependencies 中的配置。
+# --all-extras 安装所有依赖，包括 group、dev、optional
+uv install -r pyproject.toml
+```
+
+当然如果碰到了 `requirements.txt` 这样的依赖文件，也可以尝试使用 `uv` 实践出真知，最好能够回退。
+
+```bash :no-line-numbers
+# 放弃 add 和 remove 的实践，统一使用 uv pip install 等操作
+
+uv pip install -r requirements
+uv pip uninstall django
+
+uv pip freeze > requirments.txt
+
+# 使用 uv run 创建出来的 .lock 看情况要不要放在 .gitignore 中
+# 当然你的项目也不一定是由 uv run 来启动，比如 fastapi
+# uvicorn main:app --reload 参考 https://fastapi.tiangolo.com/zh/#_6
+uv run xx.py
+```
+
+### 总结
+
+作为一名前端，和同事的沟通以及社区的观察，目前看来 `uv` 是流行趋势，但是并没有完全普及，毕竟不是官方出的工具。
+
+当然你完全可以尝试使用 `uv` 做任何 `Python` 项目。
+
+除了 `uv` 之外还有其他的管理工具，比如 `peotry` [文档](https://python-poetry.org/)；万变不离其宗吧。碰到再说。
+
+你可能会看到一些开源项目的 `pyproject.toml` 为什么写的这么复杂，而我实践下来这么简单，我只能说，做了足够多的项目，踩了足够多的坑，你也可以。**实践出真知**
