@@ -93,6 +93,12 @@
       "title": "程序员工具箱",
       "list": [
         {
+          "title": "为PDF爱好者提供的PDF文件在线处理工具",
+          "link": "https://www.ilovepdf.com/zh-cn",
+          "cover": "https://www.ilovepdf.com/img/favicons-pdf/favicon-32x32.png",
+          "description": "它完全免费，而且使用方便。无论是合并PDF文件、拆分PDF文件、压缩PDF文件、Office文件转换为PDF文件，还是PDF转换为JPG图片等，iLovePDF都能满足您的需求！"
+        },
+        {
           "title": "Free Compress",
           "link": "https://freecompress.com/zh-cn",
           "cover": "https://freecompress.com/favicon-16x16.png",
