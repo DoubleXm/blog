@@ -141,8 +141,7 @@ export default defineConfig({
         },
         {
           text: 'Git',
-          collapsed: true,
-          items: []
+          link: '/devops/git/01'
         },
         {
           text: 'Jenkins',
