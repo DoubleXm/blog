@@ -164,6 +164,7 @@ export default defineConfig({
             { text: '04. 模块、包', link: '/python/04' },
             { text: '05. 字符串格式化、文件、异常处理', link: '/python/05' },
             { text: '06. 面向对象', link: '/python/06' },
+            { text: '07. 函数式编程', link: '/python/07' },
           ]
         },
       ],
