@@ -156,7 +156,7 @@ export default defineConfig({
         },
         {
           text: 'Python 基础教程',
-          collapsed: true,
+          collapsed: false,
           items: [
             { text: '01. 数字、字符串、列表及相关操作方法', link: '/python/01' },
             { text: '02. 流程控制、函数', link: '/python/02' },
@@ -165,6 +165,13 @@ export default defineConfig({
             { text: '05. 字符串格式化、文件、异常处理', link: '/python/05' },
             { text: '06. 面向对象', link: '/python/06' },
             { text: '07. 函数式编程', link: '/python/07' },
+          ]
+        },
+        {
+          text: 'Python 自动化',
+          collapsed: false,
+          items: [
+            { text: 'requests 接口请求', link: '/python/auto/01' },
           ]
         },
       ],
