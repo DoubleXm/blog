@@ -168,10 +168,33 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Python 进阶教程',
+          collapsed: false,
+          items: [
+            { text: '01. 装饰器', link: '/python/advanced/02' },
+            { text: '02. 迭代器与生成器', link: '/python/advanced/03' },
+            { text: '03. 类中的魔法方法', link: '/python/advanced/04' },
+            { text: '04. 元类', link: '/python/advanced/05' },
+            { text: '05. Python 内存管理', link: '/python/advanced/06' },
+            { text: '06. Python GIL', link: '/python/advanced/07' },
+            { text: '07. 多线程', link: '/python/advanced/08' },
+            { text: '08. 多进程', link: '/python/advanced/09' },
+            { text: '09. asyncio 异步编程(协程)', link: '/python/advanced/10' },
+          ]
+        },
+        {
           text: 'Python 自动化',
           collapsed: false,
           items: [
             { text: 'requests 接口请求', link: '/python/auto/01' },
+            { text: 'playwright WebUI 自动化', link: '/python/auto/02' },
+            { text: 'Selenium WebUI 自动化', link: '/python/auto/03' },
+            { text: 'unittest 原生测试框架', link: '/python/auto/04' },
+            { text: 'pytest 测试框架', link: '/python/auto/05' },
+            { text: 'beautifulsoup4 网页解析', link: '/python/auto/06' },
+            { text: 'openpyxl Excel 操作', link: '/python/auto/07' },
+            { text: 'pyyaml 读写 YAML 文件', link: '/python/auto/08' },
+            { text: 'pandas 数据处理', link: '/python/auto/09' },
           ]
         },
       ],
