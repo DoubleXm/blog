@@ -188,7 +188,6 @@ export default defineConfig({
           items: [
             { text: 'requests 接口请求', link: '/python/auto/01' },
             { text: 'playwright WebUI 自动化', link: '/python/auto/02' },
-            { text: 'Selenium WebUI 自动化', link: '/python/auto/03' },
             { text: 'unittest 原生测试框架', link: '/python/auto/04' },
             { text: 'pytest 测试框架', link: '/python/auto/05' },
             { text: 'beautifulsoup4 网页解析', link: '/python/auto/06' },
