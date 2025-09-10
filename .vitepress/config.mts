@@ -30,6 +30,7 @@ export default defineConfig({
         
     nav: [
       { text: '🤔...😲🚚💰', link: '/_project/module_standard' },
+      { text: 'AI', link: '/ai' },
       { 
         text: '大前端',
         items: [
@@ -188,7 +189,7 @@ export default defineConfig({
           items: [
             { text: 'requests 接口请求', link: '/python/auto/01' },
             { text: 'playwright WebUI 自动化', link: '/python/auto/02' },
-            { text: 'unittest 原生测试框架', link: '/python/auto/04' },
+            { text: 'unittest 原生测试框架', link: '/python/auto/03' },
             { text: 'pytest 测试框架', link: '/python/auto/05' },
             { text: 'beautifulsoup4 网页解析', link: '/python/auto/06' },
             { text: 'openpyxl Excel 操作', link: '/python/auto/07' },
@@ -229,6 +230,9 @@ export default defineConfig({
             { text: '2025-x-x 占位', link: '' },
           ]
         },
+      ],
+      "/ai/": [
+        {}
       ]
     },
 
