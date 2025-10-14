@@ -293,6 +293,12 @@
           "link": "https://github.com/nostalgic-css/NES.css",
           "cover": "https://nostalgic-css.github.io/NES.css/favicon.png",
           "description": "提供了一套像素风的 css 预设，可以让你轻松的实现游戏机的风格。遗憾的是默认不支持中文，不过官网也有解决方案。"
+        },
+        {
+          "title": "Vue Bits",
+          "link": "https://vue-bits.dev/",
+          "cover": "https://vue-bits.dev/favicon.ico",
+          "description": "文本、背景、组件、鼠标等动效；一个高质量、动画化、交互式且完全可定制的Vue组件开源集合，用于构建令人惊叹且难忘的用户界面。"
         }
       ]
     },
