@@ -1,5 +1,3 @@
-## 基础概念
-
 > [!NOTE]
 > 容器共享主机内核，轻量、隔离并且高效，不像虚拟机需要完整的操作系统。
 > - **容器 Container** 轻量化运行的实例，包含应用代码、运行时环境和依赖库。基于**镜像**创建，与其他容器隔离，共享主机操作系统内核（比虚拟机更高效）
@@ -9,7 +7,6 @@
 
 ![alt text](/devops/02-docker.webp)
 
-## 安装 (基于 CentOS 系统)
 
 [安装指南](https://docs.docker.com/engine/install/centos/)
 
@@ -311,4 +308,59 @@ docker run --tmpfs /tmp:rw,size=100m -d alpine
 
 # 也可以不指定，这样可能会把内存占满
 docker run --tmpfs /tmp -d alpine
+```
+
+## 网络 network
+
+
+| 指令 | 说明 |
+| --- | --- |
+| `docker network ls` | 列出所有网络 |
+| `docker network create [ 网络名 ]` | 创建一个网络 |
+| `docker network inspect [ 网络名 ]` | 查看网络信息 |
+| `docker network rm [ 网络名 ]` | 删除一个网络或多个网络 |
+| `docker network prune` | 删除所有未使用的网络 |
+| `docker network connect [ 网络名 ] [ 容器名 ]` | 将容器连接到网络 |
+| `docker network disconnect [ 网络名 ] [ 容器名 ]` | 将容器从网络断开 |
+
+```
+docker network ls
+
+NETWORK ID     NAME      DRIVER    SCOPE
+bad191c1899f   bridge    bridge    local
+6afb82bee62d   host      host      local
+a8a61a6bca9d   none      null      local
+
+运行容器时可以使用 --network 指定容器使用的网络， 默认 bridge
+
+- null 没有网络
+- host 直接使用主机的网络，容器和主机共享网络栈。容器的 IP 和 主机的 IP 一致
+- bridge 桥接网络，容器之间可以通过 IP 通信。会为每个容器分配 IP 地址
+```
+
+### bridge 桥接
+
+当使用 `docker network inspect bridge` 查看 bridge 网络的详细信息时，会发现有一个 `Containers` 字段，里面包含了所有连接到 bridge 网络的启动中的容器。
+
+其中的 `IPv4Address` 就是容器的 IP 地址。容器之间是可以被访问的。
+
+```bash :no-line-numbers
+# 创建两个 nginx 容器
+docker run --name nginx1 -d nginx
+docker run --name nginx2 -d nginx
+
+# 进入到其中一个容器去 ping 另一个容器的 ip
+docker exec -it nginx1 /bin/bash
+# ping 可能不存在需要被下载
+ping 172.17.0.2 # nginx2 的 IPv4Address
+
+# 只是 ping IP 还不够，因为每个容器的 ip 存在不固定性
+# 可以通过 --link 执行容器名
+docker run --name nginx2 --link nginx1 -d nginx
+
+# 进入 nginx2 容器，查看 /etc/hosts 文件
+docker exec -it nginx2 /bin/bash
+# 实际上就是在 hosts 文件中添加了一个 nginx1 的记录
+cat /etc/hosts
+# 172.17.0.2 nginx1 nginx1.bridge
 ```
