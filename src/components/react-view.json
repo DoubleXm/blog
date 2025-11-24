@@ -1,0 +1,226 @@
+[
+  {
+    "id": 1,
+    "name": "React",
+    "description": "用于构建用户界面的 JavaScript 库。React 是由 Facebook 开发的声明式、高效且灵活的库，用于构建可复用的 UI 组件。",
+    "tags": ["Core", "Library"],
+    "link": "https://react.dev/"
+  },
+  {
+    "id": 2,
+    "name": "Next.js",
+    "description": "React 的全栈框架。提供服务器端渲染 (SSR)、静态站点生成 (SSG) 和基于文件的路由，是构建生产级 React 应用的首选。",
+    "tags": ["SSR", "Framework"],
+    "link": "https://nextjs.org/"
+  },
+  {
+    "id": 3,
+    "name": "React Router",
+    "description": "React 生态系统中最标准的路由库。第 6 版引入了许多新特性，支持声明式路由和动态路由匹配。",
+    "tags": ["Routing"],
+    "link": "https://reactrouter.com/"
+  },
+  {
+    "id": 4,
+    "name": "TanStack Query (React Query)",
+    "description": "强大的异步状态管理库。用于在 React 中获取、缓存、同步和更新服务器状态，极大地简化了 API 请求处理。",
+    "tags": ["State", "Data Fetching"],
+    "link": "https://tanstack.com/query/latest"
+  },
+  {
+    "id": 5,
+    "name": "Zustand",
+    "description": "一个小巧、快速且可扩展的 React 状态管理解决方案。使用简化的 Flux 原则，Hook API 设计非常舒适，没有样板代码。",
+    "tags": ["State", "Lightweight"],
+    "link": "https://github.com/pmndrs/zustand"
+  },
+  {
+    "id": 6,
+    "name": "Redux Toolkit",
+    "description": "官方推荐的 Redux 开发工具集。旨在解决 Redux 配置复杂、样板代码多等问题，内置了 Thunk 和 Immer。",
+    "tags": ["State", "Flux"],
+    "link": "https://redux-toolkit.js.org/"
+  },
+  {
+    "id": 7,
+    "name": "Tailwind CSS",
+    "description": "一个功能类优先的 CSS 框架。通过组合原子类快速构建自定义用户界面，无需离开 HTML。",
+    "tags": ["CSS", "Utility-First"],
+    "link": "https://tailwindcss.com/"
+  },
+  {
+    "id": 8,
+    "name": "shadcn/ui",
+    "description": "设计精美的组件集合，你可以直接复制粘贴到你的应用中。基于 Radix UI 和 Tailwind CSS 构建，拥有极高的可定制性。",
+    "tags": ["UI", "Copy-Paste"],
+    "link": "https://ui.shadcn.com/"
+  },
+  {
+    "id": 9,
+    "name": "Framer Motion",
+    "description": "React 最好用的动画库。提供声明式的动画 API，支持布局动画、手势交互和复杂的过渡效果。",
+    "tags": ["Animation", "Motion"],
+    "link": "https://www.framer.com/motion/"
+  },
+  {
+    "id": 10,
+    "name": "MUI (Material UI)",
+    "description": "基于 Google Material Design 设计系统的 React 组件库。提供了一套完整、易用且美观的组件，适合快速开发企业级应用。",
+    "tags": ["UI", "Material Design"],
+    "link": "https://mui.com/"
+  },
+  {
+    "id": 11,
+    "name": "Ant Design",
+    "description": "企业级 UI 设计语言和 React 组件库。由蚂蚁金服开发，拥有庞大的组件生态，非常适合后台管理系统。",
+    "tags": ["UI", "Enterprise"],
+    "link": "https://ant.design/"
+  },
+  {
+    "id": 12,
+    "name": "React Hook Form",
+    "description": "高性能、灵活且易于验证的表单库。通过减少不必要的重新渲染来提高性能，API 简洁易懂。",
+    "tags": ["Form", "Hooks"],
+    "link": "https://react-hook-form.com/"
+  },
+  {
+    "id": 13,
+    "name": "classnames",
+    "description": "一个小巧的工具，用于有条件地构建 className 字符串。在处理动态样式类名时必不可少。",
+    "tags": ["Utility", "CSS"],
+    "link": "https://github.com/JedWatson/classnames"
+  },
+  {
+    "id": 14,
+    "name": "Jotai",
+    "description": "原始且灵活的 React 状态管理库。采用原子化 (Atomic) 模式，灵感来源于 Recoil，但更轻量。",
+    "tags": ["State", "Atomic"],
+    "link": "https://jotai.org/"
+  },
+  {
+    "id": 15,
+    "name": "Styled Components",
+    "description": "CSS-in-JS 的鼻祖之一。利用 ES6 模板字符串和 CSS 的强大功能，为你的组件编写实际的 CSS 代码。",
+    "tags": ["CSS", "CSS-in-JS"],
+    "link": "https://styled-components.com/"
+  },
+  {
+    "id": 16,
+    "name": "Remix",
+    "description": "专注于 Web 标准的全栈 Web 框架。现在由 Shopify 维护，强调更好的用户体验和极快的加载速度。",
+    "tags": ["Framework", "SSR"],
+    "link": "https://remix.run/"
+  },
+  {
+    "id": 18,
+    "name": "dnd-kit",
+    "description": "轻量级、模块化、高性能的 React 拖放工具库。旨在为拖放交互提供最佳的开发者体验和用户体验。",
+    "tags": ["Interaction", "Drag&Drop"],
+    "link": "https://dndkit.com/"
+  },
+  {
+    "id": 19,
+    "name": "Recharts",
+    "description": "基于 D3 构建的可组合图表库。专门为 React 设计，声明式地配置图表，支持 SVG 渲染。",
+    "tags": ["Data Viz", "Charts"],
+    "link": "https://recharts.org/"
+  },
+  {
+    "id": 20,
+    "name": "React Spring",
+    "description": "基于弹簧物理的动画库。它能够让你的 UI 动画看起来更加自然、流畅，不仅仅是基于时间的插值。",
+    "tags": ["Animation", "Physics"],
+    "link": "https://www.react-spring.dev/"
+  },
+  {
+    "id": 21,
+    "name": "SWR",
+    "description": "由 Vercel 开发的用于数据获取的 React Hook 库。策略是“先显示缓存(Stale)，再重新获取(Revalidate)”，提升用户体验。",
+    "tags": ["Data Fetching", "Vercel"],
+    "link": "https://swr.vercel.app/"
+  },
+  {
+    "id": 25,
+    "name": "Vitest",
+    "description": "由 Vite 提供支持的极速单元测试框架。虽然不是 React 独占，但它是目前测试 React 应用（尤其是使用 Vite 构建的）的最佳选择。",
+    "tags": ["Testing", "Vite"],
+    "link": "https://vitest.dev/"
+  },
+  {
+    "id": 26,
+    "name": "React Testing Library",
+    "description": "轻量级的 React 组件测试方案。鼓励你以用户使用的方式来测试组件，而不是测试实现细节。",
+    "tags": ["Testing"],
+    "link": "https://testing-library.com/docs/react-testing-library/intro/"
+  },
+  {
+    "id": 27,
+    "name": "Headless UI",
+    "description": "完全无样式、完全可访问的 UI 组件。旨在与 Tailwind CSS 完美集成，由 Tailwind Labs 团队开发。",
+    "tags": ["UI", "Headless", "Tailwind"],
+    "link": "https://headlessui.com/"
+  },
+  {
+    "id": 28,
+    "name": "react-i18next",
+    "description": "基于 i18next 的强大国际化框架。为 React 应用提供标准化的翻译管理方案。",
+    "tags": ["i18n", "Utility"],
+    "link": "https://react.i18next.com/"
+  },
+  {
+    "id": 29,
+    "name": "react-intl",
+    "description": "React 国际化库，提供了强大的国际化功能，包括消息格式化、日期、时间、数字等的本地化。",
+    "tags": ["i18n", "Utility"],
+    "link": "https://formatjs.github.io/docs/getting-started/installation"
+  },
+  {
+    "id": 30,
+    "name": "Antd 社区组件精选",
+    "description": "Ant Design 组件库的社区精选，整理了用于实现 react 的各种需求需要使用的组件",
+    "tags": ["UI", "Community"],
+    "link": "https://ant.design/docs/react/recommendation-cn"
+  },
+  {
+    "id": 31,
+    "name": "Ahooks",
+    "description": "React  Hooks 库，提供了常用的 React Hooks 实现，如 useRequest、useDebounce、useThrottle 等。",
+    "tags": ["Hooks", "Utility"],
+    "link": "https://ahooks.js.org/"
+  },
+  {
+    "id": 34,
+    "name": "dumi",
+    "description": "一个基于 Markdown 的文档生成工具。它可以帮助你快速生成文档，支持 React 组件的文档化。",
+    "tags": ["Documentation", "Markdown"],
+    "link": "https://d.umijs.org/"
+  },
+  {
+    "id": 32,
+    "name": "storybook",
+    "description": "一个用于开发和测试 React 组件的工具。它允许你在一个独立的环境中创建和展示组件，方便调试和文档编写。",
+    "tags": ["UI", "Storybook"],
+    "link": "https://storybook.js.org/"
+  },
+  {
+    "id": 33,
+    "name": "umi",
+    "description": "一个基于 React 的企业级前端应用框架。它提供了一整套开发工具和约定，帮助你快速构建和维护复杂的 React 应用。",
+    "tags": ["Framework", "Enterprise"],
+    "link": "https://umijs.org/"
+  },
+  {
+    "id": 35,
+    "name": "Antv G6",
+    "description": "一个基于 React 的图可视化库。它提供了丰富的图可视化功能，如节点、边、布局等。",
+    "tags": ["Data Viz", "Graph"],
+    "link": "https://g6.antv.antgroup.com/manual/introduction"
+  },
+  {
+    "id": 36,
+    "name": "DataV",
+    "description": "组件库支持 React、Vue版 ，主要用于构建大屏（全屏）数据展示页面即数据可视化，具有多种类型组件可供使用：",
+    "tags": ["DataV", "Charts"],
+    "link": "http://datav-react.jiaminghi.com/guide/#%E7%94%A8%E5%89%8D%E5%BF%85%E7%9C%8B"
+  }
+]

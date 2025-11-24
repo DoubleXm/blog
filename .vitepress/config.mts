@@ -36,7 +36,7 @@ export default defineConfig({
         items: [
           { text: '🌚 JavaScript', link: '/python/01' },
           { text: '🔞 Vue', link: '/vue/pinia/01' },
-          { text: '♻️ React', link: '/react' },
+          { text: '♻️ React', link: '/react/view' },
           { text: '🐜 微前端', link: '/micro-web/single-spa' },
           { text: '🐢 Node.js', link: '/node' },
           { text: '🦈 数据库', link: '/database' },
@@ -89,7 +89,46 @@ export default defineConfig({
           ]
         },
       ],
-      "/react/": [],
+      "/react/": [
+        {
+          text: 'React',
+          collapsed: true,
+          items: [
+            { text: '生态版图', link: '/react/view' },
+            { text: 'use hooks', link: '/react/hooks' },
+          ]
+        },
+        {
+          text: '一生之敌，源码',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: '组件库开发',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: '低代码简易实现',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: '各种尝鲜',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: 'React Native',
+          collapsed: true,
+          items: [
+          ]
+        }
+      ],
       "/micro-web/": [
         {
           text: 'SingleSpa',
