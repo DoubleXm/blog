@@ -222,5 +222,12 @@
     "description": "组件库支持 React、Vue版 ，主要用于构建大屏（全屏）数据展示页面即数据可视化，具有多种类型组件可供使用：",
     "tags": ["DataV", "Charts"],
     "link": "http://datav-react.jiaminghi.com/guide/#%E7%94%A8%E5%89%8D%E5%BF%85%E7%9C%8B"
+  },
+  {
+    "id": 37,
+    "name": "immer",
+    "description": "一个用于不可变数据结构的库。它允许你以可变的方式操作数据，而无需担心数据的不可变性。复杂对象的修改 setState、useReducer 等都可以使用 immer 来处理。",
+    "tags": ["Immutable", "Utility"],
+    "link": "https://immerjs.github.io/immer/zh-CN/"
   }
 ]

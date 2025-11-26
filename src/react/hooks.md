@@ -327,5 +327,212 @@ const App = () => {
 
 ## useContext
 
+向组件库的深层传递数据，跨层级传递数据。需要配合 `createContext` 来创建上下文。
+
+```js :no-line-numbers
+import { useState, useContext } from 'react';
+
+const GrandSon = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+  return <>
+    <h1 style={{ color: theme === 'light' ? 'black' : 'white' }}>GrandSon</h1>
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>change theme</button>
+  </>
+}
+
+const Son = () => <GrandSon />
+
+const ThemeContext = createContext({
+  theme: 'light',
+  setTheme: (theme: 'light' | 'dark') => {},
+})
+const App = () => {
+  const [theme, setTheme] = useState('light');
+  {/* v19 之后可以省略 .Provider */}
+  return <ThemeContext.Provider value={{ theme, setTheme }}>
+    <Son />
+  </ThemeContext.Provider>
+}
+```
+
 ## memo、useMemo、useCallback
 
+**memo 用于优化组件的渲染性能，当组件的 `props` `state` `context` 没有变化时，不会重新渲染组件。**
+
+**需要注意的是，memo 是浅比较，如果是对象或者复杂的内容还是要配合 `useMemo`、`useCallback` 来优化。**
+
+同样以切换主题为例，如果你在 Son 组件中加入了打印，发现每次点击都会打印，说明组件重新渲染了。实际上完全没有必要。
+
+```js :no-line-numbers
+const Son = memo(() => <GrandSon />)
+```
+
+**useCallback 用于优化函数的性能，当函数的依赖项没有变化时，不会重新创建函数。因为每次从新渲染后函数都会被从新创建**
+
+```js :no-line-numbers
+const Child1 = (props) => {
+  const { count, setCount } = props;
+  return <>
+    <h1>Child1 {count}</h1>
+    <button onClick={() => setCount(count + 1)}>click me</button>
+  </>
+}
+const Child2 = (props) => {
+  const { count, setCount } = props;
+  return <>
+    <h1>Child2 {count}</h1>
+    <button onClick={() => count === 0 ? setCount(count + 2) : setDoubleCount(count * 2)}>double count</button>
+  </>
+}
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [doubleCount, setDoubleCount] = useState(0);
+
+  return <>
+    <Child1 count={count} setCount={setCount} />
+    <Child2 count={doubleCount} setCount={setDoubleCount} />
+  </>
+}
+```
+
+理想情况下，除了首次渲染，之后只会渲染每次点击的组件。但实际上都会被渲染。此时可以使用 memo 来进行优化，避免不必要的更新。
+
+```js :no-line-numbers
+MemoChild1 = memo(Child1);
+```
+
+试想如果你需要额外再传递一个方法呢？因为每次更新后函数都会从新创建，基于有了 memo 优化，Child1 仍然每次都会执行。
+
+```js :no-line-numbers
+const App = () => {
+  // ...
+  function doSomething() {
+    console.log('do something');
+  }
+  return <>
+    <MemoChild1 count={count} setCount={setCount} doSomething={doSomething} />
+    <Child2 count={doubleCount} setCount={setDoubleCount} />
+  </>
+}
+```
+
+此时可以使用 `useCallback` 来优化函数的性能，当函数的依赖项没有变化时，不会重新创建函数。
+
+```js :no-line-numbers
+const doSomething = useCallback(() => {
+  console.log('do something');
+}, [])
+```
+
+既然函数可以被缓存，那么值也是可以被缓存的，使用 `useMemo` 来优化值的性能。
+
+正常来说每次 render 时，函数都会被整体执行一遍
+
+```js :no-line-numbers
+const App = () => {
+  const [count, setCount] = useState(0);
+  const doubleCount = count * 2;
+
+  return <>
+    <h1>count: {count}</h1>
+    <h1>doubleCount: {doubleCount}</h1>
+    <button onClick={() => setCount(count + 1)}>click me</button>
+  </>
+}
+```
+所以单独看上诉代码没有任何问题，但是如果此时再次需要一个开关。符合直觉的想法是，每次开关的点击 doubleCount 也会被重新计算。
+
+好在是这个运算很简洁，如果比较复杂，也可以使用 `useMemo` 来优化。这样就能避免不必要的优化。
+
+```js :no-line-numbers
+const App = () => {
+  const [count, setCount] = useState(0);
+  const doubleCount = useMemo(() => count * 2, [count]);
+
+  const [isOpen, setIsOpen] = useState(false);
+  return <>
+    <h1>count: {count}</h1>
+    <h1>doubleCount: {doubleCount}</h1>
+    <button onClick={() => setCount(count + 1)}>click me</button>
+    <input type="checkbox" checked={isOpen} onChange={() => setIsOpen(!isOpen)} />
+  </>
+}
+```
+
+## 闭包陷阱
+
+[搞定 React Hooks 闭包问题，让你的代码不再"失忆"](https://github.com/wangkaiwd/fe-blog/issues/5) 这是在 github 中看到别人的总结。
+
+文中表述了一些常见的场景下，effect 中获取不到最新的 state
+
+``` :no-line-numbers
+延迟执行（ setTimeout、 Promise 等）
+DOM 事件监听
+防抖函数
+```
+
+```js :no-line-numbers
+const App = () => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    // promise interval 等异步操作中，获取到的 state 是旧值
+    setTimeout(() => {
+      console.log('count: ', count);
+    }, 2000);
+  }, [count])
+
+  return <>
+    <h1>count: {count}</h1>
+    <button onClick={() => setCount(count + 1)}>click me</button>
+  </>
+}
+```
+
+### 方案一 ref
+
+使用 ref 获取最新的 state，ref 的变更不会引起组件重新渲染。
+
+```js :no-line-numbers
+const [count, setCount] = useState(0);
+const countRef = useRef(count);
+useEffect(() => {
+  // promise interval 等异步操作中，获取到的 state 是旧值
+  setTimeout(() => {
+    console.log('count: ', countRef.current);
+  }, 2000);
+}, [count])
+
+<button onClick={() => {
+  countRef.current = count + 1;
+  setCount(count + 1);
+}}>click me</button>
+```
+
+### 方案二 useEffectEvent v19
+
+```js :no-line-numbers
+const [count, setCount] = useState(0);
+
+const event = useEffectEvent(() => {
+  setTimeout(() => {
+    console.log('count: ', count);
+  }, 2000);
+});
+
+useEffect(() => {
+  event();
+}, [count])
+
+<button onClick={() => setCount(count + 1)}>click me</button>
+```
+
+## 更进一步
+
+[React Hooks 使用误区，驳官方文档](https://github.com/brickspert/blog/issues/45)
+
+[React 18 总览](https://github.com/brickspert/blog/issues/48)
+
+[React 19 总览](https://github.com/brickspert/blog/issues/66)
+
+[助你完全理解React高阶组件（Higher-Order Components）](https://github.com/brickspert/blog/issues/2)
