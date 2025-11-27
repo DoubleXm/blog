@@ -96,6 +96,8 @@ export default defineConfig({
           items: [
             { text: '生态版图', link: '/react/view' },
             { text: 'use hooks', link: '/react/hooks' },
+            { text: 'React for TypeScript', link: '/react/react-for-ts' },
+            { text: '受控组件 vs 非受控组件', link: '/react/controlled-vs-uncontrolled' },
           ]
         },
         {
