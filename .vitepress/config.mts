@@ -110,6 +110,22 @@ export default defineConfig({
           text: '组件库开发',
           collapsed: true,
           items: [
+            { text: 'storybook 组件库文档', link: '/react/components/storybook' },
+            { text: '组件库打包', link: '/react/components/packaging' },
+            { text: 'DatePickerPanel 日期选择面板', link: '/react/components/datepickerpanel' },
+            { text: 'Calendar 日历', link: '/react/components/calendar' },
+            { text: 'Icon 图标', link: '/react/components/icon' },
+            { text: 'Space 间距', link: '/react/components/space' },
+            { text: 'WaterMark 水印', link: '/react/components/watermark' },
+            { text: 'message 全局提示', link: '/react/components/message' },
+            { text: 'Popover 气泡卡片', link: '/react/components/popover' },
+            { text: 'ColorPicker 颜色选择器', link: '/react/components/colorpicker' },
+            { text: 'Tour 漫游式引导', link: '/react/components/tour' },
+            { text: 'Form 表单', link: '/react/components/form' },
+            { text: 'Upload 上传', link: '/react/components/upload' },
+            { text: 'MutateObserver DOM变更', link: '/react/components/metateovserve' },
+            { text: 'Portal 渲染到指定 DOM', link: '/react/components/portal' },
+            { text: 'CopyToClipboard 复制到剪贴板', link: '/react/components/copyToClipboard' },
           ]
         },
         {
