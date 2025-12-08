@@ -110,7 +110,7 @@ export default defineConfig({
           text: '组件库开发',
           collapsed: true,
           items: [
-            { text: 'storybook 组件库文档', link: '/react/components/storybook' },
+            { text: 'StoryBook 组件库文档', link: '/react/components/storybook' },
             { text: '组件库打包', link: '/react/components/packaging' },
             { text: 'DatePickerPanel 日期选择面板', link: '/react/components/datepickerpanel' },
             { text: 'Calendar 日历', link: '/react/components/calendar' },
