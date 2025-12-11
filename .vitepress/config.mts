@@ -98,6 +98,7 @@ export default defineConfig({
             { text: 'use hooks', link: '/react/hooks' },
             { text: 'React for TypeScript', link: '/react/react-for-ts' },
             { text: '受控组件 vs 非受控组件', link: '/react/controlled-vs-uncontrolled' },
+            { text: '深入理解 Suspense 和 ErrorBoundary', link: '/react/lazy-loading-error-catching' },
           ]
         },
         {
@@ -126,6 +127,7 @@ export default defineConfig({
             { text: 'MutateObserver DOM变更', link: '/react/components/metateovserve' },
             { text: 'Portal 渲染到指定 DOM', link: '/react/components/portal' },
             { text: 'CopyToClipboard 复制到剪贴板', link: '/react/components/copyToClipboard' },
+            { text: '单元测试', link: '/react/components/test' },
           ]
         },
         {
