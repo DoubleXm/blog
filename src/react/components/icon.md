@@ -52,6 +52,7 @@ const Icon: React.FC<IconProps> = (props) => {
     spin,
     ref,
     children,
+    viewBox = '0 0 1024 1024',
     ...restProps
   } = props;
 
@@ -61,6 +62,7 @@ const Icon: React.FC<IconProps> = (props) => {
       className={classNames}
       style={styles}
       ref={ref}
+      viewBox={viewBox}
       fill="currentColor"
       {...restProps}
     >
