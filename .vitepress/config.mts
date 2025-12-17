@@ -34,7 +34,6 @@ export default defineConfig({
       { 
         text: '大前端',
         items: [
-          { text: '🌚 JavaScript', link: '/python/01' },
           { text: '🔞 Vue', link: '/vue/pinia/01' },
           { text: '♻️ React', link: '/react/view' },
           { text: '🐜 微前端', link: '/micro-web/single-spa' },
@@ -54,6 +53,12 @@ export default defineConfig({
           text: '工程化',
           items: [
             { text: '模块化的发展及 SystemJS 原理', link: '/_project/module_standard' },
+          ]
+        },
+        {
+          text: 'Browser',
+          items: [
+            { text: '浏览器中常见的观察者 Observer', link: '/_project/observer'}
           ]
         },
         {
