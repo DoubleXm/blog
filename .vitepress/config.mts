@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
-    outline: [2, 3],
+    outline: 'deep',
     search: {
       provider: 'local'
     },
