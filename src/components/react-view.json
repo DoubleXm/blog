@@ -236,5 +236,12 @@
     "description": "与框架无关，一个用于将文本复制到剪贴板的库。它提供了简单的 API，方便你在 React 应用中实现复制功能。",
     "tags": ["Utility"],
     "link": "https://www.npmjs.com/package/copy-to-clipboard"
+  },
+  {
+    "id": 39,
+    "name": "js-cookie",
+    "description": "与框架无关，一个用于操作浏览器 Cookies 的库。它提供了简单的 API，方便你在 React 应用中管理 Cookies。",
+    "tags": ["Utility"],
+    "link": "https://www.npmjs.com/package/js-cookie"
   }
 ]
