@@ -95,11 +95,11 @@ export default defineConfig({
         },
       ],
       "/react/": [
+        { text: '工具速查', link: '/react/view' },
         {
           text: 'React',
           collapsed: true,
           items: [
-            { text: '生态版图', link: '/react/view' },
             { text: 'use hooks', link: '/react/hooks' },
             { text: 'React for TypeScript', link: '/react/react-for-ts' },
             { text: '受控组件 vs 非受控组件', link: '/react/controlled-vs-uncontrolled' },
@@ -108,9 +108,48 @@ export default defineConfig({
           ]
         },
         {
+          text: 'Router',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: '状态管理',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: 'Next.js',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: 'Remix',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
+          text: '周边生态',
+          collapsed: true,
+          items: [
+          ]
+        },
+        {
           text: '一生之敌，源码',
           collapsed: true,
           items: [
+          ]
+        },
+        {
+          text: '样式处理方案',
+          collapsed: true,
+          items: [
+            { text: 'tailwind', link: '/react/tailwind' },
+            { text: 'css-in-js(styled component)', link: '/react/css-in-js' },
+            { text: 'css module', link: '/react/styled-components' },
           ]
         },
         {
@@ -138,13 +177,17 @@ export default defineConfig({
           ]
         },
         {
-          text: '低代码简易实现',
+          text: 'React Spring',
           collapsed: true,
           items: [
+            { text: '弹簧动画', link: '/react/spring/01' },
+            { text: '+ use-gesture 手势操作', link: '/react/spring/02' },
+            { text: '划入划出转场动画', link: '/react/spring/03' },
+            { text: '+ react-transition-group 过渡动画', link: '/react/spring/04' },
           ]
         },
         {
-          text: '各种尝鲜',
+          text: 'React Playground',
           collapsed: true,
           items: [
           ]
@@ -154,7 +197,13 @@ export default defineConfig({
           collapsed: true,
           items: [
           ]
-        }
+        },
+        {
+          text: '低代码简易实现',
+          collapsed: true,
+          items: [
+          ]
+        },
       ],
       "/micro-web/": [
         {
