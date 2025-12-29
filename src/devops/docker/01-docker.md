@@ -364,3 +364,39 @@ docker exec -it nginx2 /bin/bash
 cat /etc/hosts
 # 172.17.0.2 nginx1 nginx1.bridge
 ```
+
+### --net 指定网络模式
+
+``` bash :no-line-numbers
+docker run --name nginx1 --net none -d nginx
+docker run --name nginx2 --net host -d nginx
+```
+
+### 端口映射
+
+通过 `docker inspect [ 容器名 ]` 可以查看容器的详细信息，其中的 `ExposedPorts` 字段就是容器暴露的端口。
+
+
+``` bash :no-line-numbers
+docker inspect mysql_5.7
+
+# "ExposedPorts": {
+#     "3306/tcp": {},
+#     "33060/tcp": {}
+# },
+```
+
+```bash :no-line-numbers
+# 通过 -p 将容器的 80 端口映射到主机的 8080 端口
+docker run --name port_nginx -d -p 8080:80 nginx
+```
+
+可以通过 `docker port [ 容器名 ]` 查看端口映射关系
+
+```bash :no-line-numbers
+docker port port_nginx
+# 或者使用 
+docker container port port_nginx
+# 8080/tcp -> 0.0.0.0:8080
+# 8080/tcp -> :::8080
+```
