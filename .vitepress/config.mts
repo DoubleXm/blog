@@ -265,8 +265,7 @@ export default defineConfig({
         },
         {
           text: 'Nginx',
-          collapsed: true,
-          items: [],
+          link: '/devops/nginx/01'
         },
         {
           text: 'Docker',
