@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>65岁退休Coder - Terminal Authority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#526900",
+                        "on-primary-container": "#4a5e00",
+                        "outline": "#777575",
+                        "on-tertiary-fixed-variant": "#505e73",
+                        "secondary-fixed-dim": "#00ec3b",
+                        "surface-container-high": "#201f1f",
+                        "inverse-surface": "#fcf8f8",
+                        "tertiary-dim": "#cad8f0",
+                        "on-tertiary": "#4f5d71",
+                        "surface-bright": "#2c2c2c",
+                        "surface-container-lowest": "#000000",
+                        "surface-container-low": "#131313",
+                        "secondary": "#00fc40",
+                        "inverse-on-surface": "#565554",
+                        "secondary-dim": "#00ec3b",
+                        "on-secondary": "#005a10",
+                        "on-tertiary-fixed": "#344255",
+                        "tertiary-container": "#d8e6ff",
+                        "inverse-primary": "#516700",
+                        "surface-tint": "#f3ffca",
+                        "surface-variant": "#262626",
+                        "on-secondary-fixed": "#00440a",
+                        "error-container": "#b92902",
+                        "surface-dim": "#0e0e0e",
+                        "on-error-container": "#ffd2c8",
+                        "on-primary-fixed": "#3a4a00",
+                        "secondary-container": "#006e16",
+                        "on-tertiary-container": "#465468",
+                        "on-background": "#ffffff",
+                        "primary": "#f3ffca",
+                        "surface-container": "#1a1919",
+                        "background": "#0e0e0e",
+                        "surface": "#0e0e0e",
+                        "on-surface": "#ffffff",
+                        "primary-fixed": "#cafd00",
+                        "primary-container": "#cafd00",
+                        "primary-dim": "#beee00",
+                        "on-secondary-container": "#e6ffdc",
+                        "tertiary": "#eff4ff",
+                        "error-dim": "#d53d18",
+                        "outline-variant": "#494847",
+                        "on-error": "#450900",
+                        "tertiary-fixed": "#d8e6ff",
+                        "tertiary-fixed-dim": "#cad8f0",
+                        "on-primary": "#516700",
+                        "primary-fixed-dim": "#beee00",
+                        "on-secondary-fixed-variant": "#006513",
+                        "error": "#ff7351",
+                        "secondary-fixed": "#00fc40",
+                        "surface-container-highest": "#262626",
+                        "on-surface-variant": "#adaaaa",
+                        "info": "#3b82f6",
+                        "warning-accent": "#f59e0b",
+                        "danger": "#ef4444"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "Noto Sans SC", "sans-serif"],
+                        "body": ["Inter", "system-ui", "-apple-system", "BlinkMacSystemFont", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "sans-serif"],
+                        "label": ["Inter", "Noto Sans SC", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 2px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cafd00; }
+        .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+        /* Obsidian Terminal High-Contrast Code Highlighting */
+        .code-block-container { background-color: #0d0d0d; }
+        .code-keyword { color: #00ffff; } /* Cyan */
+        .code-function { color: #ff00ff; } /* Magenta */
+        .code-string { color: #39ff14; } /* Neon Green */
+        .code-comment { color: #666666; font-style: italic; }
+        .code-variable { color: #ff8c00; } /* Neon Orange */
+        .code-constant { color: #ffff00; } /* Yellow */
+        .code-operator { color: #ffffff; }
+        .code-params { color: #abb2bf; }
+
+        /* Custom typography spacing and hierarchy */
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.25rem;
+            background-color: #00fc40;
+            margin-right: 0.75rem;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+        
+        .article-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 2rem 0;
+            font-size: 0.875rem;
+        }
+        .article-table th {
+            background-color: #1a1919;
+            text-align: left;
+            padding: 12px 16px;
+            border: 1px solid #49484726;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .article-table td {
+            padding: 12px 16px;
+            border: 1px solid #49484726;
+            color: #adaaaa;
+        }
+        .article-table tr:hover td {
+            background-color: #131313;
+        }
+        .article-table .font-mono {
+            color: #00fc40;
+        }
+
+        /* Stylized Terminal Lists */
+        .terminal-list { list-style: none; padding-left: 0; }
+        .terminal-list li { position: relative; padding-left: 2rem; margin-bottom: 0.75rem; }
+        .terminal-list li::before {
+            content: '>>';
+            position: absolute;
+            left: 0;
+            color: #00fc40;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: bold;
+        }
+
+        .terminal-ordered-list { counter-reset: term-counter; list-style: none; padding-left: 0; }
+        .terminal-ordered-list li { counter-increment: term-counter; position: relative; padding-left: 3rem; margin-bottom: 1rem; }
+        .terminal-ordered-list li::before {
+            content: counter(term-counter, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: #262626;
+            color: #cafd00;
+            padding: 2px 6px;
+            border-right: 2px solid #cafd00;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/90 backdrop-blur-xl border-b border-outline-variant/10 transition-colors duration-300 flex justify-between items-center px-8 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#cafd00] font-mono font-['Space_Grotesk']">65岁退休Coder</span>
+<nav class="hidden md:flex items-center gap-6 text-sm font-['Space_Grotesk'] tracking-tighter">
+<a class="text-[#adaaaa] hover:text-[#cafd00] transition-all duration-200" href="#">Home</a>
+<div class="group relative">
+<button class="flex items-center gap-1 text-[#adaaaa] hover:text-[#cafd00] transition-all duration-200">
+                    AI <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-high border-outline-variant/15 border rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 p-2 shadow-2xl">
+<a class="block px-4 py-2 text-on-surface-variant hover:text-primary-fixed hover:bg-surface-container-highest rounded" href="#">Large Language Models</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-primary-fixed hover:bg-surface-container-highest rounded" href="#">Neural Networks</a>
+</div>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-1 text-[#cafd00] border-b-2 border-[#cafd00] pb-1 transition-all duration-200">
+                    Large Frontend <span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="absolute top-full left-0 mt-2 w-48 bg-surface-container-high border-outline-variant/15 border rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 p-2 shadow-2xl">
+<a class="block px-4 py-2 text-on-surface-variant hover:text-primary-fixed hover:bg-surface-container-highest rounded" href="#">React</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-primary-fixed hover:bg-surface-container-highest rounded" href="#">Vue</a>
+<a class="block px-4 py-2 text-on-surface-variant hover:text-primary-fixed hover:bg-surface-container-highest rounded" href="#">Node</a>
+</div>
+</div>
+<a class="text-[#adaaaa] hover:text-[#cafd00] transition-all duration-200" href="#">Directives</a>
+<a class="text-[#adaaaa] hover:text-[#cafd00] transition-all duration-200" href="#">Tutorials</a>
+</nav>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar (Left) -->
+<aside class="h-[calc(100vh-64px)] w-64 fixed left-0 top-16 bg-[#0e0e0e] border-r border-[#494847]/15 font-mono text-sm flex flex-col py-4">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[#cafd00] font-bold">ROOT_DIR</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-secondary/10 text-secondary border border-secondary/20">LIVE</span>
+</div>
+<div class="text-[10px] text-on-surface-variant opacity-50 tracking-widest">/dev/blog/components</div>
+</div>
+<nav class="flex-1 overflow-y-auto px-2 space-y-1">
+<div class="mb-4">
+<div class="flex items-center justify-between px-4 py-2 text-[#00fc40] bg-[#131313] border-l-4 border-[#00fc40] group cursor-default">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-sm">extension</span>
+<span>Hand-rolled Components</span>
+</div>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</div>
+<div class="ml-9 mt-1 space-y-1">
+<a class="block px-3 py-1.5 text-on-surface-variant hover:text-[#cafd00] transition-colors border-l border-outline-variant/30" href="#">Calendar Component</a>
+<a class="block px-3 py-1.5 text-primary-fixed transition-colors border-l border-primary-fixed/50 font-medium" href="#">Watermark Component</a>
+<a class="block px-3 py-1.5 text-on-surface-variant hover:text-[#cafd00] transition-colors border-l border-outline-variant/30" href="#">Virtual List</a>
+</div>
+</div>
+<a class="text-[#adaaaa] flex items-center gap-3 px-4 py-3 hover:bg-[#201f1f] hover:text-[#cafd00] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-sm">layers</span>
+<span>Architecture</span>
+</a>
+<a class="text-[#adaaaa] flex items-center gap-3 px-4 py-3 hover:bg-[#201f1f] hover:text-[#cafd00] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-sm">code</span>
+<span>Algorithms</span>
+</a>
+<a class="text-[#adaaaa] flex items-center gap-3 px-4 py-3 hover:bg-[#201f1f] hover:text-[#cafd00] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-sm">dns</span>
+<span>System Design</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 mr-72 flex-1 p-12 bg-surface">
+<div class="max-w-4xl mx-auto">
+<!-- Content Header -->
+<div class="mb-12">
+<nav class="flex gap-2 text-xs text-on-surface-variant font-mono mb-4">
+<span>components</span>
+<span>/</span>
+<span class="text-secondary">watermark.md</span>
+</nav>
+<h1 class="text-5xl font-headline font-bold text-on-surface tracking-tighter mb-6 leading-tight">
+                    Deep Dive: Hand-rolled <span class="text-primary-fixed">Watermark</span> Logic
+                </h1>
+<div class="flex items-center gap-6 text-sm text-on-surface-variant font-mono border-y border-outline-variant/10 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<span>2024.05.20</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">timer</span>
+<span>12 min read</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-secondary">terminal</span>
+<span>TypeScript / Canvas API</span>
+</div>
+</div>
+</div>
+<!-- Markdown Content -->
+<article class="space-y-8 text-on-surface-variant leading-relaxed text-[17px]">
+<p>Creating a robust watermark component in React/Vue isn't just about overlaying a div. It requires careful consideration of security (preventing removal via DevTools), performance (avoiding re-renders), and visual subtlety. 在现代前端开发中，水印组件的安全性和性能是必须要考虑的关键指标。</p>
+<div class="code-block-container rounded-xl border border-outline-variant/10 shadow-2xl overflow-hidden">
+<div class="flex items-center justify-between px-6 py-2 bg-[#1a1a1a] border-b border-outline-variant/10">
+<span class="text-xs font-mono text-[#adaaaa]">MutationObserver Implementation</span>
+<span class="text-xs font-mono text-[#adaaaa]">TypeScript</span>
+</div>
+<pre class="p-6 font-mono text-sm leading-6 overflow-x-auto"><code class="font-mono"><span class="code-keyword">const</span> <span class="code-function">observeWatermark</span> = (<span class="code-variable">target</span>: <span class="code-constant">HTMLElement</span>) =&gt; {
+  <span class="code-keyword">const</span> <span class="code-variable">observer</span> = <span class="code-keyword">new</span> <span class="code-constant">MutationObserver</span>((<span class="code-params">mutations</span>) =&gt; {
+    <span class="code-keyword">for</span> (<span class="code-keyword">const</span> <span class="code-variable">mutation</span> <span class="code-keyword">of</span> <span class="code-variable">mutations</span>) {
+      <span class="code-keyword">if</span> (<span class="code-variable">mutation</span>.<span class="code-variable">type</span> === <span class="code-string">'childList'</span> || <span class="code-variable">mutation</span>.<span class="code-variable">type</span> === <span class="code-string">'attributes'</span>) {
+        <span class="code-comment">// Anti-tamper logic / 防篡改逻辑</span>
+        <span class="code-function">recreateWatermark</span>(<span class="code-variable">target</span>);
+      }
+    }
+  });
+  
+  <span class="code-variable">observer</span>.<span class="code-function">observe</span>(<span class="code-variable">target</span>, { 
+    <span class="code-variable">attributes</span>: <span class="code-constant">true</span>, 
+    <span class="code-variable">childList</span>: <span class="code-constant">true</span>, 
+    <span class="code-variable">subtree</span>: <span class="code-constant">true</span> 
+  });
+};</code></pre>
+</div>
+<h2 class="text-3xl font-headline font-semibold text-on-surface tracking-tight mt-12 mb-6">
+                    The Canvas Strategy / 画布渲染策略
+                </h2>
+<p>We leverage the Canvas API to generate a base64 pattern that is applied as a background image. This method is more memory-efficient than creating thousands of DOM elements for the watermark grid. 使用 Canvas API 生成 base64 图案并作为背景图片应用，这种方式比创建数千个 DOM 元素更为节省内存。</p>
+<h2 class="text-3xl font-headline font-semibold text-on-surface tracking-tight mt-12 mb-6">
+                    Stylized Lists / 列表演示
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+<div>
+<h4 class="text-xs font-mono text-secondary uppercase tracking-widest mb-4">Unordered Terminal List</h4>
+<ul class="terminal-list">
+<li>Optimized Canvas rendering engine / 优化的 Canvas 渲染引擎</li>
+<li>Real-time MutationObserver protection / 实时 MutationObserver 保护</li>
+<li>CSS variable theme synchronization / CSS 变量主题同步</li>
+<li>Low-latency base64 generation / 低延迟 base64 生成</li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-mono text-secondary uppercase tracking-widest mb-4">Ordered Monospace List</h4>
+<ol class="terminal-ordered-list">
+<li>Initialize rendering context / 初始化渲染上下文</li>
+<li>Generate unique pattern seed / 生成唯一图案种子</li>
+<li>Inject background protection layer / 注入背景保护层</li>
+<li>Start DOM mutation listener / 启动 DOM 变更监听</li>
+</ol>
+</div>
+</div>
+<h3 class="text-xl font-headline font-semibold text-on-surface mt-8 mb-4">Implementation Matrix</h3>
+<table class="article-table">
+<thead>
+<tr>
+<th>Method</th>
+<th>Complexity</th>
+<th>Performance</th>
+<th>Security</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOM Overlay</td>
+<td class="font-mono">Low</td>
+<td>Poor</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Canvas Pattern</td>
+<td class="font-mono">Medium</td>
+<td>Excellent</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>SVG Background</td>
+<td class="font-mono">Medium</td>
+<td>Good</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+<!-- TIP Callout -->
+<div class="p-6 rounded-lg bg-secondary/5 border-l-4 border-secondary flex gap-4">
+<span class="material-symbols-outlined text-secondary">lightbulb</span>
+<div>
+<h4 class="text-on-surface font-semibold mb-1">Performance Tip</h4>
+<p class="text-sm opacity-80">By using <code>memo()</code> and <code>useMemo</code>, we ensure the canvas only regenerates when configuration props change.</p>
+</div>
+</div>
+<!-- INFO Callout -->
+<div class="p-6 rounded-lg bg-info/5 border-l-4 border-info flex gap-4">
+<span class="material-symbols-outlined text-info">info</span>
+<div>
+<h4 class="text-on-surface font-semibold mb-1">Context Info</h4>
+<p class="text-sm opacity-80">The <code>MutationObserver</code> detects if a user deletes the node or hides it via CSS visibility/display styles.</p>
+</div>
+</div>
+</div>
+<h2 class="text-3xl font-headline font-semibold text-on-surface tracking-tight mt-12 mb-6">
+                    Security Constraints / 安全约束
+                </h2>
+<p>Instead of hardcoding colors, we map the watermark opacity and color to the application's CSS variables, ensuring theme consistency.</p>
+<!-- WARNING Callout -->
+<div class="p-4 bg-warning-accent/10 rounded-lg border-l-4 border-warning-accent flex items-start gap-4">
+<span class="material-symbols-outlined text-warning-accent">warning</span>
+<div class="text-sm">
+<strong class="text-on-surface block mb-1">Caution Required</strong>
+<p class="opacity-80">Over-securing watermarks can lead to performance degradation on low-end devices if the observer frequency is too high. 频繁的 DOM 观察可能会在低端设备上导致性能卡顿。</p>
+</div>
+</div>
+<!-- DANGER Callout -->
+<div class="p-4 bg-danger/10 rounded-lg border-l-4 border-danger flex items-start gap-4">
+<span class="material-symbols-outlined text-danger">dangerous</span>
+<div class="text-sm">
+<strong class="text-on-surface block mb-1">Critical Failure Case</strong>
+<p class="opacity-80">If the <code>MutationObserver</code> is disconnected or disabled via browser extensions, the anti-tamper logic will fail completely. 如果观察器被插件禁用，防篡改机制将失效。</p>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-medium text-on-surface mt-10 mb-4">Conclusion / 总结</h3>
+<p>A production-ready watermark component requires balancing security, performance, and user experience. 生产级的水印组件需要在安全性、性能和用户体验之间取得平衡。</p>
+</article>
+</div>
+</main>
+<!-- Right Sidebar (Table of Contents) -->
+<aside class="w-72 fixed right-0 top-16 h-[calc(100vh-64px)] bg-[#0e0e0e] border-l border-[#494847]/15 p-8 overflow-y-auto">
+<h4 class="text-xs font-mono font-bold text-on-surface-variant uppercase tracking-widest mb-6">In this article</h4>
+<nav class="space-y-4">
+<a class="group flex items-center gap-3 text-primary-fixed" href="#">
+<span class="text-[10px] font-mono opacity-40">01</span>
+<span class="text-sm font-medium">Overview</span>
+<span class="flex-1 border-b border-primary-fixed/20 border-dotted"></span>
+</a>
+<a class="group flex items-center gap-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-[10px] font-mono opacity-40">02</span>
+<span class="text-sm">Canvas Strategy</span>
+<span class="flex-1 border-b border-outline-variant/20 border-dotted"></span>
+</a>
+<a class="group flex items-center gap-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-[10px] font-mono opacity-40">03</span>
+<span class="text-sm">Stylized Lists</span>
+<span class="flex-1 border-b border-outline-variant/20 border-dotted"></span>
+</a>
+<a class="group flex items-center gap-3 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="text-[10px] font-mono opacity-40">04</span>
+<span class="text-sm">Security Constraints</span>
+<span class="flex-1 border-b border-outline-variant/20 border-dotted"></span>
+</a>
+</nav>
+</aside>
+</div>
+<!-- Floating UI Subtle Accent -->
+<div class="fixed bottom-8 right-8 z-[60] flex flex-col gap-4">
+<button class="w-12 h-12 bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center rounded shadow-2xl text-on-surface hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">expand_less</span>
+</button>
+</div>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-20">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#131313_1px,transparent_1px)] bg-[length:24px_24px]"></div>
+</div>
+</body></html>
