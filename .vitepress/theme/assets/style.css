@@ -20,20 +20,22 @@
     'Microsoft YaHei',
     sans-serif;
   --blog-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --blog-color-canvas-rgb: 0 0 0;
-  --blog-color-surface-lowest-rgb: 14 14 14;
-  --blog-color-surface-base-rgb: 19 19 19;
-  --blog-color-surface-low-rgb: 27 27 27;
-  --blog-color-surface-container-rgb: 31 31 31;
-  --blog-color-surface-high-rgb: 42 42 42;
-  --blog-color-surface-bright-rgb: 57 57 57;
-  --blog-color-text-rgb: 245 247 255;
-  --blog-color-text-secondary-rgb: 174 182 199;
-  --blog-color-text-muted-rgb: 112 120 136;
-  --blog-color-text-faint-rgb: 91 98 112;
-  --blog-color-primary-rgb: 173 198 255;
-  --blog-color-primary-container-rgb: 77 142 255;
-  --blog-color-primary-highlight-rgb: 196 215 255;
+  --blog-color-canvas-rgb: 26 27 29;
+  --blog-color-surface-lowest-rgb: 32 33 36;
+  --blog-color-surface-base-rgb: 39 41 45;
+  --blog-color-surface-low-rgb: 46 49 53;
+  --blog-color-surface-container-rgb: 54 58 63;
+  --blog-color-surface-high-rgb: 64 68 74;
+  --blog-color-surface-bright-rgb: 76 81 88;
+  --blog-color-text-rgb: 218 220 224;
+  --blog-color-heading-rgb: 198 201 206;
+  --blog-color-emphasis-rgb: 188 191 197;
+  --blog-color-text-secondary-rgb: 164 168 176;
+  --blog-color-text-muted-rgb: 128 133 142;
+  --blog-color-text-faint-rgb: 104 109 118;
+  --blog-color-primary-rgb: 132 154 196;
+  --blog-color-primary-container-rgb: 108 136 186;
+  --blog-color-primary-highlight-rgb: 156 175 210;
   --blog-color-on-primary-container-rgb: 0 40 93;
   --blog-color-tertiary-rgb: 255 183 134;
   --blog-color-danger-rgb: 255 124 145;
@@ -49,6 +51,8 @@
   --blog-color-surface-high: rgb(var(--blog-color-surface-high-rgb));
   --blog-color-surface-bright: rgb(var(--blog-color-surface-bright-rgb));
   --blog-color-text: rgb(var(--blog-color-text-rgb));
+  --blog-color-heading: rgb(var(--blog-color-heading-rgb));
+  --blog-color-emphasis: rgb(var(--blog-color-emphasis-rgb));
   --blog-color-text-secondary: rgb(var(--blog-color-text-secondary-rgb));
   --blog-color-text-muted: rgb(var(--blog-color-text-muted-rgb));
   --blog-color-text-faint: rgb(var(--blog-color-text-faint-rgb));
@@ -61,52 +65,52 @@
   --blog-color-success: rgb(var(--blog-color-success-rgb));
   --blog-color-outline: rgb(var(--blog-color-outline-rgb));
 
-  --blog-ghost-border-soft: rgb(var(--blog-color-outline-rgb) / 0.16);
-  --blog-ghost-border: rgb(var(--blog-color-outline-rgb) / 0.22);
-  --blog-ghost-border-strong: rgb(var(--blog-color-outline-rgb) / 0.32);
-  --blog-charged-border: rgb(var(--blog-color-primary-rgb) / 0.18);
-  --blog-charged-border-strong: rgb(var(--blog-color-primary-rgb) / 0.34);
-  --blog-charged-fill: rgb(var(--blog-color-primary-rgb) / 0.08);
-  --blog-charged-fill-strong: rgb(var(--blog-color-primary-rgb) / 0.16);
-  --blog-accent-border: rgb(var(--blog-color-primary-container-rgb) / 0.24);
-  --blog-accent-border-strong: rgb(var(--blog-color-primary-container-rgb) / 0.34);
-  --blog-accent-fill: rgb(var(--blog-color-primary-container-rgb) / 0.08);
-  --blog-accent-fill-strong: rgb(var(--blog-color-primary-container-rgb) / 0.14);
+  --blog-ghost-border-soft: rgb(var(--blog-color-outline-rgb) / 0.14);
+  --blog-ghost-border: rgb(var(--blog-color-outline-rgb) / 0.18);
+  --blog-ghost-border-strong: rgb(var(--blog-color-outline-rgb) / 0.26);
+  --blog-charged-border: rgb(var(--blog-color-primary-rgb) / 0.14);
+  --blog-charged-border-strong: rgb(var(--blog-color-primary-rgb) / 0.24);
+  --blog-charged-fill: rgb(var(--blog-color-primary-rgb) / 0.06);
+  --blog-charged-fill-strong: rgb(var(--blog-color-primary-rgb) / 0.12);
+  --blog-accent-border: rgb(var(--blog-color-primary-container-rgb) / 0.18);
+  --blog-accent-border-strong: rgb(var(--blog-color-primary-container-rgb) / 0.26);
+  --blog-accent-fill: rgb(var(--blog-color-primary-container-rgb) / 0.06);
+  --blog-accent-fill-strong: rgb(var(--blog-color-primary-container-rgb) / 0.12);
   --blog-tertiary-fill: rgb(var(--blog-color-tertiary-rgb) / 0.1);
   --blog-danger-fill: rgb(var(--blog-color-danger-rgb) / 0.1);
   --blog-backdrop-color: rgb(var(--blog-color-canvas-rgb) / 0.78);
-  --blog-shadow-panel: 0 18px 36px rgb(0 0 0 / 0.18);
-  --blog-shadow-panel-hover: 0 24px 52px rgb(0 0 0 / 0.26);
-  --blog-shadow-command: 0 32px 96px rgb(0 0 0 / 0.58);
-  --blog-shadow-float: 0 20px 60px rgb(0 0 0 / 0.35);
-  --blog-shadow-glow: 0 0 18px rgb(var(--blog-color-primary-rgb) / 0.12);
-  --blog-shadow-glow-accent: 0 0 12px rgb(var(--blog-color-primary-container-rgb) / 0.36);
+  --blog-shadow-panel: 0 16px 32px rgb(0 0 0 / 0.12);
+  --blog-shadow-panel-hover: 0 22px 44px rgb(0 0 0 / 0.16);
+  --blog-shadow-command: 0 24px 56px rgb(0 0 0 / 0.28);
+  --blog-shadow-float: 0 18px 40px rgb(0 0 0 / 0.2);
+  --blog-shadow-glow: 0 0 14px rgb(var(--blog-color-primary-rgb) / 0.08);
+  --blog-shadow-glow-accent: 0 0 10px rgb(var(--blog-color-primary-container-rgb) / 0.16);
   --blog-panel-glass-bg:
     linear-gradient(
       180deg,
-      rgb(var(--blog-color-surface-high-rgb) / 0.92) 0%,
-      rgb(var(--blog-color-surface-base-rgb) / 0.96) 100%
+      rgb(var(--blog-color-surface-high-rgb) / 0.9) 0%,
+      rgb(var(--blog-color-surface-base-rgb) / 0.94) 100%
     );
   --blog-panel-command-bg:
-    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.18) 0.75px, transparent 0.85px),
-    radial-gradient(circle at 18px 18px, rgb(var(--blog-color-primary-rgb) / 0.08) 0.7px, transparent 0.8px),
+    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.1) 0.75px, transparent 0.85px),
+    radial-gradient(circle at 18px 18px, rgb(var(--blog-color-primary-rgb) / 0.035) 0.7px, transparent 0.8px),
     linear-gradient(
       180deg,
-      rgb(var(--blog-color-surface-base-rgb) / 0.98) 0%,
-      rgb(var(--blog-color-surface-lowest-rgb) / 0.99) 100%
+      rgb(var(--blog-color-surface-base-rgb) / 0.97) 0%,
+      rgb(var(--blog-color-surface-lowest-rgb) / 0.98) 100%
     );
   --blog-panel-command-rail:
     linear-gradient(
       180deg,
-      rgb(var(--blog-color-primary-container-rgb) / 0.92) 0%,
-      rgb(var(--blog-color-primary-rgb) / 0.32) 100%
+      rgb(var(--blog-color-primary-container-rgb) / 0.52) 0%,
+      rgb(var(--blog-color-primary-rgb) / 0.16) 100%
     );
   --blog-grid-pattern-image:
-    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.68) 0.82px, transparent 0.92px),
-    radial-gradient(circle at 12px 12px, rgb(var(--blog-color-primary-rgb) / 0.2) 0.65px, transparent 0.72px);
+    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.56) 0.86px, transparent 0.96px),
+    radial-gradient(circle at 12px 12px, rgb(var(--blog-color-primary-rgb) / 0.14) 0.7px, transparent 0.78px);
   --blog-terminal-surface-bg:
-    radial-gradient(circle at top center, rgb(var(--blog-color-primary-rgb) / 0.05), transparent 24%),
-    radial-gradient(circle at 18% 0%, rgb(var(--blog-color-primary-container-rgb) / 0.04), transparent 18%),
+    radial-gradient(circle at top center, rgb(var(--blog-color-primary-rgb) / 0.02), transparent 24%),
+    radial-gradient(circle at 18% 0%, rgb(var(--blog-color-primary-container-rgb) / 0.018), transparent 18%),
     linear-gradient(
       180deg,
       rgb(var(--blog-color-canvas-rgb) / 0.99) 0%,
@@ -119,6 +123,8 @@
   --blog-terminal-panel: var(--blog-color-surface-container);
   --blog-terminal-panel-high: var(--blog-color-surface-high);
   --blog-terminal-text: var(--blog-color-text);
+  --blog-terminal-heading: var(--blog-color-heading);
+  --blog-terminal-emphasis: var(--blog-color-emphasis);
   --blog-terminal-text-secondary: var(--blog-color-text-secondary);
   --blog-terminal-text-muted: var(--blog-color-text-muted);
   --blog-terminal-primary: var(--blog-color-primary);
@@ -179,6 +185,8 @@ html[data-theme='light'] {
   --blog-color-surface-high-rgb: 231 232 233;
   --blog-color-surface-bright-rgb: 223 226 230;
   --blog-color-text-rgb: 25 28 29;
+  --blog-color-heading-rgb: 25 28 29;
+  --blog-color-emphasis-rgb: 25 28 29;
   --blog-color-text-secondary-rgb: 71 78 89;
   --blog-color-text-muted-rgb: 100 108 120;
   --blog-color-text-faint-rgb: 137 144 154;
@@ -269,8 +277,8 @@ body {
 
 .VPLocalSearchBox .backdrop {
   background:
-    radial-gradient(circle at top center, rgb(var(--blog-color-primary-rgb) / 0.06), transparent 28%),
-    radial-gradient(circle at 18% 0%, rgb(var(--blog-color-primary-container-rgb) / 0.05), transparent 24%),
+    radial-gradient(circle at top center, rgb(var(--blog-color-primary-rgb) / 0.03), transparent 28%),
+    radial-gradient(circle at 18% 0%, rgb(var(--blog-color-primary-container-rgb) / 0.025), transparent 24%),
     rgb(var(--blog-color-canvas-rgb) / 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -617,7 +625,7 @@ body {
 }
 
 .resource-page {
-  background: var(--blog-terminal-bg);
+  background: var(--blog-color-canvas);
 }
 
 .resource-page .VPContent,
@@ -664,7 +672,7 @@ body {
 }
 
 .blog-terminal-surface {
-  background: var(--blog-terminal-surface-bg);
+  background: var(--blog-color-canvas);
 }
 
 .blog-theme-layout,
@@ -739,7 +747,7 @@ body {
 .blog-theme-layout .vp-doc h6 {
   position: relative;
   border: 0;
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-heading);
   font-family: var(--blog-font-display);
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -876,8 +884,30 @@ body {
 }
 
 .blog-theme-layout .vp-doc strong {
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-emphasis);
   font-weight: 600;
+}
+
+.dark .blog-theme-layout .vp-doc h1,
+.dark .blog-theme-layout .vp-doc h2,
+.dark .blog-theme-layout .vp-doc h3,
+.dark .blog-theme-layout .vp-doc h4,
+.dark .blog-theme-layout .vp-doc h5,
+.dark .blog-theme-layout .vp-doc h6 {
+  color: rgb(var(--blog-color-heading-rgb) / 0.92);
+}
+
+.dark .blog-theme-layout .vp-doc strong {
+  color: rgb(var(--blog-color-emphasis-rgb) / 0.88);
+}
+
+.dark .blog-theme-layout .vp-doc h2::before {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--blog-color-primary-container-rgb) / 0.76) 0%,
+    rgb(var(--blog-color-primary-rgb) / 0.58) 100%
+  );
+  box-shadow: 0 0 10px rgb(var(--blog-color-primary-container-rgb) / 0.08);
 }
 
 .blog-theme-layout .vp-doc a {
@@ -911,12 +941,12 @@ body {
   padding: 16px 18px 16px 20px;
   border: 0;
   border-radius: 8px;
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-text-secondary);
   font-size: 0.78rem;
   line-height: 1.95;
   background:
-    linear-gradient(90deg, rgb(var(--blog-color-primary-rgb) / 0.08) 0%, rgb(var(--blog-color-primary-rgb) / 0) 56%),
-    rgb(var(--blog-color-surface-base-rgb) / 0.96);
+    linear-gradient(90deg, rgb(var(--blog-color-primary-rgb) / 0.035) 0%, rgb(var(--blog-color-primary-rgb) / 0) 56%),
+    rgb(var(--blog-color-surface-base-rgb) / 0.94);
 }
 
 .blog-theme-layout .vp-doc blockquote::before {
@@ -1008,7 +1038,7 @@ body {
   border-radius: 8px;
   font-size: 0.78rem;
   line-height: 1.75;
-  background: rgb(var(--blog-color-surface-lowest-rgb) / 0.98);
+  background: rgb(var(--blog-color-surface-base-rgb) / 0.92);
   box-shadow: none;
 }
 
@@ -1036,10 +1066,10 @@ body {
 }
 
 .blog-theme-layout .vp-doc th {
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-emphasis);
   font-weight: 600;
   text-align: left;
-  background: rgb(var(--blog-color-surface-container-rgb) / 0.98);
+  background: rgb(var(--blog-color-surface-container-rgb) / 0.92);
 }
 
 .blog-theme-layout .vp-doc td {
@@ -1056,7 +1086,7 @@ body {
 }
 
 .blog-theme-layout .vp-doc tbody td:first-child {
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-emphasis);
 }
 
 .blog-theme-layout .vp-doc blockquote::after,
@@ -1068,7 +1098,7 @@ body {
 }
 
 .blog-theme-layout .vp-doc tbody tr:hover td {
-  background: rgb(var(--blog-color-surface-container-rgb) / 0.98);
+  background: rgb(var(--blog-color-surface-container-rgb) / 0.94);
 }
 
 .blog-theme-layout .vp-doc th :not(pre) > code,
@@ -1083,8 +1113,8 @@ body {
 .blog-theme-layout .vp-doc :not(pre) > code {
   padding: 0.22rem 0.42rem;
   border-radius: 4px;
-  color: var(--blog-terminal-primary);
-  background: rgb(var(--blog-color-canvas-rgb) / 0.92);
+  color: rgb(var(--blog-color-primary-highlight-rgb) / 0.9);
+  background: rgb(var(--blog-color-surface-container-rgb) / 0.92);
   font-family: var(--blog-font-mono);
   font-size: 0.9em;
 }
@@ -1097,9 +1127,9 @@ body {
 
 .blog-theme-layout .vp-doc div[class*='language-'] {
   margin: 28px 0;
-  border: 1px solid rgb(var(--blog-color-outline-rgb) / 0.15);
-  background: var(--blog-color-canvas);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.26);
+  border: 1px solid rgb(var(--blog-color-outline-rgb) / 0.12);
+  background: rgb(var(--blog-color-surface-lowest-rgb) / 0.96);
+  box-shadow: 0 14px 28px rgb(0 0 0 / 0.14);
 }
 
 .blog-theme-layout .vp-doc hr {

@@ -240,8 +240,9 @@ onBeforeUnmount(() => {
   border-radius: 18px;
   padding: 20px;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.028) 0%, rgb(255 255 255 / 0) 100%),
-    var(--blog-color-surface-container);
+    linear-gradient(180deg, rgb(255 255 255 / 0.044) 0%, rgb(255 255 255 / 0.012) 34%, transparent 100%),
+    linear-gradient(135deg, rgb(var(--blog-color-primary-rgb) / 0.028) 0%, transparent 30%),
+    rgb(var(--blog-color-surface-base-rgb) / 0.98);
   box-shadow: var(--blog-shadow-panel);
 }
 
@@ -251,7 +252,9 @@ onBeforeUnmount(() => {
   align-items: center;
   min-height: 56px;
   overflow: hidden;
-  background: var(--blog-color-surface-container);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.038) 0%, transparent 100%),
+    rgb(var(--blog-color-surface-low-rgb) / 0.98);
 }
 
 .resource-search-box::after {
@@ -260,8 +263,7 @@ onBeforeUnmount(() => {
   bottom: 0;
   left: 0;
   height: 2px;
-  background:
-    linear-gradient(90deg, rgb(var(--blog-color-primary-container-rgb) / 0.82), rgb(var(--blog-color-primary-rgb) / 0));
+  background: linear-gradient(90deg, rgb(var(--blog-color-primary-container-rgb) / 0.56), rgb(var(--blog-color-primary-rgb) / 0));
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.24s ease;
@@ -308,7 +310,9 @@ onBeforeUnmount(() => {
   padding: 0 14px;
   border: 1px solid var(--blog-ghost-border-strong);
   border-radius: 8px;
-  background: rgb(255 255 255 / 0.02);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.03) 0%, transparent 100%),
+    rgb(var(--blog-color-surface-high-rgb) / 0.7);
   font-family: var(--blog-font-mono);
   font-size: 0.64rem;
   font-weight: 700;
@@ -330,7 +334,9 @@ onBeforeUnmount(() => {
 
 .resource-filter-tag.is-active {
   border-color: rgb(var(--blog-color-primary-rgb) / 0.3);
-  background: rgb(var(--blog-color-primary-rgb) / 0.1);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.024) 0%, transparent 100%),
+    rgb(var(--blog-color-primary-rgb) / 0.14);
   color: var(--blog-color-primary);
 }
 

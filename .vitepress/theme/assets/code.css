@@ -6,19 +6,19 @@
  :root {
   --vp-code-line-height: 1.7;
   --vp-code-font-size: 0.875em;
-  --vp-code-color: var(--vp-c-brand-1);
-  --vp-code-link-color: var(--vp-c-brand-1);
-  --vp-code-link-hover-color: var(--vp-c-brand-2);
+  --vp-code-color: rgb(var(--blog-color-primary-highlight-rgb) / 0.9);
+  --vp-code-link-color: rgb(var(--blog-color-primary-highlight-rgb) / 0.9);
+  --vp-code-link-hover-color: var(--blog-color-text);
   --vp-code-bg: var(--vp-c-default-soft);
 
-  --vp-code-block-color: var(--blog-color-text-secondary);
-  --vp-code-block-bg: var(--blog-color-surface-low);
-  --vp-code-block-divider-color: var(--blog-color-canvas);
+  --vp-code-block-color: rgb(var(--blog-color-text-secondary-rgb) / 0.95);
+  --vp-code-block-bg: rgb(var(--blog-color-surface-base-rgb) / 0.94);
+  --vp-code-block-divider-color: rgb(var(--blog-color-outline-rgb) / 0.14);
 
-  --vp-code-lang-color: var(--blog-color-text-muted);
+  --vp-code-lang-color: rgb(var(--blog-color-text-muted-rgb) / 0.88);
 
-  --vp-code-line-highlight-color: rgb(var(--blog-color-primary-rgb) / 0.12);
-  --vp-code-line-number-color: var(--blog-color-text-muted);
+  --vp-code-line-highlight-color: rgb(var(--blog-color-primary-rgb) / 0.07);
+  --vp-code-line-number-color: rgb(var(--blog-color-text-faint-rgb) / 0.92);
 
   --vp-code-line-diff-add-color: rgb(var(--blog-color-success-rgb) / 0.16);
   --vp-code-line-diff-add-symbol-color: var(--blog-color-success);
@@ -29,19 +29,19 @@
   --vp-code-line-warning-color: rgb(var(--blog-color-tertiary-rgb) / 0.16);
   --vp-code-line-error-color: rgb(var(--blog-color-danger-rgb) / 0.16);
 
-  --vp-code-copy-code-border-color: var(--blog-ghost-border);
-  --vp-code-copy-code-bg: var(--blog-color-surface-container);
-  --vp-code-copy-code-hover-border-color: var(--blog-charged-border);
-  --vp-code-copy-code-hover-bg: var(--blog-color-surface-high);
+  --vp-code-copy-code-border-color: rgb(var(--blog-color-outline-rgb) / 0.16);
+  --vp-code-copy-code-bg: rgb(var(--blog-color-surface-container-rgb) / 0.9);
+  --vp-code-copy-code-hover-border-color: rgb(var(--blog-color-primary-rgb) / 0.18);
+  --vp-code-copy-code-hover-bg: rgb(var(--blog-color-surface-high-rgb) / 0.88);
   --vp-code-copy-code-active-text: var(--blog-color-text-secondary);
   --vp-code-copy-copied-text-content: 'Copied';
 
-  --vp-code-tab-divider: var(--blog-color-canvas);
-  --vp-code-tab-text-color: var(--blog-color-text-muted);
-  --vp-code-tab-bg: var(--blog-color-surface-low);
-  --vp-code-tab-hover-text-color: var(--blog-color-text);
-  --vp-code-tab-active-text-color: var(--blog-color-text);
-  --vp-code-tab-active-bar-color: var(--blog-color-primary-container);
+  --vp-code-tab-divider: rgb(var(--blog-color-outline-rgb) / 0.12);
+  --vp-code-tab-text-color: rgb(var(--blog-color-text-muted-rgb) / 0.9);
+  --vp-code-tab-bg: rgb(var(--blog-color-surface-low-rgb) / 0.9);
+  --vp-code-tab-hover-text-color: var(--blog-color-emphasis);
+  --vp-code-tab-active-text-color: var(--blog-color-emphasis);
+  --vp-code-tab-active-bar-color: rgb(var(--blog-color-primary-rgb) / 0.5);
 }
 
 img {

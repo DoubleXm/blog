@@ -264,8 +264,9 @@ onBeforeUnmount(() => {
   border-radius: 16px;
   padding: 18px 20px;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.03) 0%, rgb(255 255 255 / 0) 100%),
-    var(--blog-color-surface-container);
+    linear-gradient(180deg, rgb(255 255 255 / 0.044) 0%, rgb(255 255 255 / 0.012) 34%, transparent 100%),
+    linear-gradient(135deg, rgb(var(--blog-color-primary-rgb) / 0.03) 0%, transparent 30%),
+    rgb(var(--blog-color-surface-base-rgb) / 0.98);
 }
 
 .resource-stat-card span,
@@ -294,8 +295,9 @@ onBeforeUnmount(() => {
   border-radius: 18px;
   padding: 20px;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.028) 0%, rgb(255 255 255 / 0) 100%),
-    var(--blog-color-surface-container);
+    linear-gradient(180deg, rgb(255 255 255 / 0.044) 0%, rgb(255 255 255 / 0.012) 34%, transparent 100%),
+    linear-gradient(135deg, rgb(var(--blog-color-primary-rgb) / 0.03) 0%, transparent 30%),
+    rgb(var(--blog-color-surface-base-rgb) / 0.98);
   box-shadow: var(--blog-shadow-panel);
 }
 
@@ -305,7 +307,9 @@ onBeforeUnmount(() => {
   align-items: center;
   border: 1px solid var(--blog-ghost-border-strong);
   border-radius: 10px;
-  background: var(--blog-color-surface-high);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.038) 0%, transparent 100%),
+    rgb(var(--blog-color-surface-low-rgb) / 0.98);
 }
 
 .resource-search-box::after {
@@ -314,7 +318,7 @@ onBeforeUnmount(() => {
   bottom: 0;
   left: 16px;
   height: 2px;
-  background: linear-gradient(90deg, var(--blog-color-primary), transparent);
+  background: linear-gradient(90deg, rgb(var(--blog-color-primary-rgb) / 0.58), transparent);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.24s ease;
@@ -368,7 +372,9 @@ onBeforeUnmount(() => {
 
 .resource-filter-tag {
   color: var(--blog-color-text-secondary);
-  background: rgb(255 255 255 / 0.02);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.03) 0%, transparent 100%),
+    rgb(var(--blog-color-surface-high-rgb) / 0.68);
 }
 
 .resource-filter-tag:hover,
@@ -376,7 +382,9 @@ onBeforeUnmount(() => {
   transform: translateY(-1px);
   border-color: rgb(var(--blog-color-primary-rgb) / 0.28);
   color: var(--blog-color-primary);
-  background: rgb(var(--blog-color-primary-rgb) / 0.08);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.024) 0%, transparent 100%),
+    rgb(var(--blog-color-primary-rgb) / 0.13);
 }
 
 .resource-clear-button {

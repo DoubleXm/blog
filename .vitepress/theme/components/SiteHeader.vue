@@ -193,11 +193,11 @@ onBeforeUnmount(() => {
   letter-spacing: -0.04em;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-heading);
 }
 
 .site-header__brand-prefix {
-  color: var(--blog-terminal-text);
+  color: var(--blog-terminal-heading);
 }
 
 .site-header__brand-title {

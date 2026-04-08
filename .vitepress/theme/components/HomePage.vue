@@ -701,152 +701,46 @@ onBeforeUnmount(() => {
         </div>
 
         <div class="terminal-home__cards">
-          <a
+          <div
             v-for="(card, index) in directoryCards"
             :key="card.key"
             v-motion
-            class="terminal-home__card"
-            :class="{ 'is-disabled': !card.available }"
-            :href="card.href ? resolveLink(card.href) : undefined"
-            :aria-disabled="!card.available"
-            :style="{ '--card-accent-rgb': card.accentRgb }"
+            class="terminal-home__card-shell"
             :initial="getCardMotionInitial(14, 0.994)"
             :visible-once="getCardMotionVisibleOnce(index)"
-            @click="!card.available && $event.preventDefault()"
           >
-            <div class="terminal-home__card-body">
-              <div class="terminal-home__card-heading">
-                <h3 class="terminal-home__card-title">{{ card.label }}</h3>
-                <span class="terminal-home__card-status">{{ card.stateLabel }}</span>
-              </div>
-              <p class="terminal-home__card-details">{{ card.details }}</p>
-            </div>
-
-            <div class="terminal-home__card-bottom">
-              <div class="terminal-home__card-metrics">
-                <span class="terminal-home__card-count">{{ card.count }} ARTICLES</span>
-                <span class="terminal-home__card-route">{{ card.routePreview }}</span>
-              </div>
-              <span class="terminal-home__card-arrow">{{ card.available ? '↗' : '···' }}</span>
-            </div>
-          </a>
-        </div>
-      </section>
-
-      <section class="terminal-home__section terminal-home__section--github">
-        <div
-          v-motion
-          class="terminal-home__github"
-          :initial="getMotionInitial(14, 0.994)"
-          :visible-once="getMotionVisibleOnce(52)"
-        >
-          <div class="terminal-home__github-head">
-            <div class="terminal-home__github-title-group">
-              <span class="terminal-home__github-icon">⌘</span>
-              <h3 class="terminal-home__github-title">GITHUB_CONTRIBUTIONS</h3>
-            </div>
-
-            <div class="terminal-home__github-legend">
-              <span>Less</span>
-              <div class="terminal-home__github-scale">
-                <span class="level-0" />
-                <span class="level-1" />
-                <span class="level-2" />
-                <span class="level-3" />
-                <span class="level-4" />
-              </div>
-              <span>More</span>
-            </div>
-          </div>
-
-          <div v-if="inspectedContributionMeta" class="terminal-home__github-inspector">
-            <span class="terminal-home__github-inspector-date">
-              {{ inspectedContributionMeta.dateLabel }}
-            </span>
-            <strong class="terminal-home__github-inspector-count">
-              {{ inspectedContributionMeta.activityLabel }}
-            </strong>
-            <span class="terminal-home__github-inspector-level">
-              {{ inspectedContributionMeta.levelLabel }}
-            </span>
-            <span class="terminal-home__github-inspector-hint">
-              {{ inspectedContributionMeta.hint }}
-            </span>
-          </div>
-
-          <div
-            class="terminal-home__github-grid-wrap"
-            @mouseleave="clearHoveredContributionDay"
-          >
-            <div
-              class="terminal-home__github-grid"
-              :style="{ '--week-count': String(Math.max(contributionSummary.weeks.length, 1)) }"
-            >
-              <div
-                v-for="(week, weekIndex) in contributionSummary.weeks"
-                :key="`week-${weekIndex}`"
-                class="terminal-home__github-week"
-              >
-                <button
-                  v-for="day in week.contributionDays"
-                  :key="day.date"
-                  type="button"
-                  class="terminal-home__github-day"
-                  :class="[
-                    `level-${day.level}`,
-                    {
-                      'is-active': inspectedContributionDay?.date === day.date,
-                      'is-pinned': pinnedContributionDay?.date === day.date,
-                    },
-                  ]"
-                  :aria-label="`${day.date}: ${day.contributionCount} contributions`"
-                  :aria-pressed="pinnedContributionDay?.date === day.date"
-                  :title="`${day.date}: ${day.contributionCount} contributions`"
-                  @mouseenter="hoverContributionDay(day)"
-                  @focus="hoverContributionDay(day)"
-                  @blur="clearHoveredContributionDay"
-                  @click="togglePinnedContributionDay(day)"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="terminal-home__github-footer">
-            <div class="terminal-home__github-stats">
-              <div class="terminal-home__github-stat">
-                <span>TOTAL_CONTRIBUTIONS</span>
-                <strong>{{ contributionSummary.totalContributions }}</strong>
-              </div>
-              <div class="terminal-home__github-stat">
-                <span>DAILY_AVG</span>
-                <strong>{{ contributionSummary.averagePerDay }}</strong>
-              </div>
-              <div class="terminal-home__github-stat">
-                <span>LONGEST_STREAK</span>
-                <strong>{{ contributionSummary.longestStreak }} DAYS</strong>
-              </div>
-              <div class="terminal-home__github-stat">
-                <span>CURRENT_STREAK</span>
-                <strong>{{ contributionSummary.currentStreak }} DAYS</strong>
-              </div>
-            </div>
-
             <a
-              class="terminal-home__github-badge"
-              :href="GITHUB_REPOSITORY_URL"
-              target="_blank"
-              rel="noreferrer"
+              class="terminal-home__card"
+              :class="{ 'is-disabled': !card.available }"
+              :href="card.href ? resolveLink(card.href) : undefined"
+              :aria-disabled="!card.available"
+              :style="{ '--card-accent-rgb': card.accentRgb }"
+              @click="!card.available && $event.preventDefault()"
             >
-              <span class="terminal-home__github-badge-dot" />
-              <span>{{ contributionStatus }}</span>
+              <div class="terminal-home__card-body">
+                <div class="terminal-home__card-heading">
+                  <h3 class="terminal-home__card-title">{{ card.label }}</h3>
+                </div>
+                <p class="terminal-home__card-details">{{ card.details }}</p>
+              </div>
+
+              <div class="terminal-home__card-bottom">
+                <div class="terminal-home__card-metrics">
+                  <span class="terminal-home__card-count">{{ card.count }} ARTICLES</span>
+                  <span class="terminal-home__card-route">{{ card.routePreview }}</span>
+                </div>
+                <span class="terminal-home__card-arrow">{{ card.available ? '↗' : '···' }}</span>
+              </div>
             </a>
           </div>
-
-          <p v-if="contributionSummary.note" class="terminal-home__github-note">
-            {{ contributionSummary.note }}
-          </p>
         </div>
       </section>
+
+      <!--
+      <section class="terminal-home__section terminal-home__section--github">
+        GitHub contributions panel hidden by request.
+      </section>
+      -->
 
       <section class="terminal-home__markdown">
         <Content />
@@ -872,44 +766,39 @@ onBeforeUnmount(() => {
   --terminal-primary: var(--blog-color-primary);
   --terminal-secondary: var(--blog-color-primary-container);
   --terminal-tertiary: var(--blog-color-tertiary);
-  --terminal-shadow: var(--blog-shadow-glow);
+  --terminal-shadow: var(--blog-shadow-panel);
   position: relative;
   min-height: 100vh;
   color: var(--terminal-text);
-  background: var(--blog-terminal-surface-bg);
+  background: var(--blog-color-canvas);
 }
 
 .terminal-home::before {
+  z-index: 0;
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.72) 0.85px, transparent 0.95px),
-    radial-gradient(circle at 12px 12px, rgb(var(--blog-color-primary-rgb) / 0.22) 0.7px, transparent 0.75px);
+    radial-gradient(circle at 1px 1px, rgb(var(--blog-color-outline-soft-rgb) / 0.72) 0.92px, transparent 1.04px),
+    radial-gradient(circle at 12px 12px, rgb(var(--blog-color-primary-rgb) / 0.22) 0.76px, transparent 0.86px);
   background-position:
     0 0,
     2px 2px;
   background-size:
     20px 20px,
     28px 28px;
-  opacity: 0.42;
+  opacity: 0.34;
   content: '';
   pointer-events: none;
 }
 
 .terminal-home::after {
+  z-index: 0;
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 24% 16%, rgb(var(--blog-color-primary-rgb) / 0.08), transparent 18%),
-    radial-gradient(circle at 78% 30%, rgb(var(--blog-color-primary-container-rgb) / 0.06), transparent 20%),
-    repeating-linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.02) 0,
-      rgb(255 255 255 / 0.02) 1px,
-      transparent 1px,
-      transparent 120px
-    );
-  opacity: 0.22;
+    radial-gradient(circle at 24% 16%, rgb(var(--blog-color-primary-rgb) / 0.03), transparent 16%),
+    radial-gradient(circle at 78% 30%, rgb(var(--blog-color-primary-container-rgb) / 0.024), transparent 18%);
+  opacity: 0.1;
   content: '';
   pointer-events: none;
 }
@@ -948,11 +837,11 @@ onBeforeUnmount(() => {
   letter-spacing: -0.04em;
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--terminal-text);
+  color: var(--blog-terminal-heading);
 }
 
 .terminal-home__brand-prefix {
-  color: var(--terminal-text);
+  color: var(--blog-terminal-heading);
 }
 
 .terminal-home__brand-title {
@@ -974,6 +863,7 @@ onBeforeUnmount(() => {
 .terminal-home__main {
   position: relative;
   z-index: 1;
+  isolation: isolate;
   margin: 0 auto;
   padding: 80px 24px 64px;
   max-width: 1536px;
@@ -1006,12 +896,13 @@ onBeforeUnmount(() => {
   height: 8px;
   border-radius: 999px;
   background: var(--terminal-secondary);
-  box-shadow: 0 0 10px rgb(var(--blog-color-primary-container-rgb) / 0.7);
+  box-shadow: 0 0 0 1px rgb(var(--blog-color-primary-container-rgb) / 0.22);
   animation: terminal-pulse 1.6s ease-in-out infinite;
 }
 
 .terminal-home__title {
   margin: 0;
+  color: var(--blog-terminal-heading);
   font-family: var(--blog-font-display);
   font-size: clamp(2.85rem, 8.2vw, 5.8rem);
   font-weight: 700;
@@ -1021,7 +912,7 @@ onBeforeUnmount(() => {
 
 .terminal-home__title span {
   color: var(--terminal-primary);
-  text-shadow: 0 0 12px rgb(var(--blog-color-primary-rgb) / 0.34);
+  text-shadow: none;
 }
 
 .terminal-home__tagline {
@@ -1041,7 +932,7 @@ onBeforeUnmount(() => {
   border: 1px solid var(--blog-ghost-border);
   border-radius: 12px;
   background: rgb(var(--blog-color-surface-lowest-rgb) / 0.98);
-  box-shadow: 0 32px 70px rgb(0 0 0 / 0.35);
+  box-shadow: 0 16px 32px rgb(0 0 0 / 0.16);
 }
 
 .terminal-home__terminal-bar {
@@ -1178,6 +1069,7 @@ onBeforeUnmount(() => {
 }
 
 .terminal-home__section {
+  position: relative;
   margin-bottom: 48px;
 }
 
@@ -1209,107 +1101,144 @@ onBeforeUnmount(() => {
 }
 
 .terminal-home__cards {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
+.terminal-home__cards::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  z-index: -1;
+  background: var(--blog-color-canvas);
+  pointer-events: none;
+}
+
+.terminal-home__card-shell {
+  min-width: 0;
+}
+
 .terminal-home__card {
   --card-accent-rgb: 135, 220, 255;
   position: relative;
+  z-index: 0;
   isolation: isolate;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
   min-height: 252px;
-  border: 1px solid var(--blog-ghost-border-soft);
+  border: 1px solid rgb(var(--blog-color-outline-rgb) / 0.14);
   border-radius: 12px;
   padding: 24px;
   text-decoration: none;
   color: inherit;
+  background-color: rgb(var(--blog-color-surface-base-rgb));
   background:
-    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.1), transparent 38%),
-    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.045), transparent 32%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.028) 0%, rgb(255 255 255 / 0) 100%),
-    var(--terminal-panel);
+    linear-gradient(180deg, rgb(var(--blog-color-surface-high-rgb)) 0%, rgb(var(--blog-color-surface-base-rgb)) 100%);
   box-shadow: var(--blog-shadow-panel);
   transition:
-    border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.28s ease,
-    box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    background-position 0.38s ease,
+    background 0.38s ease;
   transform-origin: center bottom;
   backface-visibility: hidden;
   transform: translateZ(0);
-  will-change: transform, border-color, box-shadow;
+  will-change: transform, border-color, box-shadow, background-position;
 }
 
 .terminal-home__card::before {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background:
-    radial-gradient(circle at 18% 16%, rgba(var(--card-accent-rgb), 0.08), transparent 34%),
+    linear-gradient(
+      135deg,
+      rgba(var(--card-accent-rgb), 0.24) 0%,
+      rgba(var(--card-accent-rgb), 0.1) 24%,
+      rgba(var(--card-accent-rgb), 0.04) 42%,
+      transparent 66%
+    ),
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.045) 0%,
-      rgba(255, 255, 255, 0.02) 28%,
-      transparent 72%
+      rgba(var(--card-accent-rgb), 0.06) 0%,
+      transparent 48%
     );
-  opacity: 0.5;
-  transition: opacity 0.26s ease;
+  opacity: 1;
+  transform: none;
+  transition:
+    background 0.44s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.34s ease,
+    transform 0.44s cubic-bezier(0.22, 1, 0.36, 1);
   content: '';
   pointer-events: none;
 }
 
 .terminal-home__card::after {
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(var(--card-accent-rgb), 0.62) 0%,
-    rgba(var(--card-accent-rgb), 0.26) 48%,
-    transparent 100%
-  );
-  opacity: 0.52;
-  transition: opacity 0.26s ease;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.04) 0%, rgb(255 255 255 / 0.012) 28%, transparent 100%),
+    linear-gradient(225deg, rgb(255 255 255 / 0.03) 0%, transparent 34%);
+  opacity: 1;
+  transition:
+    background 0.44s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.34s ease;
   content: '';
   pointer-events: none;
 }
 
 .terminal-home__card:hover {
-  transform: translate3d(0, -4px, 0);
-  border-color: rgba(var(--card-accent-rgb), 0.2);
+  transform: translate3d(0, -5px, 0);
   background:
-    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.11), transparent 38%),
-    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.05), transparent 32%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.04) 0%, rgb(255 255 255 / 0.01) 100%),
-    var(--terminal-panel-high);
+    linear-gradient(180deg, rgb(var(--blog-color-surface-bright-rgb)) 0%, rgb(var(--blog-color-surface-container-rgb)) 100%);
   box-shadow:
-    0 24px 52px rgb(0 0 0 / 0.22),
-    0 0 0 1px rgb(255 255 255 / 0.025);
+    0 20px 32px rgb(0 0 0 / 0.16),
+    0 8px 16px rgb(0 0 0 / 0.06);
 }
 
 .terminal-home__card:hover::before,
 .terminal-home__card:focus-visible::before {
-  opacity: 0.66;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--card-accent-rgb), 0.32) 0%,
+      rgba(var(--card-accent-rgb), 0.14) 24%,
+      rgba(var(--card-accent-rgb), 0.06) 44%,
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(var(--card-accent-rgb), 0.08) 0%,
+      transparent 50%
+    );
+  opacity: 1;
+  transform: translate3d(0px, -2px, 0);
 }
 
 .terminal-home__card:hover::after,
 .terminal-home__card:focus-visible::after {
-  opacity: 0.82;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.046) 0%, rgb(255 255 255 / 0.014) 28%, transparent 100%),
+    linear-gradient(225deg, rgb(255 255 255 / 0.034) 0%, transparent 32%);
+  opacity: 1;
 }
 
 .terminal-home__card:focus-visible {
   outline: none;
-  transform: translate3d(0, -3px, 0);
-  border-color: rgba(var(--card-accent-rgb), 0.22);
+  transform: translate3d(0, -5px, 0);
   box-shadow:
-    0 20px 44px rgb(0 0 0 / 0.22),
-    0 0 0 1px rgb(255 255 255 / 0.03);
+    0 20px 32px rgb(0 0 0 / 0.16),
+    0 8px 16px rgb(0 0 0 / 0.06);
 }
 
 .terminal-home__card.is-disabled {
@@ -1319,22 +1248,23 @@ onBeforeUnmount(() => {
 }
 
 .terminal-home__card.is-disabled::before {
-  opacity: 0.2;
+  opacity: 0.16;
 }
 
 .terminal-home__card.is-disabled::after {
-  opacity: 0.26;
+  opacity: 0.18;
 }
 
 .terminal-home__card.is-disabled:hover {
   transform: none;
-  border-color: var(--blog-ghost-border-soft);
   background:
-    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.055), transparent 38%),
-    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.03), transparent 32%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.02) 0%, rgb(255 255 255 / 0) 100%),
-    var(--terminal-panel);
+    linear-gradient(180deg, rgb(var(--blog-color-surface-high-rgb)) 0%, rgb(var(--blog-color-surface-base-rgb)) 100%);
   box-shadow: none;
+}
+
+.terminal-home__card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .terminal-home__card-bottom,
@@ -1382,17 +1312,6 @@ onBeforeUnmount(() => {
   letter-spacing: -0.02em;
 }
 
-.terminal-home__card-status {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  border: 1px solid rgba(var(--card-accent-rgb), 0.12);
-  border-radius: 999px;
-  padding: 5px 9px;
-  color: rgb(var(--card-accent-rgb) / 0.84);
-  background: rgba(var(--card-accent-rgb), 0.05);
-}
-
 .terminal-home__card-details {
   margin: 0;
   font-size: 0.85rem;
@@ -1406,7 +1325,7 @@ onBeforeUnmount(() => {
 }
 
 .terminal-home__card-count {
-  color: rgb(var(--card-accent-rgb) / 0.82);
+  color: rgba(var(--card-accent-rgb), 0.58);
 }
 
 .terminal-home__card-route {
@@ -1414,17 +1333,19 @@ onBeforeUnmount(() => {
 }
 
 .terminal-home__card-arrow {
-  color: rgb(var(--card-accent-rgb) / 0.74);
-  opacity: 0.32;
+  color: rgba(var(--card-accent-rgb), 0.54);
+  opacity: 0.42;
   transform: translate3d(-2px, 2px, 0);
   transition:
-    opacity 0.22s ease,
-    transform 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.28s ease,
+    transform 0.44s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.26s ease;
 }
 
 .terminal-home__card:hover .terminal-home__card-arrow {
+  color: rgba(var(--card-accent-rgb), 0.72);
   opacity: 0.76;
-  transform: translate3d(4px, -2px, 0);
+  transform: translate3d(5px, -2px, 0) scale(1.03);
 }
 
 .terminal-home__card.is-disabled .terminal-home__card-arrow {
@@ -1452,7 +1373,11 @@ onBeforeUnmount(() => {
   border: 1px solid var(--blog-ghost-border-soft);
   border-radius: 18px;
   padding: 24px;
-  background: var(--terminal-panel-high);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.026) 0%, transparent 100%),
+    rgb(var(--blog-color-surface-low-rgb) / 0.98);
+  box-shadow:
+    0 18px 36px rgb(0 0 0 / 0.12);
 }
 
 .terminal-home__github-head,
@@ -1566,8 +1491,8 @@ onBeforeUnmount(() => {
   border-radius: 10px;
   padding: 10px 12px;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 0.02) 0%, rgb(255 255 255 / 0.01) 100%),
-    rgb(var(--blog-color-surface-lowest-rgb) / 0.92);
+    linear-gradient(180deg, rgb(255 255 255 / 0.03) 0%, rgb(255 255 255 / 0.008) 100%),
+    rgb(var(--blog-color-surface-lowest-rgb) / 0.98);
 }
 
 .terminal-home__github-inspector-date,
@@ -1676,7 +1601,9 @@ onBeforeUnmount(() => {
   padding: 0 16px;
   color: var(--terminal-primary);
   text-decoration: none;
-  background: var(--blog-charged-fill);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.022) 0%, transparent 100%),
+    rgb(var(--blog-color-primary-rgb) / 0.08);
   align-self: flex-end;
 }
 
@@ -2254,14 +2181,14 @@ html:not(.dark) .terminal-home__card::before,
 html.light .terminal-home__card::before,
 html[data-theme='light'] .terminal-home__card::before {
   background:
-    radial-gradient(circle at 18% 16%, rgba(var(--card-accent-rgb), 0.06), transparent 34%),
+    radial-gradient(circle at 18% 16%, rgba(var(--card-accent-rgb), 0.04), transparent 34%),
     linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.62) 0%,
-      rgba(255, 255, 255, 0.24) 24%,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.14) 24%,
       transparent 68%
     );
-  opacity: 0.4;
+  opacity: 0.28;
 }
 
 html:not(.dark) .terminal-home__card::after,
@@ -2274,10 +2201,10 @@ html:not(.dark) .terminal-home__card:hover,
 html.light .terminal-home__card:hover,
 html[data-theme='light'] .terminal-home__card:hover {
   transform: translate3d(0, -3px, 0);
-  border-color: rgba(var(--card-accent-rgb), 0.18);
+  border-color: rgba(var(--card-accent-rgb), 0.12);
   background:
-    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.1), transparent 36%),
-    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.04), transparent 30%),
+    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.06), transparent 36%),
+    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.024), transparent 30%),
     linear-gradient(
       180deg,
       rgb(var(--blog-color-surface-lowest-rgb) / 1) 0%,
@@ -2351,8 +2278,8 @@ html:not(.dark) .terminal-home__card.is-disabled:hover,
 html.light .terminal-home__card.is-disabled:hover,
 html[data-theme='light'] .terminal-home__card.is-disabled:hover {
   background:
-    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.045), transparent 36%),
-    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.018), transparent 30%),
+    radial-gradient(circle at 16% 14%, rgba(var(--card-accent-rgb), 0.024), transparent 36%),
+    radial-gradient(circle at 100% 100%, rgba(var(--card-accent-rgb), 0.01), transparent 30%),
     linear-gradient(
       180deg,
       rgb(var(--blog-color-surface-lowest-rgb) / 0.94) 0%,

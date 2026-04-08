@@ -96,9 +96,10 @@ const motionVisibleOnce = computed(() => ({
 .resource-card {
   border: 1px solid var(--blog-ghost-border);
   background:
-    radial-gradient(circle at top left, rgb(var(--blog-color-primary-rgb) / 0.1), transparent 42%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.028) 0%, rgb(255 255 255 / 0) 100%),
-    var(--blog-color-surface-container);
+    radial-gradient(circle at 14% 12%, rgb(var(--blog-color-primary-rgb) / 0.1), transparent 22%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.05) 0%, rgb(255 255 255 / 0.014) 32%, transparent 100%),
+    linear-gradient(135deg, rgb(var(--blog-color-primary-rgb) / 0.04) 0%, transparent 34%),
+    rgb(var(--blog-color-surface-base-rgb) / 0.98);
   box-shadow: var(--blog-shadow-panel);
   color: inherit;
   text-decoration: none;
@@ -108,9 +109,10 @@ const motionVisibleOnce = computed(() => ({
   transform: translateY(-4px);
   border-color: var(--blog-charged-border-strong);
   background:
-    radial-gradient(circle at top left, rgb(var(--blog-color-primary-rgb) / 0.16), transparent 44%),
-    linear-gradient(180deg, rgb(255 255 255 / 0.036) 0%, rgb(255 255 255 / 0) 100%),
-    var(--blog-color-surface-high);
+    radial-gradient(circle at 14% 12%, rgb(var(--blog-color-primary-rgb) / 0.14), transparent 24%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.064) 0%, rgb(255 255 255 / 0.018) 34%, transparent 100%),
+    linear-gradient(135deg, rgb(var(--blog-color-primary-rgb) / 0.055) 0%, transparent 36%),
+    rgb(var(--blog-color-surface-low-rgb) / 0.98);
   box-shadow: var(--blog-shadow-panel-hover);
 }
 </style>
