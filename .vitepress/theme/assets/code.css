@@ -11,37 +11,37 @@
   --vp-code-link-hover-color: var(--vp-c-brand-2);
   --vp-code-bg: var(--vp-c-default-soft);
 
-  --vp-code-block-color: #98989f;
-  --vp-code-block-bg: #161618;
-  --vp-code-block-divider-color: #000000;
+  --vp-code-block-color: var(--blog-color-text-secondary);
+  --vp-code-block-bg: var(--blog-color-surface-low);
+  --vp-code-block-divider-color: var(--blog-color-canvas);
 
-  --vp-code-lang-color: #98989f;
+  --vp-code-lang-color: var(--blog-color-text-muted);
 
-  --vp-code-line-highlight-color: rgba(101, 117, 133, 0.16);
-  --vp-code-line-number-color: #98989f;
+  --vp-code-line-highlight-color: rgb(var(--blog-color-primary-rgb) / 0.12);
+  --vp-code-line-number-color: var(--blog-color-text-muted);
 
-  --vp-code-line-diff-add-color: rgba(16, 185, 129, 0.16);
-  --vp-code-line-diff-add-symbol-color: #3dd68c;
+  --vp-code-line-diff-add-color: rgb(var(--blog-color-success-rgb) / 0.16);
+  --vp-code-line-diff-add-symbol-color: var(--blog-color-success);
 
-  --vp-code-line-diff-remove-color: rgba(244, 63, 94, 0.16);
-  --vp-code-line-diff-remove-symbol-color: #f66f81;
+  --vp-code-line-diff-remove-color: rgb(var(--blog-color-danger-rgb) / 0.16);
+  --vp-code-line-diff-remove-symbol-color: var(--blog-color-danger);
 
-  --vp-code-line-warning-color: rgba(234, 179, 8, 0.16);
-  --vp-code-line-error-color: rgba(244, 63, 94, 0.16);
+  --vp-code-line-warning-color: rgb(var(--blog-color-tertiary-rgb) / 0.16);
+  --vp-code-line-error-color: rgb(var(--blog-color-danger-rgb) / 0.16);
 
-  --vp-code-copy-code-border-color: #2e2e32;
-  --vp-code-copy-code-bg: #202127;
-  --vp-code-copy-code-hover-border-color: #2e2e32;
-  --vp-code-copy-code-hover-bg: #1b1b1f;
-  --vp-code-copy-code-active-text: #98989f;
+  --vp-code-copy-code-border-color: var(--blog-ghost-border);
+  --vp-code-copy-code-bg: var(--blog-color-surface-container);
+  --vp-code-copy-code-hover-border-color: var(--blog-charged-border);
+  --vp-code-copy-code-hover-bg: var(--blog-color-surface-high);
+  --vp-code-copy-code-active-text: var(--blog-color-text-secondary);
   --vp-code-copy-copied-text-content: 'Copied';
 
-  --vp-code-tab-divider: #000000;
-  --vp-code-tab-text-color: #98989f;
-  --vp-code-tab-bg: #161618;
-  --vp-code-tab-hover-text-color: #dfdfd6;
-  --vp-code-tab-active-text-color: #dfdfd6;
-  --vp-code-tab-active-bar-color: #a8b1ff;
+  --vp-code-tab-divider: var(--blog-color-canvas);
+  --vp-code-tab-text-color: var(--blog-color-text-muted);
+  --vp-code-tab-bg: var(--blog-color-surface-low);
+  --vp-code-tab-hover-text-color: var(--blog-color-text);
+  --vp-code-tab-active-text-color: var(--blog-color-text);
+  --vp-code-tab-active-bar-color: var(--blog-color-primary-container);
 }
 
 img {
@@ -55,7 +55,7 @@ img {
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgb(var(--blog-color-canvas-rgb) / 0.42);
   transition: all 0.3s;
 }
 
@@ -66,16 +66,4 @@ img {
   transform: translate(-50%, -50%);
   width: 70%;
   border-radius: 6px;
-}
-
-
-.aside-container {
-  width: fit-content !important;
-}
-.VPDocOutlineItem .outline-link {
-  white-space: nowrap;
-}
-
-.VPSidebarItem.level-0 {
-  padding-bottom: 10px !important;
 }

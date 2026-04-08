@@ -1,94 +1,116 @@
 <template>
-  <div 
-    class="source-card" 
-    :style="{
-      backgroundColor: isDark ? '#141414' : '#fafbfc',
-      borderColor: isDark ? '#303030' : '#f0f0f0'
-    }"
-    @click="onOpenHref(data.link)"
+  <a
+    v-motion
+    class="resource-card group relative flex h-full flex-col overflow-hidden rounded-xl px-6 py-6 transition duration-300"
+    :href="data.link"
+    target="_blank"
+    rel="noreferrer"
+    :initial="motionInitial"
+    :visible-once="motionVisibleOnce"
   >
-    <div class="title">
-      <img 
-        :src="data.cover"
-        onerror="javascript:this.src='/blog/site-logo/error.png'"
-        @click.prevent.stop="onOpenHref(data.link)"
-      >
-      <a
-        :style="{ color: isDark ? 'rgba(255,255,255,0.85)' : 'rgba(0,0,0,0.88)' }"
-        href="#"
-      >{{ data.title }}</a>
-    </div>
-
     <span
-      :style="{ color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.45)'}"
+      class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terminal-primary to-transparent opacity-0 transition duration-300 group-hover:opacity-100"
+    />
+
+    <p
+      v-if="eyebrow || data.tags?.length"
+      class="mb-4 font-mono text-[10px] font-bold uppercase tracking-terminal text-terminal-accent"
     >
-      <div v-html="data.description"></div>
-    </span>
-  </div>
+      {{ eyebrow || data.tags?.[0] }}
+    </p>
+
+    <h3 class="font-display text-xl font-bold tracking-tight text-terminal-text">
+      {{ data.title }}
+    </h3>
+
+    <div
+      class="mt-4 flex-1 text-sm leading-7 text-terminal-secondary"
+      v-html="data.description"
+    />
+
+    <div class="mt-6 flex flex-wrap items-end justify-between gap-4">
+      <div v-if="data.tags?.length" class="flex flex-wrap gap-2">
+        <span
+          v-for="tag in data.tags"
+          :key="tag"
+          class="rounded-full border border-terminal-outline/25 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-terminal text-terminal-secondary"
+        >
+          {{ tag }}
+        </span>
+      </div>
+
+      <span
+        class="inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-terminal text-terminal-primary transition duration-300 group-hover:translate-x-1"
+      >
+        {{ ctaLabel }}
+        <span aria-hidden="true">↗</span>
+      </span>
+    </div>
+  </a>
 </template>
 
 <script lang="ts" setup>
-import { useData } from 'vitepress';
+import { computed } from 'vue';
 
 interface Data {
   title: string;
   link: string;
-  cover: string;
   description: string;
+  cover?: string;
+  tags?: string[];
 }
 
-defineProps<{
-  data: Data
-}>();
+const props = withDefaults(
+  defineProps<{
+    ctaLabel?: string;
+    data: Data;
+    delay?: number;
+    eyebrow?: string;
+  }>(),
+  {
+    ctaLabel: '打开资源',
+    delay: 0,
+    eyebrow: '',
+  },
+);
 
-const { isDark } = useData();
+const motionInitial = {
+  filter: 'blur(4px)',
+  opacity: 0,
+  y: 12,
+};
 
-const onOpenHref = (link: string) => {
-  window.open(link, '_blank');
-}
+const motionVisibleOnce = computed(() => ({
+  filter: 'blur(0px)',
+  opacity: 1,
+  transition: {
+    delay: props.delay,
+    duration: 220,
+    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+  },
+  y: 0,
+}));
 </script>
 
-<style lang="scss">
-.source-card {
-  padding: 20px;
-  min-height: 180px;
-  /* border: 1px solid #f0f0f0; */
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 8px;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-family: AlibabaSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-'Noto Color Emoji';
-  line-height: 1.5;
-  transition: all .3s;
-  /* background-color: #fafbfc; */
-  &:hover {
-    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
-    border-color: transparent;
-    transform: translateY(-6px);
-  }
-  .title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5em;
-    img {
-      width: 30px;
-      height: 30px;
-    }
-    a {
-      display: block;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: var(--ant-line-height-heading-5);
-      margin-left: 10px;
-    }
-  }
-  
-  span {
-    font-size: 14px;
-  }
+<style scoped>
+.resource-card {
+  border: 1px solid var(--blog-ghost-border);
+  background:
+    radial-gradient(circle at top left, rgb(var(--blog-color-primary-rgb) / 0.1), transparent 42%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.028) 0%, rgb(255 255 255 / 0) 100%),
+    var(--blog-color-surface-container);
+  box-shadow: var(--blog-shadow-panel);
+  color: inherit;
+  text-decoration: none;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blog-charged-border-strong);
+  background:
+    radial-gradient(circle at top left, rgb(var(--blog-color-primary-rgb) / 0.16), transparent 44%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.036) 0%, rgb(255 255 255 / 0) 100%),
+    var(--blog-color-surface-high);
+  box-shadow: var(--blog-shadow-panel-hover);
 }
 </style>

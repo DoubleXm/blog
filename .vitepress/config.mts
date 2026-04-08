@@ -1,15 +1,94 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import { defineConfig } from 'vitepress';
+
+import {
+  getContentMetrics,
+  getGitHubContributions,
+  getPageMetadataByRelativePath,
+} from './blog-data';
+
+const mode = process.env.NODE_ENV ?? 'development';
+const envFiles = [
+  '.env',
+  '.env.local',
+  `.env.${mode}`,
+  `.env.${mode}.local`,
+];
+
+function parseEnvFile(filePath: string) {
+  const parsed: Record<string, string> = {};
+
+  if (!fs.existsSync(filePath)) {
+    return parsed;
+  }
+
+  const raw = fs.readFileSync(filePath, 'utf8');
+
+  for (const line of raw.split(/\r?\n/)) {
+    const trimmed = line.trim();
+
+    if (!trimmed || trimmed.startsWith('#')) {
+      continue;
+    }
+
+    const equalIndex = trimmed.indexOf('=');
+
+    if (equalIndex <= 0) {
+      continue;
+    }
+
+    const key = trimmed.slice(0, equalIndex).trim();
+    let value = trimmed.slice(equalIndex + 1).trim();
+
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    parsed[key] = value;
+  }
+
+  return parsed;
+}
+
+const loadedEnv = envFiles.reduce<Record<string, string>>((accumulator, fileName) => {
+  const filePath = path.resolve(process.cwd(), fileName);
+  return { ...accumulator, ...parseEnvFile(filePath) };
+}, {});
+
+for (const [key, value] of Object.entries(loadedEnv)) {
+  if (process.env[key] === undefined && value !== undefined) {
+    process.env[key] = value;
+  }
+}
+
+const blogData = {
+  contentMetrics: getContentMetrics(),
+  githubContributions: await getGitHubContributions(),
+  pageMetadataByRelativePath: getPageMetadataByRelativePath(),
+};
+
+const currentYear = new Date().getFullYear();
+const copyrightYears = currentYear <= 2024 ? '2024' : `2024-${currentYear}`;
 
 export default defineConfig({
   title: '65岁退休 Coder',
   description: '',
+  appearance: 'dark',
   lastUpdated: true,
   base: '/blog/',
   outDir: './dist',
   srcDir: './src',
   markdown: {
     // 'andromeeda' | 'aurora-x' | 'ayu-dark' | 'catppuccin-frappe' | 'catppuccin-latte' | 'catppuccin-macchiato' | 'catppuccin-mocha' | 'dark-plus' | 'dracula' | 'dracula-soft' | 'everforest-dark' | 'everforest-light' | 'github-dark' | 'github-dark-default' | 'github-dark-dimmed' | 'github-dark-high-contrast' | 'github-light' | 'github-light-default' | 'github-light-high-contrast' | 'houston' | 'kanagawa-dragon' | 'kanagawa-lotus' | 'kanagawa-wave' | 'laserwave' | 'light-plus' | 'material-theme' | 'material-theme-darker' | 'material-theme-lighter' | 'material-theme-ocean' | 'material-theme-palenight' | 'min-dark' | 'min-light' | 'monokai' | 'night-owl' | 'nord' | 'one-dark-pro' | 'one-light' | 'plastic' | 'poimandres' | 'red' | 'rose-pine' | 'rose-pine-dawn' | 'rose-pine-moon' | 'slack-dark' | 'slack-ochin' | 'snazzy-light' | 'solarized-dark' | 'solarized-light' | 'synthwave-84' | 'tokyo-night' | 'vesper' | 'vitesse-black' | 'vitesse-dark' | 'vitesse-light'
-    theme: 'dark-plus',
+    theme: {
+      dark: 'material-theme-darker',
+      light: 'material-theme-lighter',
+    },
     lineNumbers: true,
   },
   vite: {
@@ -19,9 +98,14 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    blogData,
     outline: 'deep',
     search: {
       provider: 'local',
+    },
+    footer: {
+      message: '技术从未退休，学习永不止步。',
+      copyright: `Copyright © ${copyrightYears} 65岁退休 Coder`,
     },
     editLink: {
       pattern: 'https://github.com/DoubleXm/blog/edit/main/src/:path',
@@ -29,20 +113,21 @@ export default defineConfig({
     },
 
     nav: [
-      { text: '🤔...😲🚚💰', link: '/_project/module_standard' },
+      { text: 'Sundry', link: '/_project/module_standard' },
       { text: 'AI', link: '/ai' },
       {
         text: '大前端',
         items: [
-          { text: '🔞 Vue', link: '/vue/pinia/01' },
-          { text: '♻️ React', link: '/react/view' },
-          { text: '🐜 微前端', link: '/micro-web/single-spa' },
-          { text: '🦈 数据库', link: '/database' },
-          { text: '🧌 DevOps', link: '/devops/01-dir' },
-          { text: '🐛 Python', link: '/python/01' },
+          { text: 'Vue', link: '/vue/pinia/01' },
+          { text: 'React', link: '/react/hooks' },
+          { text: '微前端', link: '/micro-web/single-spa' },
+          { text: 'Node', link: '/node/01' },
+          { text: '数据库', link: '/database' },
+          { text: 'DevOps', link: '/devops/01-dir' },
+          { text: 'Python', link: '/python/01' },
         ],
       },
-      { text: '🌸 资源导航', link: '/navigator-site' },
+      { text: '资源导航', link: '/navigator-site' },
       { text: '面试', link: '/interview/ba-gu/js' },
     ],
 
@@ -102,7 +187,6 @@ export default defineConfig({
         },
       ],
       '/react/': [
-        { text: '工具速查', link: '/react/view' },
         {
           text: 'React',
           collapsed: true,
@@ -367,7 +451,6 @@ export default defineConfig({
       ],
       '/ai/': [{}],
     },
-
     socialLinks: [{ icon: 'github', link: 'https://github.com/DoubleXm/blog' }],
-  },
+  } as any,
 });

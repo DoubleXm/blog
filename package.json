@@ -12,11 +12,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
     "sass-embedded": "^1.89.2",
+    "tailwindcss": "^4.2.2",
     "vitepress": "^1.6.3"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
+    "@lucide/vue": "^1.7.0",
+    "@types/node": "^25.5.2",
+    "@vueuse/motion": "^3.0.3",
     "element-plus": "^2.9.5",
     "vue": "^3.5.18"
   }

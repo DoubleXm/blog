@@ -1,5 +1,7 @@
 ---
 layout: page
+pageClass: resource-page
+aside: false
 ---
 
 <script setup>

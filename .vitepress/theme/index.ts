@@ -1,12 +1,18 @@
 import type { Theme } from 'vitepress';
-import DefaultTheme from 'vitepress/theme'
-// code block styles
-import './assets/code.css'
+import { MotionPlugin } from '@vueuse/motion';
+import DefaultTheme from 'vitepress/theme';
+
+import Layout from './Layout.vue';
 import 'element-plus/dist/index.css';
+import './assets/code.css';
+import './assets/style.css';
 
 export default {
   extends: DefaultTheme,
+  Layout,
   enhanceApp({ app }) {
+    app.use(MotionPlugin);
+
     setTimeout(() => {
       if (app._instance?.isMounted) {
         window.addEventListener('click', function (event) {
@@ -28,8 +34,8 @@ export default {
               overlay.remove();
             });
           }
-        })
+        });
       }
-    }, 1000)
-  }
-} satisfies Theme
+    }, 1000);
+  },
+} satisfies Theme;
