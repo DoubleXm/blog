@@ -121,7 +121,7 @@ export default defineConfig({
           { text: 'Vue', link: '/vue/pinia/01' },
           { text: 'React', link: '/react/hooks' },
           { text: '微前端', link: '/micro-web/single-spa' },
-          { text: 'Node', link: '/node/01' },
+          { text: 'Nest', link: '/nest/01' },
           { text: '数据库', link: '/database' },
           { text: 'DevOps', link: '/devops/01-dir' },
           { text: 'Python', link: '/python/01' },
@@ -450,6 +450,18 @@ export default defineConfig({
         },
       ],
       '/ai/': [{}],
+      '/nest/': [
+        {
+          text: 'OVERVIEW',
+          collapsed: true,
+          items: [
+            { text: '快速起步', link: '/nest/01' },
+            { text: '控制器 Controller', link: '/nest/02' },
+            { text: '提供者 Provider', link: '/nest/03' },
+            { text: '模块 Module', link: '/nest/04' },
+          ],
+        }
+      ]
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/DoubleXm/blog' }],
   } as any,
