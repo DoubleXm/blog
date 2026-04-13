@@ -457,8 +457,12 @@ export default defineConfig({
           items: [
             { text: '快速起步', link: '/nest/01' },
             { text: '控制器 Controller', link: '/nest/02' },
-            { text: '提供者 Provider', link: '/nest/03' },
-            { text: '模块 Module', link: '/nest/04' },
+            { text: '提供者 Provider & 模块 Module', link: '/nest/03' },
+            { text: '中间件 middleware', link: '/nest/04' },
+            { text: '异常过滤器 filter', link: '/nest/05' },
+            { text: '管道 pip', link: '/nest/06' },
+            { text: '守卫 guard', link: '/nest/07' },
+            { text: '拦截器 interceptor', link: '/nest/08' },
           ],
         }
       ]

@@ -5,7 +5,7 @@
 
  :root {
   --vp-code-line-height: 1.7;
-  --vp-code-font-size: 0.875em;
+  --vp-code-font-size: 1em;
   --vp-code-color: rgb(var(--blog-color-primary-highlight-rgb) / 0.9);
   --vp-code-link-color: rgb(var(--blog-color-primary-highlight-rgb) / 0.9);
   --vp-code-link-hover-color: var(--blog-color-text);
