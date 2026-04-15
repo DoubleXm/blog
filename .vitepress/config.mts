@@ -460,7 +460,7 @@ export default defineConfig({
             { text: '提供者 Provider & 模块 Module', link: '/nest/03' },
             { text: '中间件 middleware', link: '/nest/04' },
             { text: '异常过滤器 filter', link: '/nest/05' },
-            { text: '管道 pip', link: '/nest/06' },
+            { text: '管道 pipe', link: '/nest/06' },
             { text: '守卫 guard', link: '/nest/07' },
             { text: '拦截器 interceptor', link: '/nest/08' },
           ],
