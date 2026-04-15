@@ -463,6 +463,19 @@ export default defineConfig({
             { text: '管道 pipe', link: '/nest/06' },
             { text: '守卫 guard', link: '/nest/07' },
             { text: '拦截器 interceptor', link: '/nest/08' },
+            { text: '自定义装饰器/注解', link: '/nest/09' },
+            { text: '生命周期 & 总结', link: '/nest/10' },
+          ],
+        },
+        {
+          text: 'TECHNIQUES',
+          collapsed: false,
+          items: [
+            { text: '环境变量的管理', link: '/nest/01' },
+            { text: 'Prisma 的集成', link: '/nest/01' },
+            { text: 'Mongoose 集成', link: '/nest/01' },
+            { text: 'Winston 日志集成', link: '/nest/01' },
+            { text: '事件发射器 EventEmitter', link: '/nest/01' }
           ],
         }
       ]
