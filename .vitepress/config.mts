@@ -477,6 +477,13 @@ export default defineConfig({
             { text: 'Winston 日志集成', link: '/nest/01' },
             { text: '事件发射器 EventEmitter', link: '/nest/01' }
           ],
+        },
+        {
+          text: 'OTHER',
+          collapsed: false,
+          items: [
+            { text: 'Rxjs', link: '/nest/rxjs' },
+          ],
         }
       ]
     },
