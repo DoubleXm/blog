@@ -138,7 +138,7 @@
   --blog-doc-gap: 24px;
   --blog-doc-shell-max-width: 1536px;
   --blog-doc-content-width: calc(
-    var(--blog-doc-shell-max-width) - var(--vp-sidebar-width) - var(--blog-doc-aside-width) -
+    var(--blog-doc-shell-width) - var(--vp-sidebar-width) - var(--blog-doc-aside-width) -
       (var(--blog-doc-gap) * 2)
   );
   --blog-doc-shell-gutter: 48px;
@@ -1732,6 +1732,10 @@ html[data-theme='light'] .blog-theme-layout .vp-doc .custom-block {
 }
 
 @media (max-width: 1279px) {
+  :root {
+    --blog-doc-content-width: calc(var(--blog-doc-shell-width) - var(--vp-sidebar-width) - var(--blog-doc-gap));
+  }
+
   .blog-theme-layout .VPContent.has-sidebar {
     padding-left: 0;
   }
@@ -1758,6 +1762,7 @@ html[data-theme='light'] .blog-theme-layout .vp-doc .custom-block {
 @media (max-width: 959px) {
   :root {
     --blog-doc-shell-gutter: 32px;
+    --blog-doc-content-width: var(--blog-doc-shell-width);
   }
 
   .blog-theme-layout .VPDoc.has-sidebar .container {

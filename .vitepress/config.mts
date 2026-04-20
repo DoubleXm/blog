@@ -122,7 +122,7 @@ export default defineConfig({
           { text: 'React', link: '/react/hooks' },
           { text: '微前端', link: '/micro-web/single-spa' },
           { text: 'Nest', link: '/nest/01' },
-          { text: '数据库', link: '/database' },
+          { text: '数据库', link: '/database/mysql/01' },
           { text: 'DevOps', link: '/devops/01-dir' },
           { text: 'Python', link: '/python/01' },
         ],
@@ -325,11 +325,12 @@ export default defineConfig({
       ],
       '/database/': [
         {
-          text: '工程化',
+          text: 'MySQL',
+          collapsed: true,
           items: [
             {
-              text: '模块化的发展及 SystemJS 原理',
-              link: '/_project/module_standard',
+              text: 'QUICK START',
+              link: '/database/mysql/01',
             },
           ],
         },

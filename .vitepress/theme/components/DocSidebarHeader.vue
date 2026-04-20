@@ -22,7 +22,7 @@ const currentPath = computed(() => {
 
 <style scoped>
 .doc-sidebar-header {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding: 0 4px;
 }
 
