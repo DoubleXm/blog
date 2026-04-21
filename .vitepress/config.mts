@@ -89,7 +89,7 @@ export default defineConfig({
       dark: 'one-dark-pro',
       light: 'github-light',
     },
-    lineNumbers: true,
+    lineNumbers: false,
   },
   vite: {
     server: {
@@ -331,6 +331,14 @@ export default defineConfig({
             {
               text: 'QUICK START',
               link: '/database/mysql/01',
+            },
+            {
+              text: '库和表的基本操作',
+              link: '/database/mysql/02',
+            },
+            {
+              text: '数据类型',
+              link: '/database/mysql/03',
             },
           ],
         },
