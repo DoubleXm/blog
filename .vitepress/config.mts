@@ -337,8 +337,16 @@ export default defineConfig({
               link: '/database/mysql/02',
             },
             {
+              text: '字段约束条件',
+              link: '/database/mysql/04'
+            },
+            {
               text: '数据类型',
               link: '/database/mysql/03',
+            },
+            {
+              text: 'DQL 数据查询',
+              link: '/database/mysql/05'
             },
           ],
         },
