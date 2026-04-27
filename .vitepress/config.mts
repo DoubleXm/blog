@@ -345,7 +345,7 @@ export default defineConfig({
               link: '/database/mysql/03',
             },
             {
-              text: 'DQL 数据查询',
+              text: 'DQL 单表数据查询',
               link: '/database/mysql/05'
             },
           ],
