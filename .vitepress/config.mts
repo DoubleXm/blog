@@ -348,6 +348,10 @@ export default defineConfig({
               text: 'DQL 单表数据查询',
               link: '/database/mysql/05'
             },
+            {
+              text: '函数',
+              link: '/database/mysql/06'
+            },
           ],
         },
       ],
