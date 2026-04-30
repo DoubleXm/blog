@@ -352,6 +352,10 @@ export default defineConfig({
               text: '函数',
               link: '/database/mysql/06'
             },
+            {
+              text: 'DQL 多表数据查询',
+              link: '/database/mysql/07'
+            },
           ],
         },
       ],
