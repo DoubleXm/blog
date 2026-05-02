@@ -356,6 +356,10 @@ export default defineConfig({
               text: 'DQL 多表数据查询',
               link: '/database/mysql/07'
             },
+            {
+              text: 'DCL - 用户 & 权限',
+              link: '/database/mysql/08'
+            },
           ],
         },
       ],
