@@ -360,6 +360,14 @@ export default defineConfig({
               text: 'DCL - 用户 & 权限',
               link: '/database/mysql/08'
             },
+            {
+              text: '事务',
+              link: '/database/mysql/09'
+            },
+            {
+              text: '索引',
+              link: '/database/mysql/10'
+            },
           ],
         },
       ],
