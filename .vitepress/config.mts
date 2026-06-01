@@ -368,6 +368,14 @@ export default defineConfig({
               text: '索引',
               link: '/database/mysql/10'
             },
+            {
+              text: '视图',
+              link: '/database/mysql/11'
+            },
+            {
+              text: '存储过程',
+              link: '/database/mysql/12'
+            },
           ],
         },
       ],
