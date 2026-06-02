@@ -447,6 +447,7 @@ export default defineConfig({
             { text: '07. 多线程', link: '/python/advanced/08' },
             { text: '08. 多进程', link: '/python/advanced/09' },
             { text: '09. asyncio 异步编程(协程)', link: '/python/advanced/10' },
+            { text: '10. 类型注解', link: '/python/advanced/10' },
           ],
         },
         {
