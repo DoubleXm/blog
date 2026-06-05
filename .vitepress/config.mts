@@ -340,10 +340,6 @@ export default defineConfig({
           ],
         },
         {
-          text: 'Nginx',
-          link: '/devops/nginx/01'
-        },
-        {
           text: 'Docker',
           collapsed: true,
           items: [
@@ -359,6 +355,7 @@ export default defineConfig({
           collapsed: true,
           items: [],
         },
+        { text: 'Git', link: '/devops/git/01.md' }
       ],
       '/python/': [
         {
