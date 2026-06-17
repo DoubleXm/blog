@@ -136,7 +136,10 @@ export default defineConfig({
         {
           text: '工程化',
           items: [
-            { text: '模块化的发展及 SystemJS 原理', link: '/_project/module_standard' },
+            {
+              text: '模块化的发展及 SystemJS 原理',
+              link: '/_project/module_standard',
+            },
           ],
         },
         {
@@ -190,8 +193,14 @@ export default defineConfig({
           items: [
             { text: 'use hooks', link: '/react/hooks' },
             { text: 'React for TypeScript', link: '/react/react-for-ts' },
-            { text: '受控组件 vs 非受控组件', link: '/react/controlled-vs-uncontrolled' },
-            { text: '深入理解 Suspense 和 ErrorBoundary', link: '/react/lazy-loading-error-catching' },
+            {
+              text: '受控组件 vs 非受控组件',
+              link: '/react/controlled-vs-uncontrolled',
+            },
+            {
+              text: '深入理解 Suspense 和 ErrorBoundary',
+              link: '/react/lazy-loading-error-catching',
+            },
             { text: '自定义 Hooks', link: '/react/custom-hooks' },
           ],
         },
@@ -238,9 +247,15 @@ export default defineConfig({
           text: '组件库开发',
           collapsed: true,
           items: [
-            { text: 'StoryBook 组件库文档', link: '/react/components/storybook' },
+            {
+              text: 'StoryBook 组件库文档',
+              link: '/react/components/storybook',
+            },
             { text: '组件库打包', link: '/react/components/packaging' },
-            { text: 'DatePickerPanel 日期选择面板', link: '/react/components/datepickerpanel' },
+            {
+              text: 'DatePickerPanel 日期选择面板',
+              link: '/react/components/datepickerpanel',
+            },
             { text: 'Calendar 日历', link: '/react/components/calendar' },
             { text: 'Icon 图标', link: '/react/components/icon' },
             { text: 'Space 间距', link: '/react/components/space' },
@@ -301,7 +316,10 @@ export default defineConfig({
           text: 'SingleSpa',
           collapsed: true,
           items: [
-            { text: '使用方案及子应用的加载原理', link: '/micro-web/single-spa' },
+            {
+              text: '使用方案及子应用的加载原理',
+              link: '/micro-web/single-spa',
+            },
           ],
         },
       ],
@@ -310,19 +328,54 @@ export default defineConfig({
           text: 'MySQL',
           collapsed: true,
           items: [
-            { text: 'QUICK START', link: '/database/mysql/01' },
-            { text: '库和表的基本操作', link: '/database/mysql/02' },
-            { text: '字段约束条件', link: '/database/mysql/04' },
-            { text: '数据类型', link: '/database/mysql/03' },
-            { text: 'DQL 单表数据查询', link: '/database/mysql/05' },
-            { text: '函数', link: '/database/mysql/06' },
-            { text: 'DQL 多表数据查询', link: '/database/mysql/07' },
-            { text: 'DCL - 用户 & 权限', link: '/database/mysql/08' },
-            { text: '事务', link: '/database/mysql/09' },
-            { text: '索引', link: '/database/mysql/10' },
-            { text: '视图', link: '/database/mysql/11' },
-            { text: '存储过程', link: '/database/mysql/12' },
-            { text: '锁', link: '/database/mysql/13' },
+            {
+              text: 'QUICK START',
+              link: '/database/mysql/01',
+            },
+            {
+              text: '库和表的基本操作',
+              link: '/database/mysql/02',
+            },
+            {
+              text: '字段约束条件',
+              link: '/database/mysql/04'
+            },
+            {
+              text: '数据类型',
+              link: '/database/mysql/03',
+            },
+            {
+              text: 'DQL 单表数据查询',
+              link: '/database/mysql/05'
+            },
+            {
+              text: '函数',
+              link: '/database/mysql/06'
+            },
+            {
+              text: 'DQL 多表数据查询',
+              link: '/database/mysql/07'
+            },
+            {
+              text: 'DCL - 用户 & 权限',
+              link: '/database/mysql/08'
+            },
+            {
+              text: '事务',
+              link: '/database/mysql/09'
+            },
+            {
+              text: '索引',
+              link: '/database/mysql/10'
+            },
+            {
+              text: '视图',
+              link: '/database/mysql/11'
+            },
+            {
+              text: '存储过程',
+              link: '/database/mysql/12'
+            },
           ],
         },
       ],
