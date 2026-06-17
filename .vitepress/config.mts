@@ -461,6 +461,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '一个标准的 FastAPI 项目', link: '/python/fastapi/01' },
+            { text: 'loguru 日志集成', link: '/python/fastapi/02' }
           ],
         },
       ],
