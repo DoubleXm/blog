@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">大模型如何逐个 token 生成回复</title>
+  <desc id="desc">自上而下说明大模型从上下文到 token 概率分布，再循环生成直到结束，并展示 temperature、top_p、top_k 等参数影响。</desc>
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f97316"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 500 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .panel { fill: #ffffff; stroke: #dbe3ef; stroke-width: 2; }
+      .step { fill: #eff6ff; stroke: #93c5fd; stroke-width: 2; }
+      .stepLoop { fill: #fff7ed; stroke: #fdba74; stroke-width: 2; }
+      .endBox { fill: #f0fdf4; stroke: #86efac; stroke-width: 2; }
+      .num { font: 800 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1d4ed8; }
+      .numLoop { font: 800 24px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #c2410c; }
+      .label { font: 700 20px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .body { font: 500 16px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .small { font: 500 15px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .mono { font: 700 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0f172a; }
+      .barBg { fill: #e2e8f0; }
+      .bar { fill: #2563eb; animation: barColor 3s ease-in-out infinite; }
+      .flow {
+        fill: none;
+        stroke: #2563eb;
+        stroke-width: 3;
+        stroke-dasharray: 12 10;
+        animation: dash 1.2s linear infinite;
+      }
+      .loop {
+        fill: none;
+        stroke: #f97316;
+        stroke-width: 4;
+        stroke-dasharray: 12 9;
+        animation: dash 1.1s linear infinite;
+      }
+      .loopText { font: 800 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #c2410c; }
+      .tokenDot { fill: #f97316; stroke: #ffffff; stroke-width: 4; filter: drop-shadow(0 2px 5px rgba(15, 23, 42, 0.25)); }
+      .tokenHalo { fill: #fed7aa; opacity: 0.45; }
+      .tempLow { fill: #dcfce7; stroke: #86efac; stroke-width: 2; }
+      .tempHigh { fill: #fff7ed; stroke: #fdba74; stroke-width: 2; }
+      .param { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+
+      @keyframes dash {
+        to { stroke-dashoffset: -22; }
+      }
+      @keyframes barColor {
+        0%, 100% { fill: #2563eb; }
+        50% { fill: #f97316; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .flow, .loop, .bar { animation: none; }
+        .animatedToken { display: none; }
+      }
+    </style>
+    <path id="tokenPath" d="M 360 172 L 360 242 L 360 312 L 360 382 L 360 452 C 360 492, 148 492, 148 340 C 148 260, 240 242, 312 242 L 360 242 L 360 312 L 360 382 L 360 452 L 360 532 L 360 596" fill="none"/>
+  </defs>
+
+  <rect class="bg" width="1280" height="720"/>
+  <text class="title" x="54" y="58">大模型如何逐个 token 生成回复</text>
+  <text class="subtitle" x="54" y="88">按步骤向下执行；第 3-5 步会反复循环，直到满足结束条件</text>
+
+  <rect class="panel" x="44" y="122" width="720" height="540" rx="22"/>
+  <text class="label" x="74" y="160">生成流程</text>
+
+  <rect class="step" x="220" y="142" width="280" height="58" rx="16"/>
+  <text class="num" x="246" y="178">1</text>
+  <text class="label" x="286" y="174">拼上下文</text>
+  <text class="body" x="396" y="174">系统提示 / 历史问答 / 当前输入</text>
+
+  <path class="flow" d="M 360 200 L 360 222" marker-end="url(#arrowBlue)"/>
+
+  <rect class="step" x="220" y="222" width="280" height="58" rx="16"/>
+  <text class="num" x="246" y="258">2</text>
+  <text class="label" x="286" y="254">切 token 并转向量</text>
+
+  <path class="flow" d="M 360 280 L 360 302" marker-end="url(#arrowBlue)"/>
+
+  <rect class="stepLoop" x="220" y="302" width="280" height="58" rx="16"/>
+  <text class="numLoop" x="246" y="338">3</text>
+  <text class="label" x="286" y="334">权重 + attention 计算</text>
+
+  <path class="flow" d="M 360 360 L 360 382" marker-end="url(#arrowBlue)"/>
+
+  <rect class="stepLoop" x="220" y="382" width="280" height="78" rx="16"/>
+  <text class="numLoop" x="246" y="418">4</text>
+  <text class="label" x="286" y="414">得到概率并选 token</text>
+  <text class="mono" x="286" y="442">手机 45% / 产品 20%</text>
+  <rect class="barBg" x="500" y="405" width="110" height="12" rx="6"/>
+  <rect class="bar" x="500" y="405" width="76" height="12" rx="6">
+    <animate attributeName="width" values="68;92;68" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <rect class="barBg" x="500" y="432" width="110" height="12" rx="6"/>
+  <rect class="bar" x="500" y="432" width="38" height="12" rx="6">
+    <animate attributeName="width" values="30;52;30" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <path class="flow" d="M 360 460 L 360 482" marker-end="url(#arrowBlue)"/>
+
+  <rect class="stepLoop" x="220" y="482" width="280" height="58" rx="16"/>
+  <text class="numLoop" x="246" y="518">5</text>
+  <text class="label" x="286" y="514">拼回上下文</text>
+  <text class="body" x="410" y="514">继续预测下一个</text>
+
+  <path class="loop" d="M 220 512 C 104 512, 104 330, 220 330" marker-end="url(#arrowOrange)"/>
+  <text class="loopText" x="82" y="418">3-5 循环</text>
+
+  <path class="flow" d="M 360 540 L 360 568" marker-end="url(#arrowBlue)"/>
+
+  <rect class="endBox" x="220" y="568" width="280" height="58" rx="16"/>
+  <text class="label" x="292" y="604">结束</text>
+  <text class="body" x="354" y="604">回答完成 / 工具调用 / 长度限制</text>
+
+  <g class="animatedToken">
+    <circle class="tokenHalo" r="16">
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <mpath href="#tokenPath"/>
+      </animateMotion>
+    </circle>
+    <circle class="tokenDot" r="8">
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <mpath href="#tokenPath"/>
+      </animateMotion>
+    </circle>
+  </g>
+
+  <rect class="panel" x="804" y="122" width="432" height="540" rx="22"/>
+  <text class="label" x="836" y="162">哪些参数会影响回复？</text>
+
+  <rect class="tempLow" x="836" y="190" width="176" height="94" rx="14"/>
+  <text class="label" x="856" y="224">temperature 低</text>
+  <text class="small" x="856" y="252">更稳定、更保守</text>
+  <text class="small" x="856" y="272">更少随机</text>
+
+  <rect class="tempHigh" x="1026" y="190" width="176" height="94" rx="14"/>
+  <text class="label" x="1046" y="224">temperature 高</text>
+  <text class="small" x="1046" y="252">更多样、更有创意</text>
+  <text class="small" x="1046" y="272">也更容易跑偏</text>
+
+  <rect class="param" x="836" y="314" width="366" height="48" rx="12"/>
+  <text class="body" x="856" y="344">top_p：只在累计概率范围内抽样</text>
+
+  <rect class="param" x="836" y="374" width="366" height="48" rx="12"/>
+  <text class="body" x="856" y="404">top_k：只在前 K 个候选里抽样</text>
+
+  <rect class="param" x="836" y="434" width="366" height="48" rx="12"/>
+  <text class="body" x="856" y="464">max_tokens：限制最多输出长度</text>
+
+  <rect class="param" x="836" y="494" width="366" height="48" rx="12"/>
+  <text class="body" x="856" y="524">frequency penalty：减少重复用词</text>
+
+  <rect class="param" x="836" y="554" width="366" height="48" rx="12"/>
+  <text class="body" x="856" y="584">presence penalty：鼓励引入新内容</text>
+
+  <text class="small" x="836" y="630">同一个上下文，参数不同，最终回复也可能不同。</text>
+</svg>

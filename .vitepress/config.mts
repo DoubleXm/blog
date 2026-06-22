@@ -114,7 +114,7 @@ export default defineConfig({
 
     nav: [
       { text: 'Sundry', link: '/_project/module_standard' },
-      { text: 'AI', link: '/ai' },
+      { text: 'AI', link: '/ai/01.md' },
       {
         text: '大前端',
         items: [
@@ -494,7 +494,14 @@ export default defineConfig({
           items: [{ text: '2025-x-x 占位', link: '' }],
         },
       ],
-      '/ai/': [{}],
+      '/ai/': [
+        {
+          text: 'LangChain',
+          items: [
+            { text: 'LangChain 入门', link: '/ai/01.md' },
+          ]
+        }
+      ],
       '/nest/': [
         {
           text: 'OVERVIEW',
